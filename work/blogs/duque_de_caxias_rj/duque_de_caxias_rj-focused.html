@@ -1,0 +1,32 @@
+
+        <p>Duque de Caxias - RJ é uma das centenas de <a href="https://focusnfe.com.br/cidades-integradas-nfse/">cidades integradas à API da Focus NFe</a>. Nossos clientes já podem fazer a emissão, consulta e cancelamento de notas fiscais de serviço (NFSe). Utilizamos um padrão simples e consistente de comunicação com o web service da prefeitura, garantido disponibilidade e rapidez. Conheça o formato único que nossa API utiliza na comunicação com todos os municípios <a href="https://focusnfe.com.br/doc/">clicando aqui</a>.</p>
+
+<p>Veja abaixo os detalhes deste município:</p>
+
+<pre class="wp-block-preformatted" style="font-size:18px"><strong>Dados básicos:
+</strong>
+<strong>Provedor</strong>: IssNet (v.B)
+<strong>Utiliza padrão ABRASF</strong>: Sim (2.04).
+<strong>Necessita certificado digital</strong>: Sim.
+<strong>Endereço produção</strong>: <a href="https://issnetonline.com.br/duquedecaxias/" target="_blank" rel="noreferrer noopener">https://issnetonline.com.br/duquedecaxias/</a>
+<strong>Endereço homologação</strong>: <a href="https://www.issnetonline.com.br/homologaabrasf/" target="_blank" rel="noreferrer noopener">https://www.issnetonline.com.br/homologaabrasf/</a></pre>
+
+<pre class="wp-block-preformatted" style="font-size:18px"><strong>Campos em nossa API:
+</strong>
+<strong>item_lista_servico</strong>: Utiliza o padrão nacional da <a href="http://sped.rfb.gov.br/pagina/show/1601" target="_blank" rel="noreferrer noopener">Lei Complementar 116/2003</a>.
+<strong>codigo_cnae</strong>: Campo obrigatório.
+<strong>codigo_tributario_municipio</strong>: Campo obrigatório, geralmente utiliza o valor do <strong>item_lista_servico</strong> sem pontuação (ex.: para 1.05 &gt; 105). Consultar no XML de uma nota autorizada o valor desse campo.</pre>
+
+<pre class="wp-block-preformatted" style="font-size:18px"><strong><strong>Observações:</strong>
+</strong>
+- Para emitir notas no ambiente de produção via webservice, deve-se anteriormente, solicitar autorização para emissão, enviando os dados da empresa prestadora para suporte@notacontrol.com.br
+    - Caso mesmo solicitando a liberação não seja possível emitir, com a validação:
+” A empresa não está habilitada no ambiente de integração”
+    - Será necessário alterar o plano de emissão de notas.
+    - Para maiores informações basta solicitar nesse mesmo e-mail;
+- Após liberarem para emissão via webservice, deverá liberar o RPS. Basta acessar https://www.issnetonline.com.br/duquedecaxias/online/login/Login.aspx, logar com usuário e senha do cliente, ir em Solicitação, selecionar o modelo do Documento Fiscal (no caso RPS – Recibo Provisório de Serviço) e a quantidade de notas a serem emitidas que desejará deixar configurado.
+</pre>
+
+<p></p>
+
+      

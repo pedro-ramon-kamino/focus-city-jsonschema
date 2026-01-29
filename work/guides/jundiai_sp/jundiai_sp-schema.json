@@ -1,0 +1,373 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Emissão de NFS-e em Jundiaí (SP) pela API da Focus NFe",
+  "type": "object",
+  "properties": {
+    "servico": {
+      "type": "object",
+      "properties": {
+        "situacao_tributaria_pis_cofins": {
+          "title": "CST PIS/COFINS",
+          "description": "Código de Situação Tributária do PIS/COFINS (CST)Valores possíveis:00 - Nenhum;01 - Operação Tributável com Alíquota Básica;02 - Operação Tributável com Alíquota Diferenciada;03 - Operação Tributável com Alíquota por Unidade de Medida de Produto;04 - Operação Tributável monofásica - Revenda a Alíquota Zero;05 - Operação Tributável por Substituição Tributária;06 - Operação Tributável a Alíquota Zero;07 - Operação Tributável da Contribuição;08 - Operação sem Incidência da Contribuição;09 - Operação com Suspensão da Contribuição;",
+          "type": "string"
+        },
+        "base_calculo_pis_cofins": {
+          "title": "BC PIS/COFINS",
+          "description": "Valor da Base de Cálculo do PIS/COFINS (R$)",
+          "type": "string"
+        },
+        "aliquota_pis": {
+          "title": "Alíq. PIS",
+          "description": "Valor da Alíquota do PIS (%)",
+          "type": "string"
+        },
+        "aliquota_cofins": {
+          "title": "Alíq. COFINS",
+          "description": "Valor da Alíquota da COFINS (%)",
+          "type": "string"
+        },
+        "valor_pis": {
+          "title": "Valor PIS",
+          "description": "Valor monetário do PIS (R$)",
+          "type": "string"
+        },
+        "valor_cofins": {
+          "title": "Valor COFINS",
+          "description": "Valor monetário do COFINS (R$)",
+          "type": "string"
+        },
+        "tipo_retencao_pis_cofins": {
+          "title": "Tipo ret. PIS/COFINS",
+          "description": "Tipo de retencao do Pis/CofinsValores possíveis:1 - Retido;2 - Não Retido;",
+          "type": "string"
+        },
+        "codigo_indicador_operacao": {
+          "title": "Cód. indic. Operação",
+          "description": "Código indicador da operação de fornecimento, conforme tabela 'código indicador de operação'",
+          "type": "string"
+        },
+        "chaves_nfse_referenciadas": {
+          "title": "NFSeReferenciada",
+          "description": "",
+          "type": "string"
+        },
+        "chaves_nfse_referenciadas[]": {
+          "type": "object",
+          "properties": {
+            "chave_nfse": {
+              "title": "Chave NFS-e Ref.",
+              "description": "Chave da NFS-e referenciada",
+              "type": "string"
+            }
+          },
+          "optional": [
+            "chave_nfse"
+          ]
+        },
+        "ibs_cbs_situacao_tributaria": {
+          "title": "CST IBS/CBS",
+          "description": "Código de Situação Tributária do IBS e da CBS",
+          "type": "string"
+        },
+        "ibs_cbs_classificacao_tributaria": {
+          "title": "Cód. Trib. IBS/CBS",
+          "description": "Código de Classificação Tributária do IBS e da CBS",
+          "type": "string"
+        },
+        "codigo_municipio_incidencia": {
+          "title": "Doc. Mun. Incidencia",
+          "description": "Código IBGE da localidade de incidência do IBS/CBS (local da operação)",
+          "type": "string"
+        },
+        "perc_reducao_aliquota_compra_governamental": {
+          "title": "Perc. red. alíq. gov.",
+          "description": "Percentual de redução de aliquota em compra governamental",
+          "type": "string"
+        },
+        "ibs_cbs_base_calculo": {
+          "title": "BC IBS/CBS",
+          "description": "Valor da Base de Cálculo do ISSQN (R$) = Valor do Serviço - Desconto Incondicionado - Deduções/Reduções - Benefício Municipal. vBC = vServ - descIncond - (vDR ou vCalcDR + vCalcReeRepRes) - (vRedBCBM ou VCalcBM)",
+          "type": "string"
+        },
+        "codigo_nbs": {
+          "title": "Cód. NBS",
+          "description": "Código da lista de Nomenclatura Brasileira de Serviços (NBS)",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "situacao_tributaria_pis_cofins",
+        "base_calculo_pis_cofins",
+        "aliquota_pis",
+        "aliquota_cofins",
+        "valor_pis",
+        "valor_cofins",
+        "tipo_retencao_pis_cofins",
+        "codigo_indicador_operacao",
+        "chaves_nfse_referenciadas",
+        "ibs_cbs_situacao_tributaria",
+        "ibs_cbs_classificacao_tributaria",
+        "codigo_municipio_incidencia",
+        "perc_reducao_aliquota_compra_governamental",
+        "ibs_cbs_base_calculo",
+        "codigo_nbs"
+      ]
+    },
+    "percentual_total_tributos_federais": {
+      "title": "Perc. total Federal",
+      "description": "Valor percentual total aproximado dos tributos federais (%)",
+      "type": "string"
+    },
+    "percentual_total_tributos_estaduais": {
+      "title": "Perc. total UF",
+      "description": "Valor percentual total aproximado dos tributos estaduais (%)",
+      "type": "string"
+    },
+    "percentual_total_tributos_municipais": {
+      "title": "Perc. total Mun.",
+      "description": "Valor percentual total aproximado dos tributos municipais (%)",
+      "type": "string"
+    },
+    "percentual_total_tributos_simples_nacional": {
+      "title": "Perc. total SN",
+      "description": "Valor percentual aproximado do total dos tributos da alíquota do Simples Nacional (%)",
+      "type": "string"
+    },
+    "finalidade_emissao": {
+      "title": "Indic. Emissão",
+      "description": "Indicador da finalidade da emissão de NFS-eValores possíveis:0 - NFS-e regular;",
+      "type": "string"
+    },
+    "consumidor_final": {
+      "title": "Indic. Operação",
+      "description": "Indica operação de uso ou consumo pessoal (art. 57)Valores possíveis:0 - Não;1 - Sim;",
+      "type": "string"
+    },
+    "tipo_operacao_governamental": {
+      "title": "Tipo Ope. gov.",
+      "description": "Tipo de Operação com Entes Governanementais ou outros serviços sobre bens imóveisValores possíveis:1 - Fornecimento com pagamento posterior;2 - Recebimento do pagamento com fornecimento já realizado;3 - Fornecimento com pagamento já realizado;4 - Recebimento do pagamento com fornecimento posterior;5 - Fornecimento e recebimento do pagamento concomitantes.",
+      "type": "string"
+    },
+    "tipo_ente_governamental": {
+      "title": "Tipo governamental",
+      "description": "Tipo de ente governamental. Para administração pública direta e suas autarquias e fundaçõesValores possíveis:1 - União;2 - Estado;3 - Distrito Federal;4 - Município;9 - Outro;",
+      "type": "string"
+    },
+    "indicador_destinatario": {
+      "title": "Indic. destinatário",
+      "description": "A respeito do Destinatário dos serviçosValores possíveis:0 - O tomador identificado na NFS-e é o adquirente e o destinatário do fornecimento (tomador = adquirente = destinatário);1 - O tomador e o adquirente são a mesma pessoa, mas o destinatário é uma pessoa física ou jurídica ou equiparada diversa do indicado como tomador/adquirente ou se trata de um estabelecimento do adquirente diferente do indicado no campo “tomador” (tomador = adquirente ≠ destinatário);",
+      "type": "string"
+    },
+    "documentos_referenciados": {
+      "title": "DocumentosDfe",
+      "description": "",
+      "type": "string"
+    },
+    "documentos_referenciados[]": {
+      "type": "object",
+      "properties": {
+        "tipo_chave_dfe": {
+          "title": "Tipo Chave DF-e",
+          "description": "Documento fiscal a que se refere a chaveDfe que seja um dos documentos do Repositório NacionalValores possíveis:1 - NFS-e;2 - NF-e;3 - CT-e;9 - Outro;",
+          "type": "string"
+        },
+        "descricao_chave_dfe": {
+          "title": "Descrição DF-e",
+          "description": "Descrição da DF-e a que se refere a chaveDfe que seja um dos documentos do Repositório Nacional. Deve ser preenchido apenas quando 'tipoChaveDFe = 9 (Outro)'",
+          "type": "string"
+        },
+        "chave_dfe": {
+          "title": "Chave DF-e",
+          "description": "Chave do Documento Fiscal eletrônico do repositório nacional referenciado para os casos de operações já tributadas",
+          "type": "string"
+        },
+        "codigo_municipio_documento_fiscal_outro": {
+          "title": "Cod.Mun. Emissor",
+          "description": "Código do município emissor do documento fiscal que não se encontra no repositório nacional",
+          "type": "string"
+        },
+        "numero_documento_fiscal_outro": {
+          "title": "Num. Doc. Fiscal",
+          "description": "Número do documento fiscal que não se encontra no repositório nacional",
+          "type": "string"
+        },
+        "descricao_documento_fiscal_outro": {
+          "title": "Desc. Doc. Fiscal",
+          "description": "Descrição do documento fiscal",
+          "type": "string"
+        },
+        "numero_documento_nao_fiscal_outro": {
+          "title": "Num. Doc. Fiscal",
+          "description": "Número do documento não fiscal",
+          "type": "string"
+        },
+        "descricao_documento_nao_fiscal_outro": {
+          "title": "Desc. Doc. Fiscal",
+          "description": "Descrição do documento não fiscal",
+          "type": "string"
+        },
+        "cnpj_fornecedor": {
+          "title": "CNPJ Fornecedor",
+          "description": "Número da inscrição no Cadastro Nacional de Pessoa Jurídica (CNPJ) do Fornecedor do serviço",
+          "type": "string"
+        },
+        "cpf_fornecedor": {
+          "title": "CPF Fornecedor",
+          "description": "Número da inscrição no Cadastro de Pessoa Física (CPF) do Fornecedor do serviço",
+          "type": "string"
+        },
+        "nif_fornecedor": {
+          "title": "NIF Fornecedor",
+          "description": "Este elemento só deverá ser preenchido para fornecedores não residentes no Brasil",
+          "type": "string"
+        },
+        "motivo_ausencia_nif_fornecedor": {
+          "title": "Não NIF Fornecedor",
+          "description": "Motivo para não informação do NIFValores possíveis:0 - Não informado na nota de origem;1 - Dispensado do NIF;2 - Não exigência do NIF;",
+          "type": "string"
+        },
+        "razao_social_fornecedor": {
+          "title": "Nome Fornecedor",
+          "description": "Nome / Razão Social do do Fornecedor do serviço",
+          "type": "string"
+        },
+        "data_emissao_documento_dedutivel": {
+          "title": "Dt. Emissão Doc.",
+          "description": "Data da emissão do documento dedutível. Ano, mês e dia (AAAA-MM-DD)",
+          "type": "string"
+        },
+        "data_competencia_documento_dedutivel": {
+          "title": "Dt. Comp. Doc.",
+          "description": "Data da competência do documento dedutível. Ano, mês e dia (AAAA-MM-DD)",
+          "type": "string"
+        },
+        "tipo_valor_incluido": {
+          "title": "Tipo valor incluido",
+          "description": "Tipo de valor incluído neste documento, recebido por motivo de estarem relacionadas a operações de terceiros, objeto de reembolso, repasse ou ressarcimento pelo recebedor, já tributados e aqui referenciadosValores possíveis:01 - Repasse de remuneração por intermediação de imóveis a demais corretores envolvidos na operação;02 - Repasse de valores a fornecedor relativo a fornecimento intermediado por agência de turismo;03 - Reembolso ou ressarcimento recebido por agência de propaganda e publicidade por valores pagos relativos a serviços de produção externa por conta e ordem de terceiro;04 - Reembolso ou ressarcimento recebido por agência de propaganda e publicidade por valores pagos relativos a serviços de mídia por conta e ordem de terceiro;99 - Outros reembolsos ou ressarcimentos recebidos por valores pagos relativos a operações por conta e ordem de terceiro;",
+          "type": "string"
+        },
+        "descricao_tipo_valor_incluido": {
+          "title": "Des. tipo valor incluido",
+          "description": "Descrição do reembolso ou ressarcimento quando a opção é '99 - Outros reembolsos ou ressarcimentos recebidos por valores pagos relativos a operações por conta e ordem de terceiro'",
+          "type": "string"
+        },
+        "valor_repasse": {
+          "title": "Valor repasse",
+          "description": "Valor monetário (total ou parcial, conforme documento informado) utilizado para não inclusão na base de cálculo do ISS e do IBS e da CBS da NFS-e que está sendo emitida (R$)",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "tipo_chave_dfe",
+        "descricao_chave_dfe",
+        "chave_dfe",
+        "codigo_municipio_documento_fiscal_outro",
+        "numero_documento_fiscal_outro",
+        "descricao_documento_fiscal_outro",
+        "numero_documento_nao_fiscal_outro",
+        "descricao_documento_nao_fiscal_outro",
+        "cnpj_fornecedor",
+        "cpf_fornecedor",
+        "nif_fornecedor",
+        "motivo_ausencia_nif_fornecedor",
+        "razao_social_fornecedor",
+        "data_emissao_documento_dedutivel",
+        "data_competencia_documento_dedutivel",
+        "tipo_valor_incluido",
+        "descricao_tipo_valor_incluido",
+        "valor_repasse"
+      ]
+    },
+    "modo_prestacao": {
+      "title": "Modo prestação",
+      "description": "Valores possíveis:0 - Desconhecido (tipo não informado na nota de origem);1 - Transfronteiriço;2 - Consumo no Brasil;3 - Movimento Temporário de Pessoas Físicas;4 - Consumo no Exterior;",
+      "type": "string"
+    },
+    "vinculo_negocio": {
+      "title": "Vínculo negócio",
+      "description": "Vínculo entre as partes no negócioValores possíveis:0 - Sem vínculo com o Tomador/Prestador1 - Controlada;2 - Controladora;3 - Coligada;4 - Matriz;5 - Filial ou sucursal;6 - Outro vínculo;",
+      "type": "string"
+    },
+    "codigo_moeda": {
+      "title": "Cód. moeda",
+      "description": "Identifica a moeda da transação comercial",
+      "type": "string"
+    },
+    "valor_servico_ext": {
+      "title": "Valor serv. ext.",
+      "description": "Valor do serviço prestado expresso em moeda estrangeira especificada em tpmoeda",
+      "type": "string"
+    },
+    "mecanismo_comercio_ext_prestador": {
+      "title": "Apoio prestador ext.",
+      "description": "Mecanismo de apoio/fomento ao Comércio Exterior utilizado pelo prestador do serviçoValores possíveis:00 - Desconhecido (tipo não informado na nota de origem);01 - Nenhum;02 - ACC - Adiantamento sobre Contrato de Câmbio - Redução a Zero do IR e do IOF;03 - ACE - Adiantamento sobre Cambiais Entregues - Redução a Zero do IR e do IOF;04 - BNDES-Exim Pós-Embarque - Serviços;05 - BNDES-Exim Pré-Embarque - Serviços;06 - FGE - Fundo de Garantia à Exportação;07 - PROEX - EQUALIZAÇÃO08 - PROEX - Financiamento;",
+      "type": "string"
+    },
+    "mecanismo_comercio_ext_tomador": {
+      "title": "Apoio tomador ext.",
+      "description": "Mecanismo de apoio/fomento ao Comércio Exterior utilizado pelo tomador do serviçoValores possíveis:00 - Desconhecido (tipo não informado na nota de origem);01 - Nenhum;02 - Adm. Pública e Repr. Internacional;03 - Alugueis e Arrend. Mercantil de maquinas, equip., embarc. e aeronaves;04 - Arrendamento Mercantil de aeronave para empresa de transporte aéreo público;05 - Comissão a agentes externos na exportação;06 - Despesas de armazenagem, mov. e transporte de carga no exterior;07 - Eventos FIFA (subsidiária);08 - Eventos FIFA;09 - Fretes, arrendamentos de embarcações ou aeronaves e outros;10 - Material Aeronáutico;11 - Promoção de Bens no Exterior;12 - Promoção de Dest. Turísticos Brasileiros;13 - Promoção do Brasil no Exterior;14 - Promoção Serviços no Exterior;15 - RECINE;16 - RECOPA;17 - Registro e Manutenção de marcas, patentes e cultivares;18 - REICOMP;19 - REIDI;20 - REPENEC;21 - REPES;22 - RETAERO;23 - RETID;24 - Royalties, Assistência Técnica, Científica e Assemelhados;25 - Serviços de avaliação da conformidade vinculados aos Acordos da OMC;26 - ZPE;",
+      "type": "string"
+    },
+    "movimentacao_temporaria_bens": {
+      "title": "Movimentação Temporária",
+      "description": "Vínculo da Operação à Movimentação Temporária de BensValores possíveis:0 - Desconhecido (tipo não informado na nota de origem);1 - Não;2 - Vinculada - Declaração de Importação;3 - Vinculada - Declaração de Exportação;",
+      "type": "string"
+    },
+    "numero_declaracao_importacao": {
+      "title": "Núm. Declaração Imp.",
+      "description": "Número da Declaração de Importação (DI/DSI/DA/DRI-E) averbado",
+      "type": "string"
+    },
+    "numero_registro_exportacao": {
+      "title": "Núm. Registro Exp.",
+      "description": "Número do Registro de Exportação (RE) averbado",
+      "type": "string"
+    },
+    "mdic": {
+      "title": "MDIC",
+      "description": "Compartilhar as informações da NFS-e gerada a partir desta DPS com a Secretaria de Comércio ExteriorValores possíveis:0 - Não enviar para o MDIC;1 - Enviar para o MDIC;",
+      "type": "string"
+    },
+    "evento": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "title": "Nome Evento",
+          "description": "",
+          "type": "string"
+        },
+        "descricao": {
+          "title": "Descrição Evento",
+          "description": "",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "nome",
+        "descricao"
+      ]
+    }
+  },
+  "optional": [
+    "percentual_total_tributos_federais",
+    "percentual_total_tributos_estaduais",
+    "percentual_total_tributos_municipais",
+    "percentual_total_tributos_simples_nacional",
+    "finalidade_emissao",
+    "consumidor_final",
+    "tipo_operacao_governamental",
+    "tipo_ente_governamental",
+    "indicador_destinatario",
+    "documentos_referenciados",
+    "modo_prestacao",
+    "vinculo_negocio",
+    "codigo_moeda",
+    "valor_servico_ext",
+    "mecanismo_comercio_ext_prestador",
+    "mecanismo_comercio_ext_tomador",
+    "movimentacao_temporaria_bens",
+    "numero_declaracao_importacao",
+    "numero_registro_exportacao",
+    "mdic"
+  ]
+}

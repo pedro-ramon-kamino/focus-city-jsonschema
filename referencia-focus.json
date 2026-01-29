@@ -1,0 +1,535 @@
+{
+  "_metadata": {
+    "descricao": "Payload de referência completo com todos os campos do padrão municipal Focus NFSe",
+    "versao": "2.0.0",
+    "data_geracao": "2026-01-29T14:54:26.816Z",
+    "total_campos": 74
+  },
+  "payload_exemplo": {
+    "data_emissao": "2024-01-15T10:30:00-03:00",
+    "natureza_operacao": "1",
+    "regime_especial_tributacao": "5",
+    "optante_simples_nacional": true,
+    "incentivador_cultural": false,
+    "prestador": {
+      "cnpj": "12345678000123",
+      "inscricao_municipal": "123456",
+      "codigo_municipio": "3550308"
+    },
+    "tomador": {
+      "cpf": "12345678909",
+      "cnpj": "12345678000199",
+      "nif": "123456789",
+      "motivo_ausencia_nif": "0",
+      "inscricao_municipal": "123456",
+      "razao_social": "Empresa Exemplo LTDA",
+      "telefone": "11999998888",
+      "email": "tomador@example.com",
+      "endereco": {
+        "logradouro": "Rua das Flores",
+        "tipo_logradouro": "Rua",
+        "numero": "123A",
+        "complemento": "Apto 45, Bloco B",
+        "bairro": "Centro",
+        "codigo_municipio": "3550308",
+        "uf": "SP",
+        "cep": "01311000"
+      }
+    },
+    "servico": {
+      "valor_servicos": 1500,
+      "valor_deducoes": 0,
+      "valor_pis": 10.5,
+      "valor_cofins": 5.75,
+      "valor_inss": 20,
+      "valor_ir": 18,
+      "valor_csll": 12,
+      "iss_retido": false,
+      "valor_iss": 45,
+      "valor_iss_retido": 0,
+      "outras_retencoes": 0,
+      "base_calculo": 1500,
+      "aliquota": 0.05,
+      "desconto_incondicionado": 0,
+      "desconto_condicionado": 0,
+      "item_lista_servico": "17.09",
+      "codigo_cnae": "6201501",
+      "codigo_tributario_municipio": "123456",
+      "discriminacao": "Serviços de desenvolvimento de sistemas sob demanda",
+      "codigo_municipio": "3550308",
+      "percentual_total_tributos": 0.34,
+      "fonte_total_tributos": "IBPT",
+      "codigo_nbs": "1.0101.11.00",
+      "codigo_indicador_operacao": "020101",
+      "ibs_cbs_classificacao_tributaria": "400001",
+      "ibs_cbs_situacao_tributaria": "400",
+      "ibs_cbs_base_calculo": 1500,
+      "ibs_uf_aliquota": 0.0167,
+      "ibs_mun_aliquota": 0.0833,
+      "cbs_aliquota": 0.9,
+      "ibs_uf_valor": 0,
+      "ibs_mun_valor": 0,
+      "cbs_valor": 0
+    },
+    "intermediario": {
+      "cpf": "12345678909",
+      "cnpj": "12345678000199",
+      "nif": "123456789",
+      "motivo_ausencia_nif": "0",
+      "inscricao_municipal": "123456",
+      "razao_social": "Empresa Intermediária LTDA"
+    },
+    "codigo_obra": "123456789012345",
+    "art": "ART2023000123",
+    "numero_nfse_substituido": "678",
+    "numero_rps_substituido": "12345",
+    "serie_rps_substituido": "A1",
+    "tipo_rps_substituido": "1"
+  },
+  "campos_documentados": [
+    {
+      "campo": "data_emissao",
+      "tipo": "string",
+      "obrigatorio": true,
+      "descricao": "Data/hora de emissão da NFSe. Alguns municípios não utilizam hora e ela será descartada caso seja fo..."
+    },
+    {
+      "campo": "natureza_operacao",
+      "tipo": "string",
+      "obrigatorio": true,
+      "descricao": "Natureza da operação. Informar um dos códigos abaixo. Valor padrão: 1. Campo ignorado em alguns muni..."
+    },
+    {
+      "campo": "regime_especial_tributacao",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Código do regime especial de tributação. Campo ignorado em alguns municípios<br>\n  1: Microempresa m..."
+    },
+    {
+      "campo": "optante_simples_nacional",
+      "tipo": "boolean",
+      "obrigatorio": true,
+      "descricao": "Informar true (verdadeiro) ou false (falso) se a empresa for optante pelo Simples Nacional. Campo ig..."
+    },
+    {
+      "campo": "incentivador_cultural",
+      "tipo": "boolean",
+      "obrigatorio": false,
+      "descricao": "Informe true (verdadeiro) ou false (falso). Valor padrão: false. Campo ignorado em alguns municípios..."
+    },
+    {
+      "campo": "prestador",
+      "tipo": "object",
+      "obrigatorio": true,
+      "descricao": ""
+    },
+    {
+      "campo": "prestador.cnpj",
+      "tipo": "string",
+      "obrigatorio": true,
+      "descricao": "CNPJ do prestador de serviços. Caracteres não numéricos são ignorados."
+    },
+    {
+      "campo": "prestador.inscricao_municipal",
+      "tipo": "string",
+      "obrigatorio": true,
+      "descricao": "Inscrição municipal do prestador."
+    },
+    {
+      "campo": "prestador.codigo_municipio",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Código IBGE de 7 dígitos do município do prestador."
+    },
+    {
+      "campo": "tomador",
+      "tipo": "object",
+      "obrigatorio": true,
+      "descricao": ""
+    },
+    {
+      "campo": "tomador.cpf",
+      "tipo": "string",
+      "obrigatorio": true,
+      "descricao": "CPF do tomador, se aplicável. Caracteres não numéricos são ignorados.\n"
+    },
+    {
+      "campo": "tomador.cnpj",
+      "tipo": "string",
+      "obrigatorio": true,
+      "descricao": "CNPJ do tomador, se aplicável. Caracteres não numéricos são ignorados.\n"
+    },
+    {
+      "campo": "tomador.nif",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "<sup>(RT)</sup> *NIF (Número de Identificação Fiscal) do tomador estrangeiro, fornecido por órgão de..."
+    },
+    {
+      "campo": "tomador.motivo_ausencia_nif",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "<sup>(RT)</sup> *Motivo para não informação do NIF do tomador estrangeiro, se aplicável.*<br>\n  *0: ..."
+    },
+    {
+      "campo": "tomador.inscricao_municipal",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Inscrição municipal do tomador. Caracteres não numéricos são ignorados.\n"
+    },
+    {
+      "campo": "tomador.razao_social",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Razão social ou nome do tomador."
+    },
+    {
+      "campo": "tomador.telefone",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Telefone do tomador. Tamanho máximo: 11 caracteres (somente números).\n"
+    },
+    {
+      "campo": "tomador.email",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Email do tomador."
+    },
+    {
+      "campo": "tomador.endereco",
+      "tipo": "object",
+      "obrigatorio": false,
+      "descricao": ""
+    },
+    {
+      "campo": "tomador.endereco.logradouro",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Nome do logradouro."
+    },
+    {
+      "campo": "tomador.endereco.tipo_logradouro",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Tipo do logradouro. Usado apenas para alguns municípios. Valor padrão: os 3 primeiros caracteres do ..."
+    },
+    {
+      "campo": "tomador.endereco.numero",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Número do endereço."
+    },
+    {
+      "campo": "tomador.endereco.complemento",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Complemento do endereço."
+    },
+    {
+      "campo": "tomador.endereco.bairro",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Bairro do endereço."
+    },
+    {
+      "campo": "tomador.endereco.codigo_municipio",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Código IBGE do município."
+    },
+    {
+      "campo": "tomador.endereco.uf",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "UF do endereço."
+    },
+    {
+      "campo": "tomador.endereco.cep",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "CEP do endereço. Caracteres não numéricos são ignorados.\n"
+    },
+    {
+      "campo": "servico",
+      "tipo": "object",
+      "obrigatorio": true,
+      "descricao": ""
+    },
+    {
+      "campo": "servico.valor_servicos",
+      "tipo": "number",
+      "obrigatorio": true,
+      "descricao": "Valor dos serviços."
+    },
+    {
+      "campo": "servico.valor_deducoes",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "Valor das deduções."
+    },
+    {
+      "campo": "servico.valor_pis",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "Valor do PIS."
+    },
+    {
+      "campo": "servico.valor_cofins",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "Valor do COFINS."
+    },
+    {
+      "campo": "servico.valor_inss",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "Valor do INSS."
+    },
+    {
+      "campo": "servico.valor_ir",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "Valor do IRRF."
+    },
+    {
+      "campo": "servico.valor_csll",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "Valor do CSLL."
+    },
+    {
+      "campo": "servico.iss_retido",
+      "tipo": "boolean",
+      "obrigatorio": true,
+      "descricao": "Informar se o ISS foi retido."
+    },
+    {
+      "campo": "servico.valor_iss",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "Valor do ISS. Campo ignorado por alguns municípios que realizam seu próprio cálculo."
+    },
+    {
+      "campo": "servico.valor_iss_retido",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "Valor do ISS Retido. Campo ignorado em alguns municípios."
+    },
+    {
+      "campo": "servico.outras_retencoes",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "Valor de outras retenções. Campo ignorado em alguns municípios."
+    },
+    {
+      "campo": "servico.base_calculo",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "Base de cálculo do ISS. Valor padrão igual ao valor_servicos. Campo ignorado em alguns municípios."
+    },
+    {
+      "campo": "servico.aliquota",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "Alíquota do ISS. Algumas cidades permitem usar até 4 dígitos decimais."
+    },
+    {
+      "campo": "servico.desconto_incondicionado",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "Valor do desconto incondicionado. Campo ignorado em alguns municípios."
+    },
+    {
+      "campo": "servico.desconto_condicionado",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "Valor do desconto condicionado. Campo ignorado em alguns municípios."
+    },
+    {
+      "campo": "servico.item_lista_servico",
+      "tipo": "string",
+      "obrigatorio": true,
+      "descricao": "Código da lista de serviços, conforme Lei Complementar 116/2003.\n<sup>(RT)</sup> *Com a Reforma Trib..."
+    },
+    {
+      "campo": "servico.codigo_cnae",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Código CNAE de 7 dígitos. Campo ignorado em alguns municípios."
+    },
+    {
+      "campo": "servico.codigo_tributario_municipio",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Código tributário conforme tabela do município."
+    },
+    {
+      "campo": "servico.discriminacao",
+      "tipo": "string",
+      "obrigatorio": true,
+      "descricao": "Discriminação dos serviços. Tamanho pode variar conforme o município."
+    },
+    {
+      "campo": "servico.codigo_municipio",
+      "tipo": "string",
+      "obrigatorio": true,
+      "descricao": "Código IBGE do município de prestação do serviço (7 dígitos)."
+    },
+    {
+      "campo": "servico.percentual_total_tributos",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "Percentual aproximado de todos os impostos, de acordo com a Lei da Transparência. Disponível apenas ..."
+    },
+    {
+      "campo": "servico.fonte_total_tributos",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Fonte da informação de total de tributos (ex: \"IBPT\"). Disponível apenas para alguns municípios.\n"
+    },
+    {
+      "campo": "servico.codigo_nbs",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "<sup>(RT)</sup> *Código da lista de Nomenclatura Brasileira de Serviços (vide [Tabela NBS](https://w..."
+    },
+    {
+      "campo": "servico.codigo_indicador_operacao",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "<sup>(RT)</sup> *Código indicador de operação (vide [Tabela IndOp](https://www.gov.br/nfse/pt-br/bib..."
+    },
+    {
+      "campo": "servico.ibs_cbs_classificacao_tributaria",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "<sup>(RT)</sup> *Código de Classificação Tributária do IBS e CBS (vide [Tabela de Correlação NBS-cCl..."
+    },
+    {
+      "campo": "servico.ibs_cbs_situacao_tributaria",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "<sup>(RT)</sup> *Código de Situação Tributária do IBS e CBS (vide tabelas acima).*\n"
+    },
+    {
+      "campo": "servico.ibs_cbs_base_calculo",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "<sup>(RT)</sup> *Base de cálculo do IBS e CBS.*\n"
+    },
+    {
+      "campo": "servico.ibs_uf_aliquota",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "<sup>(RT)</sup> *Alíquota da UF para IBS da localidade de incidência.*\n"
+    },
+    {
+      "campo": "servico.ibs_mun_aliquota",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "<sup>(RT)</sup> *Alíquota do Município para IBS da localidade de incidência.*\n"
+    },
+    {
+      "campo": "servico.cbs_aliquota",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "<sup>(RT)</sup> *Alíquota da União para CBS.*\n"
+    },
+    {
+      "campo": "servico.ibs_uf_valor",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "<sup>(RT)</sup> *Valor do IBS da UF calculado.*\n"
+    },
+    {
+      "campo": "servico.ibs_mun_valor",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "<sup>(RT)</sup> *Valor do IBS do Município calculado.*\n"
+    },
+    {
+      "campo": "servico.cbs_valor",
+      "tipo": "number",
+      "obrigatorio": false,
+      "descricao": "<sup>(RT)</sup> *Valor do CBS da União calculado.*\n"
+    },
+    {
+      "campo": "intermediario",
+      "tipo": "object",
+      "obrigatorio": false,
+      "descricao": "Esta seção é ignorada se não suportada pelo município."
+    },
+    {
+      "campo": "intermediario.cpf",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "CPF do intermediário, se aplicável. Caracteres não numéricos são ignorados.\n"
+    },
+    {
+      "campo": "intermediario.cnpj",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "CNPJ do intermediário, se aplicável. Caracteres não numéricos são ignorados.\n"
+    },
+    {
+      "campo": "intermediario.nif",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "<sup>(RT)</sup> *NIF (Número de Identificação Fiscal) do intermediario estrangeiro, fornecido por ór..."
+    },
+    {
+      "campo": "intermediario.motivo_ausencia_nif",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "<sup>(RT)</sup> *Motivo para não informação do NIF do intermediário estrangeiro, se aplicável.*<br>\n..."
+    },
+    {
+      "campo": "intermediario.inscricao_municipal",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Inscrição municipal do intermediário. Caracteres não numéricos são ignorados.\n"
+    },
+    {
+      "campo": "intermediario.razao_social",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Razão social ou nome do intermediário."
+    },
+    {
+      "campo": "codigo_obra",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Código da obra quando construção civil. Tamanho máximo: 15 caracteres."
+    },
+    {
+      "campo": "art",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Código ART quando construção civil. Este campo é ignorado em alguns municípios."
+    },
+    {
+      "campo": "numero_nfse_substituido",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Caso o município permita substituição de notas, aqui você poderá informar o número da NFSe a ser sub..."
+    },
+    {
+      "campo": "numero_rps_substituido",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Caso o município permita substituição de notas, aqui você poderá informar o número do RPS a ser subs..."
+    },
+    {
+      "campo": "serie_rps_substituido",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Obrigatório se informado o campo numero_rps_substituido. Indica a série do RPS a ser substituído.\n"
+    },
+    {
+      "campo": "tipo_rps_substituido",
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Obrigatório se informado o campo numero_rps_substituido. Indica o tipo do RPS a ser substituído. Cas..."
+    }
+  ]
+}

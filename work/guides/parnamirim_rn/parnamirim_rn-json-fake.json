@@ -1,0 +1,84 @@
+{
+  "chaves_nfse_referenciadas": "string",
+  "chaves_nfse_referenciadas[]": {
+    "chave_nfse": "string"
+  },
+  "consumidor_final": "string",
+  "destinatario": {
+    "cnpj": "string",
+    "cpf": "string",
+    "email": "string",
+    "endereco": {
+      "bairro": "string",
+      "cep": "string",
+      "cep_ext": "string",
+      "codigo_municipio": "string",
+      "codigo_pais_ext": "string",
+      "complemento": "string",
+      "logradouro": "string",
+      "nome_cidade_ext": "string",
+      "numero": "string",
+      "regiao_ext": "string"
+    },
+    "motivo_ausencia_nif": "string",
+    "nif": "string",
+    "razao_social": "string",
+    "telefone": "string"
+  },
+  "documentos_referenciados": "string",
+  "documentos_referenciados[]": {
+    "chave_dfe": "string",
+    "cnpj_fornecedor": "string",
+    "codigo_municipio_documento_fiscal_outro": "string",
+    "cpf_fornecedor": "string",
+    "data_competencia_documento_dedutivel": "string",
+    "data_emissao_documento_dedutivel": "string",
+    "descricao_chave_dfe": "string",
+    "descricao_documento_fiscal_outro": "string",
+    "descricao_documento_nao_fiscal_outro": "string",
+    "descricao_tipo_valor_incluido": "string",
+    "motivo_ausencia_nif_fornecedor": "string",
+    "nif_fornecedor": "string",
+    "numero_documento_fiscal_outro": "string",
+    "numero_documento_nao_fiscal": "string",
+    "razao_social_fornecedor": "string",
+    "tipo_chave_dfe": "string",
+    "tipo_valor_incluido": "string",
+    "valor_repasse": "string"
+  },
+  "finalidade_emissao": "string",
+  "imovel": {
+    "codigo_cib": "string",
+    "endereco": {
+      "bairro": "string",
+      "cep": "string",
+      "cep_ext": "string",
+      "complemento": "string",
+      "logradouro": "string",
+      "nome_cidade_ext": "string",
+      "numero": "string",
+      "regiao_ext": "string"
+    },
+    "inscricao_imobiliaria": "string"
+  },
+  "indicador_destinatario": "string",
+  "regime_tributario_simples_nacional": "string",
+  "servico": {
+    "cbs_percentual_diferimento": "string",
+    "codigo_indicador_operacao": "string",
+    "codigo_nbs": "string",
+    "ibs_cbs_classificacao_tributaria": "string",
+    "ibs_cbs_classificacao_tributaria_regular": "string",
+    "ibs_cbs_credito_codigo_classificacao": "string",
+    "ibs_cbs_situacao_tributaria": "string",
+    "ibs_cbs_situacao_tributaria_regular": "string",
+    "ibs_mun_percentual_diferimento": "string",
+    "ibs_uf_percentual_diferimento": "string",
+    "valor_total_tributos": "string"
+  },
+  "tipo_compra_governamental": "string",
+  "tipo_operacao_governamental": "string",
+  "tomador": {
+    "nif": "string"
+  }
+}

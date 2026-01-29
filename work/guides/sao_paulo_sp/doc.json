@@ -1,0 +1,620 @@
+{
+  "chaves_nfse_referenciadas": {
+    "type": "string",
+    "description": "Lista de objetos do tipo chave_nfse",
+    "required": false,
+    "proibido": false
+  },
+  "chaves_nfse_referenciadas[]": {
+    "type": "object",
+    "description": "",
+    "required": false,
+    "proibido": false,
+    "chave_nfse": {
+      "type": "string",
+      "description": "Chave da NFS-e referenciada",
+      "required": false,
+      "proibido": false
+    }
+  },
+  "consumidor_final": {
+    "type": "string",
+    "description": "Valores possíveis:0 - Não1 - Sim",
+    "required": true,
+    "proibido": false
+  },
+  "destinatario": {
+    "type": "object",
+    "description": "Grupo de informações do destinatário",
+    "required": false,
+    "proibido": false,
+    "cnpj": {
+      "type": "string",
+      "description": "Número do CNPJ",
+      "required": false,
+      "proibido": false
+    },
+    "cpf": {
+      "type": "string",
+      "description": "Número do CPF",
+      "required": false,
+      "proibido": false
+    },
+    "email": {
+      "type": "string",
+      "description": "Endereço eletrônico",
+      "required": false,
+      "proibido": false
+    },
+    "endereco": {
+      "type": "object",
+      "description": "Grupo de informações do endereço",
+      "required": false,
+      "proibido": false,
+      "cep": {
+        "type": "string",
+        "description": "Código de Endereçamento Postal",
+        "required": false,
+        "proibido": false
+      },
+      "cep_ext": {
+        "type": "string",
+        "description": "Código alfanumérico do Endereçamento Postal no exterior",
+        "required": false,
+        "proibido": false
+      },
+      "codigo_pais_ext": {
+        "type": "string",
+        "description": "Tabela de Países ISO",
+        "required": false,
+        "proibido": false
+      },
+      "nome_cidade_ext": {
+        "type": "string",
+        "description": "Nome da cidade no exterior",
+        "required": false,
+        "proibido": false
+      },
+      "regiao_ext": {
+        "type": "string",
+        "description": "Estado, província ou região da cidade no exterior",
+        "required": false,
+        "proibido": false
+      }
+    },
+    "motivo_ausencia_nif": {
+      "type": "string",
+      "description": "Tipo do motivo para não informação do NIF. Valores possíveis:0 - Não informado na nota de origem1 - Dispensado do NIF2 - Não exigência do NIF",
+      "required": false,
+      "proibido": false
+    },
+    "nif": {
+      "type": "string",
+      "description": "Número de Identificação Fiscal fornecido por um órgão de administração tributária no exterior",
+      "required": false,
+      "proibido": false
+    },
+    "razao_social": {
+      "type": "string",
+      "description": "Nome ou Razão Social",
+      "required": false,
+      "proibido": false
+    }
+  },
+  "documentos_referenciados": {
+    "type": "string",
+    "description": "Lista de objetos do tipo documentos_referenciados",
+    "required": false,
+    "proibido": false
+  },
+  "documentos_referenciados[]": {
+    "type": "object",
+    "description": "",
+    "required": false,
+    "proibido": false,
+    "chave_dfe": {
+      "type": "string",
+      "description": "Chave do Documento Fiscal eletrônico do repositório nacional referenciado para os casos de operações já tributadas",
+      "required": false,
+      "proibido": false
+    },
+    "cnpj_fornecedor": {
+      "type": "string",
+      "description": "CNPJ do fornecedor",
+      "required": false,
+      "proibido": false
+    },
+    "codigo_municipio_doc_fiscal_outro": {
+      "type": "string",
+      "description": "Código do município emissor do documento fiscal que não se encontra no repositório nacional",
+      "required": false,
+      "proibido": false
+    },
+    "cpf_fornecedor": {
+      "type": "string",
+      "description": "CPF do fornecedor",
+      "required": false,
+      "proibido": false
+    },
+    "data_competencia_documento_dedutivel": {
+      "type": "string",
+      "description": "Data da competência do documento dedutível. Ano, mês e dia (AAAA-MM-DD)",
+      "required": false,
+      "proibido": false
+    },
+    "data_emissao_documento_dedutivel": {
+      "type": "string",
+      "description": "Data da emissão do documento dedutível. Ano, mês e dia (AAAA-MM-DD)",
+      "required": false,
+      "proibido": false
+    },
+    "descricao_chave_dfe": {
+      "type": "string",
+      "description": "Descrição da DF -e a que se refere a chaveDfe que seja um dos documentos do Repositório Nacional. Deve ser preenchido apenas quando tipoChaveDFe = 9 (Outro)",
+      "required": false,
+      "proibido": false
+    },
+    "descricao_doc_fiscal_outro": {
+      "type": "string",
+      "description": "Descrição do documento fiscal",
+      "required": false,
+      "proibido": false
+    },
+    "descricao_doc_nao_fiscal": {
+      "type": "string",
+      "description": "Descrição do documento não fiscal",
+      "required": false,
+      "proibido": false
+    },
+    "descricao_tipo_valor_incluido": {
+      "type": "string",
+      "description": "Descrição do reembolso ou ressarcimento quando a opção é \"99 - Outros reembolsos ou ressarcimentos recebidos por valores pagos relativos a operações por conta e ordem de terceiro\"",
+      "required": false,
+      "proibido": false
+    },
+    "motivo_ausencia_nif_fornecedor": {
+      "type": "string",
+      "description": "Tipo do motivo para não informação do NIF. Valores possíveis:0 - Não informado na nota de origem1 - Dispensado do NIF2 - Não exigência do NIF",
+      "required": false,
+      "proibido": false
+    },
+    "nif_fornecedor": {
+      "type": "string",
+      "description": "Tipo NIF (Número de Identificação Fiscal) - fornecido por um órgão de administração tributária no exterior",
+      "required": false,
+      "proibido": false
+    },
+    "numero_doc_fiscal_outro": {
+      "type": "string",
+      "description": "Número do documento fiscal que não se encontra no repositório nacional",
+      "required": false,
+      "proibido": false
+    },
+    "numero_doc_nao_fiscal": {
+      "type": "string",
+      "description": "Número do documento não fiscal",
+      "required": false,
+      "proibido": false
+    },
+    "razao_social_fornecedor": {
+      "type": "string",
+      "description": "Nome ou Razão Social",
+      "required": false,
+      "proibido": false
+    },
+    "tipo_chave_dfe": {
+      "type": "string",
+      "description": "Tipo de documento do repositório nacional. Valores possíveis:1 - NFS-e2 - NF-e3 - CT-e9 - Outro",
+      "required": false,
+      "proibido": false
+    },
+    "tipo_valor_incluido": {
+      "type": "string",
+      "description": "Tipo de valor incluído neste documento, recebido por motivo de estarem relacionadas a operações de terceiros, objeto de reembolso, repasse ou ressarcimento pelo recebedor, já tributados e aqui referenciado",
+      "required": false,
+      "proibido": false
+    },
+    "valor_repasse": {
+      "type": "string",
+      "description": "Valor monetário (total ou parcial, conforme documento informado) utilizado para não inclusão na base de cálculo do ISS e do IBS e da CBS da NFS-e que está sendo emitida (R$)",
+      "required": false,
+      "proibido": false
+    }
+  },
+  "evento": {
+    "type": "object",
+    "description": "Grupo de informações sobre o evento",
+    "required": false,
+    "proibido": false,
+    "data_fim": {
+      "type": "string",
+      "description": "Data de fim da atividade de evento. Ano, Mês e Dia (AAAA-MM-DD)",
+      "required": false,
+      "proibido": false
+    },
+    "data_inicio": {
+      "type": "string",
+      "description": "Data de início da atividade de evento. Ano, Mês e Dia (AAAA-MM-DD)",
+      "required": false,
+      "proibido": false
+    },
+    "endereco": {
+      "type": "object",
+      "description": "Grupo de informações do endereço do evento",
+      "required": false,
+      "proibido": false,
+      "cep": {
+        "type": "string",
+        "description": "Código de Endereçamento Postal",
+        "required": false,
+        "proibido": false
+      },
+      "cep_ext": {
+        "type": "string",
+        "description": "Código alfanumérico do Endereçamento Postal no exterior",
+        "required": false,
+        "proibido": false
+      },
+      "codigo_pais_ext": {
+        "type": "string",
+        "description": "Tabela de Países ISO",
+        "required": false,
+        "proibido": false
+      },
+      "nome_cidade_ext": {
+        "type": "string",
+        "description": "Nome da cidade no exterior",
+        "required": false,
+        "proibido": false
+      },
+      "regiao_ext": {
+        "type": "string",
+        "description": "Estado, província ou região da cidade no exterior",
+        "required": false,
+        "proibido": false
+      }
+    },
+    "nome": {
+      "type": "string",
+      "description": "Nome do evento cultural, artístico, esportivo",
+      "required": false,
+      "proibido": false
+    }
+  },
+  "exigibilidade_suspensa": {
+    "type": "string",
+    "description": "Informe se é uma emissão com exigibilidade suspensa.0 - Não1 - Sim",
+    "required": true,
+    "proibido": false
+  },
+  "finalidade_emissao": {
+    "type": "string",
+    "description": "Valores possíveis:0 - NFS-e regular1 - NFS-e complementar",
+    "required": true,
+    "proibido": false
+  },
+  "imovel": {
+    "type": "object",
+    "description": "",
+    "required": false,
+    "proibido": false,
+    "codigo_cib": {
+      "type": "string",
+      "description": "Cadastro de imóveis. Obrigatório para construção civil",
+      "required": false,
+      "proibido": false
+    },
+    "endereco": {
+      "type": "object",
+      "description": "Grupo de informações do endereço do imóvel",
+      "required": false,
+      "proibido": false,
+      "cep": {
+        "type": "string",
+        "description": "Código de Endereçamento Postal",
+        "required": false,
+        "proibido": false
+      },
+      "cep_ext": {
+        "type": "string",
+        "description": "Código alfanumérico do Endereçamento Postal no exterior",
+        "required": false,
+        "proibido": false
+      },
+      "codigo_pais_ext": {
+        "type": "string",
+        "description": "Tabela de Países ISO",
+        "required": false,
+        "proibido": false
+      },
+      "nome_cidade_ext": {
+        "type": "string",
+        "description": "Nome da cidade no exterior",
+        "required": false,
+        "proibido": false
+      },
+      "regiao_ext": {
+        "type": "string",
+        "description": "Estado, província ou região da cidade no exterior",
+        "required": false,
+        "proibido": false
+      }
+    },
+    "inscricao_imobiliaria": {
+      "type": "string",
+      "description": "Inscrição Imobiliária fiscal (código fornecido pela prefeitura para identificação da obra ou para fins de recolhimento do IPTU)",
+      "required": false,
+      "proibido": false
+    }
+  },
+  "indicador_destinatario": {
+    "type": "string",
+    "description": "Valores possíveis:0 - O destinatário é o próprio tomador identificado na NFS-e (tomador = destinatário)1 - O destinatário não é o próprio tomador, podendo ser o intermediário ou outra pessoa, física ou jurídica (ou equiparada), ou um estabelecimento diferente do indicado como tomador (tomador != destinatário)",
+    "required": true,
+    "proibido": false
+  },
+  "obra": {
+    "type": "object",
+    "description": "",
+    "required": false,
+    "proibido": false,
+    "codigo": {
+      "type": "string",
+      "description": "Identificação da obra, do Cadastro Nacional de Obras, ou do Cadastro Específico do INSS",
+      "required": false,
+      "proibido": false
+    },
+    "codigo_cib": {
+      "type": "string",
+      "description": "Cadastro de imóveis. Obrigatório para construção civil",
+      "required": false,
+      "proibido": false
+    },
+    "endereco": {
+      "type": "object",
+      "description": "Grupo de informações do endereço da obra",
+      "required": false,
+      "proibido": false,
+      "cep": {
+        "type": "string",
+        "description": "Código de Endereçamento Postal",
+        "required": false,
+        "proibido": false
+      },
+      "cep_ext": {
+        "type": "string",
+        "description": "Código alfanumérico do Endereçamento Postal no exterior",
+        "required": false,
+        "proibido": false
+      },
+      "codigo_pais_ext": {
+        "type": "string",
+        "description": "Tabela de Países ISO",
+        "required": false,
+        "proibido": false
+      },
+      "nome_cidade_ext": {
+        "type": "string",
+        "description": "Nome da cidade no exterior",
+        "required": false,
+        "proibido": false
+      },
+      "regiao_ext": {
+        "type": "string",
+        "description": "Estado, província ou região da cidade no exterior",
+        "required": false,
+        "proibido": false
+      }
+    },
+    "inscricao_imobiliaria": {
+      "type": "string",
+      "description": "Inscrição Imobiliária fiscal (código fornecido pela prefeitura para identificação da obra ou para fins de recolhimento do IPTU)",
+      "required": false,
+      "proibido": false
+    }
+  },
+  "pagamento_parcelado_antecipado": {
+    "type": "string",
+    "description": "Informe se a nota teve pagamento parcelado antecipado0 - Não1 - Sim",
+    "required": true,
+    "proibido": false
+  },
+  "servico": {
+    "type": "object",
+    "description": "",
+    "mapeadoNFSe": true,
+    "required": false,
+    "proibido": false,
+    "codigo_indicador_operacao": {
+      "type": "string",
+      "description": "Conforme tabela \"código indicador de operação\"",
+      "mapeadoNFSe": true,
+      "required": true,
+      "proibido": false
+    },
+    "codigo_municipio_prestacao": {
+      "type": "string",
+      "description": "Código da cidade do município da prestação do serviço",
+      "required": false,
+      "proibido": false
+    },
+    "codigo_nbs": {
+      "type": "string",
+      "description": "Nomenclatura Brasileira de Serviços",
+      "mapeadoNFSe": true,
+      "required": true,
+      "proibido": false
+    },
+    "codigo_ncm": {
+      "type": "string",
+      "description": "Nomenclatura Comum do Mercosul",
+      "required": false,
+      "proibido": false
+    },
+    "codigo_pais_prestacao": {
+      "type": "string",
+      "description": "Código do país da prestação do serviço",
+      "required": false,
+      "proibido": false
+    },
+    "fonte_total_tributos": {
+      "type": "string",
+      "description": "Utilizado para mostrar a entidade responsável pelo cálculo do campo percentual_total_tributos. Ex: IBPT.",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "ibs_cbs_classificacao_tributaria": {
+      "type": "string",
+      "description": "Código de classificação Tributária do IBS e da CBS principal",
+      "mapeadoNFSe": true,
+      "required": true,
+      "proibido": false
+    },
+    "ibs_cbs_classificacao_tributaria_regular": {
+      "type": "string",
+      "description": "Código de classificação Tributária do IBS e da CBS de tributação regular",
+      "required": false,
+      "proibido": false
+    },
+    "percentual_total_tributos": {
+      "type": "string",
+      "description": "Percentual do valor total dos tributos",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "valor_final_cobrado": {
+      "type": "string",
+      "description": "Valor final cobrado",
+      "required": true,
+      "proibido": false
+    },
+    "valor_inicial_cobrado": {
+      "type": "string",
+      "description": "Valor inicial cobrado",
+      "required": false,
+      "proibido": false
+    },
+    "valor_ipi": {
+      "type": "string",
+      "description": "Valor de IPI",
+      "required": true,
+      "proibido": false
+    },
+    "valor_juros": {
+      "type": "string",
+      "description": "Valor dos juros",
+      "required": false,
+      "proibido": false
+    },
+    "valor_multa": {
+      "type": "string",
+      "description": "Valor da multa",
+      "required": false,
+      "proibido": false
+    }
+  },
+  "tipo_compra_governamental": {
+    "type": "string",
+    "description": "Valores possíveis:1 - União2 - Estados3 - Distrito Federal4 - Municípios",
+    "required": false,
+    "proibido": false
+  },
+  "tipo_operacao_governamental": {
+    "type": "string",
+    "description": "Tipo de Operação com Entes Governamentais ou outros serviços sobre bens imóveis. Valores possíveis:1 - Fornecimento com pagamento posterior2 - Recebimento do pagamento com fornecimento já realizado3 - Fornecimento com pagamento já realizado4 - Recebimento do pagamento com fornecimento posterior5 - Fornecimento e recebimento do pagamento concomitantes",
+    "required": false,
+    "proibido": false
+  },
+  "tomador": {
+    "type": "object",
+    "description": "",
+    "mapeadoNFSe": true,
+    "required": false,
+    "proibido": false,
+    "endereco": {
+      "type": "object",
+      "description": "Endereço do tomador",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false,
+      "bairro": {
+        "type": "string",
+        "description": "Bairro",
+        "mapeadoNFSe": true,
+        "required": false,
+        "proibido": false
+      },
+      "cep": {
+        "type": "string",
+        "description": "CEP",
+        "mapeadoNFSe": true,
+        "required": false,
+        "proibido": false
+      },
+      "codigo_municipio": {
+        "type": "string",
+        "description": "Código Município",
+        "mapeadoNFSe": true,
+        "required": false,
+        "proibido": false
+      },
+      "complemento": {
+        "type": "string",
+        "description": "Complemento",
+        "mapeadoNFSe": true,
+        "required": false,
+        "proibido": false
+      },
+      "logradouro": {
+        "type": "string",
+        "description": "Logradouro",
+        "mapeadoNFSe": true,
+        "required": false,
+        "proibido": false
+      },
+      "numero": {
+        "type": "string",
+        "description": "Número",
+        "mapeadoNFSe": true,
+        "required": false,
+        "proibido": false
+      },
+      "tipo_logradouro": {
+        "type": "string",
+        "description": "Tipo de Logradouro",
+        "mapeadoNFSe": true,
+        "required": false,
+        "proibido": false
+      },
+      "uf": {
+        "type": "string",
+        "description": "UF",
+        "mapeadoNFSe": true,
+        "required": false,
+        "proibido": false
+      }
+    },
+    "motivo_ausencia_nif": {
+      "type": "string",
+      "description": "Tipo do motivo para não informação do NIF0 - Não informado na nota de origem1 - Dispensado do NIF2 - Não exigência do NIF",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "nif": {
+      "type": "string",
+      "description": "Tipo NIF (Número de Identificação Fiscal) fornecido por um órgão de administração tributária no exterior",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    }
+  },
+  "tributacao_rps": {
+    "type": "string",
+    "description": "Indica como o RPS foi tributado. Valores possíveis:T: Tributado em São Paulo (valor default);F: Tributado Fora de São Paulo;A: Tributado em São Paulo, porém Isento;B: Tributado Fora de São Paulo, porém Isento;M: Tributado em São Paulo, porém Imune;N: Tributado Fora de São Paulo, porém Imune;X: Tributado em São Paulo, porém Exigibilidade Suspensa;V: Tributado Fora de São Paulo, porém Exigibilidade Suspensa;P: Exportação de Serviços.",
+    "required": false,
+    "proibido": false
+  }
+}

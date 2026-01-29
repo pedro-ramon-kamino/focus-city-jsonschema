@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Schema NFSe - Blog Format",
+  "type": "object",
+  "properties": {},
+  "blogFormat": true,
+  "$blogMeta": {
+    "dadosBasicos": {},
+    "camposAPI": {},
+    "observacoes": ""
+  }
+}

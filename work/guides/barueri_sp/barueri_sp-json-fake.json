@@ -1,0 +1,12 @@
+{
+  "servico": {
+    "codigo_nbs": "string",
+    "data_fim_evento": "string",
+    "data_inicio_evento": "string",
+    "nome_evento": "string",
+    "vinculo_servico_prestado": "string"
+  },
+  "tomador": {
+    "nif": "string"
+  }
+}

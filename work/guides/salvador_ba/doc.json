@@ -1,0 +1,30 @@
+{
+  "servico": {
+    "type": "object",
+    "description": "",
+    "mapeadoNFSe": true,
+    "required": false,
+    "proibido": false,
+    "codigo_nbs": {
+      "type": "string",
+      "description": "Código de Nomenclatura Brasileira de Serviços",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "ibs_cbs_classificacao_tributaria": {
+      "type": "string",
+      "description": "Código de Classificação Tributária do IBS e da CBS",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "codigo_indicador_operacao": {
+      "type": "string",
+      "description": "Código indicador da operação do serviço",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    }
+  }
+}

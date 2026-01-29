@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Emissão de NFS-e em Salvador (BA) pela API da Focus NFe",
+  "type": "object",
+  "properties": {
+    "servico": {
+      "type": "object",
+      "properties": {
+        "codigo_nbs": {
+          "title": "Código NBS",
+          "description": "Código de Nomenclatura Brasileira de Serviços",
+          "type": "string"
+        },
+        "ibs_cbs_classificacao_tributaria": {
+          "title": "Cód. class. trib. IBS/CBS",
+          "description": "Código de Classificação Tributária do IBS e da CBS",
+          "type": "string"
+        },
+        "codigo_indicador_operacao": {
+          "title": "Cód. ind. operação",
+          "description": "Código indicador da operação do serviço",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "codigo_nbs",
+        "ibs_cbs_classificacao_tributaria",
+        "codigo_indicador_operacao"
+      ]
+    }
+  }
+}

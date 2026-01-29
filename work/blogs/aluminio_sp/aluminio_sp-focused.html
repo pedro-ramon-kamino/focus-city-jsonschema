@@ -1,0 +1,49 @@
+
+        <p>Aluminio - SP é uma das centenas de cidades integradas à API da Focus NFe. Nossos clientes já podem fazer a emissão, consulta e cancelamento de notas fiscais de serviço (NFSe). Utilizamos um padrão simples e consistente de comunicação com o web service da prefeitura, garantido disponibilidade e rapidez. Conheça o formato único que nossa API utiliza na comunicação com todos os municípios clicando aqui.</p>
+
+<p>Veja abaixo os detalhes deste município:</p>
+
+<div class="px-3 py-4 mb-3 text-body bg-body-secondary rounded">
+        <h2 id="dados-básicos">Dados básicos:</h2>
+
+<p><strong>Provedor:</strong> Smarapd.  <br>
+<strong>Utiliza padrão ABRASF:</strong> Não.  <br>
+<strong>Necessita certificado digital:</strong> Sim. Também requer dados de login e senha de acesso na prefeitura.  <br>
+<strong>Endereço produção:</strong> https://pmaluminio.smarapd.com.br:8443/tbw/loginNFEContribuinte.jsp?execobj=NFERelacionados  <br>
+<strong>Endereço homologação:</strong> Igual ao de produção.</p>
+
+<h2 id="campos-em-nossa-api">Campos em nossa API:</h2>
+
+<p><strong>item_lista_servico:</strong> Utiliza o padrão nacional da <a href="http://sped.rfb.gov.br/pagina/show/1601">Lei Complementar 116/2003</a>.  <br>
+<strong>codigo_cnae:</strong> Campo não utilizado.  <br>
+<strong>codigo_tributario_municipio:</strong> Campo não utilizado.</p>
+
+<h2 id="observações">Observações:</h2>
+
+<p><strong>natureza_operacao</strong>: Alguns municípios utilizam um padrão próprio. Necessário confirmar na interface da prefeitura. Abaixo segue os valores usados em alguns municípios.
+Valores possíveis:</p>
+<ul>
+  <li>511 – ISSQN DEVIDO NA SERRA, SEM RETENÇÃO, RECOLHIDO PELO PRESTADOR</li>
+  <li>200 – IMUNIDADE</li>
+  <li>300 – ISENÇÃO</li>
+  <li>400 – NÃO INCIDÊNCIA DE ISSQN</li>
+  <li>512 – ISSQN DEVIDO NA SERRA, COM RETENÇÃO, RECOLHIDO PELO TOMADOR</li>
+  <li>615 – ISSQN DEVIDO EM OUTRO MUNICÍPIO, SEM RETENÇÃO, RECOLHIDO PELO PRESTADOR</li>
+  <li>616 – ISSQN DEVIDO EM OUTRO MUNICÍPIO, COM RETENÇÃO, RECOLHIDO PELO TOMADOR</li>
+  <li>911 – ISSQN DEVIDO NA SERRA, SEM RETENÇÃO, RECOLHIDO PELO PRESTADOR – ORGÃO PÚBLICO</li>
+  <li>912 – ISSQN DEVIDO NA SERRA, COM RETENÇÃO, RECOLHIDO PELO TOMADOR – ORGÃO PÚBLICO</li>
+</ul>
+
+<p><strong>Múltiplos serviços</strong>: É possível informar mais de um serviço por nota, basta trocar a chave “servico” por “servicos” e informar um array de servicos</p>
+
+      </div>
+
+<h2 id="simplifique-sua-gestão-de-documentos-fiscais-com-a-focus-nfe">Simplifique sua gestão de documentos fiscais com a Focus NFe</h2>
+
+<p>Somos um ecossistema de soluções para a emissão e gestão de documentos fiscais, permitindo que empresas dos mais diversos portes e segmentos ganhem mais tempo para focar no que importa.</p>
+
+<p>Sua empresa possui desenvolvedores, sistema interno e quer otimizar a emissão de notas? Conheça nosso conjunto de APIs para emissão de documentos fiscais!</p>
+
+<p><a href="https://focusnfe.com.br/contato/?utm_campaign=textoctablog">Converse já com nossa equipe!</a></p>
+
+      

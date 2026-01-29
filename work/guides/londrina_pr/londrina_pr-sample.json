@@ -1,0 +1,33 @@
+{
+  "data_emissao": "2025-07-16T11:13:00",
+  "natureza_operacao": "tf",
+  "optante_simples_nacional": "false",
+  "prestador": {
+    "cnpj": "00000000000000",
+    "codigo_municipio": 4113700,
+    "inscricao_municipal": "123445"
+  },
+  "tomador": {
+    "cnpj": "11.111.111/0001-11",
+    "razao_social": "Fictício Tomador",
+    "endereco": {
+      "logradouro": "Rua Fictícia",
+      "numero": "2",
+      "complemento": "ap02",
+      "bairro": "Centro",
+      "codigo_municipio": 4106902,
+      "uf": "PR",
+      "cep": "82900-010"
+    },
+    "telefone": "11 1111-1111",
+    "email": "test@example.com"
+  },
+  "servico": {
+    "discriminacao": "Nota emitida em caráter de TESTE de integração com Webservice \n Quebra de linha 1 | Quebra de linha 2",
+    "iss_retido": "false",
+    "item_lista_servico": "17141",
+    "codigo_municipio": "4113700",
+    "codigo_cnae": "69.11-7-01",
+    "valor_servicos": 1.0
+  }
+}

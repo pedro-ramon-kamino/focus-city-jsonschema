@@ -1,0 +1,2871 @@
+{
+    "data": {
+        "allow_crawlers": "enabled",
+        "appearance": {
+            "icon": {
+                "name": null,
+                "type": null
+            }
+        },
+        "category": {
+            "uri": "/branches/2.0/categories/reference/Documentos Fiscais"
+        },
+        "content": {
+            "body": null,
+            "excerpt": "Quando uma NFS-e é enviada para processamento, é realizada uma pré-validação, caso ocorra algum problema como: ausência de campos essenciais, formato de dados incorreto ou problemas com o cadastro do prestador em nossa base, a nota não será aceita e você receberá uma mensagem de erro de forma **síncrona**.\n\nCaso a nota seja aceita para processamento, ela será enviada para uma fila e será processada de forma **assíncrona**. Com isto, a nota poderá ser autorizada ou retornar um erro, de acordo com a validação da prefeitura.\n\nPara verificar se a nota já foi autorizada, você terá que efetuar uma [consulta](https://focus-nfe.readme.io/reference/consultarnfseporreferencia#/) ou se utilizar de webhooks (gatilhos).\n\n   ⚠ **Reforma Tributária**\n  * Abaixo, campos novos da API de NFSe são denotados com <sup>(RT)</sup> e destacados em *itálico*. Durante a transição, alguns municípios podem não aceitar ou não interpretar estes campos.\n  * Muitos municípios estão migrando para o novo padrão da <a href=\"/reference/enviardpsnacional\">API de NFSe Nacional</a>, verifique em nosso <a href=\"https://focusnfe.com.br/guides/reforma-tributaria/\">Guia da Reforma Tributária</a>.\n\n   ⚠ **ATENÇÃO** Alguns municípios podem ter campos adicionais ou regras específicas para preenchimento de campos.\nEstas exceções tem se mostrado frequentes em função da **Reforma Tributária**.\nConsulte nossa lista de [Municípios Integrados](https://focusnfe.com.br/cidades-integradas-nfse/) para orientações sobre especificidades de seu município.\n\nAbaixo você poderá verificar uma listagem dos principais campos disponíveis.\n",
+            "link": {
+                "url": null,
+                "new_tab": false
+            },
+            "next": {
+                "description": null,
+                "pages": []
+            }
+        },
+        "metadata": {
+            "description": null,
+            "image": {
+                "uri": null,
+                "url": null
+            },
+            "keywords": null,
+            "title": null
+        },
+        "parent": {
+            "uri": "/branches/2.0/reference/nfse"
+        },
+        "privacy": {
+            "view": "public"
+        },
+        "slug": "enviarnfse",
+        "state": "current",
+        "title": "Enviar",
+        "type": "endpoint",
+        "api_config": null,
+        "api": {
+            "method": "post",
+            "path": "/nfse",
+            "schema": {
+                "openapi": "3.0.3",
+                "info": {
+                    "title": "NFSe - Nota Fiscal de Serviço",
+                    "description": "Por meio desta API é possível realizar operações com o webservice das [prefeituras integradas](https://focusnfe.com.br/guides/nfse/municipios-integrados/) à Focus NFe. Para emissão de NFS-e nacional, consulte a [API específica](https://focus-nfe.readme.io/reference/nfse-nacional#/) deste documento fiscal.\n\nAs operações disponíveis são:\n\n* Emitir NFS-e\n* Cancelar NFS-e\n* Consultar NFS-es emitidas\n* Encaminhar uma NFS-e autorizada por email\n* Solicitar reenvio de notificação de NFSe\n",
+                    "version": "2.0.0",
+                    "contact": {
+                        "name": "Focus NFe Suporte",
+                        "email": "suporte@focusnfe.com.br"
+                    },
+                    "license": {
+                        "name": "Proprietary",
+                        "url": "https://focusnfe.com.br"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://api.focusnfe.com.br/v2",
+                        "description": "Servidor de Produção"
+                    },
+                    {
+                        "url": "https://homologacao.focusnfe.com.br/v2",
+                        "description": "Servidor de Homologação"
+                    }
+                ],
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "tags": [
+                    {
+                        "name": "NFSe",
+                        "description": "Operações relacionadas a Notas Fiscais de Serviços Eletrônicas (NFSe)"
+                    }
+                ],
+                "paths": {
+                    "/nfse": {
+                        "post": {
+                            "tags": [
+                                "NFSe"
+                            ],
+                            "summary": "Enviar",
+                            "description": "Quando uma NFS-e é enviada para processamento, é realizada uma pré-validação, caso ocorra algum problema como: ausência de campos essenciais, formato de dados incorreto ou problemas com o cadastro do prestador em nossa base, a nota não será aceita e você receberá uma mensagem de erro de forma **síncrona**.\n\nCaso a nota seja aceita para processamento, ela será enviada para uma fila e será processada de forma **assíncrona**. Com isto, a nota poderá ser autorizada ou retornar um erro, de acordo com a validação da prefeitura.\n\nPara verificar se a nota já foi autorizada, você terá que efetuar uma [consulta](https://focus-nfe.readme.io/reference/consultarnfseporreferencia#/) ou se utilizar de webhooks (gatilhos).\n\n   ⚠ **Reforma Tributária**\n  * Abaixo, campos novos da API de NFSe são denotados com <sup>(RT)</sup> e destacados em *itálico*. Durante a transição, alguns municípios podem não aceitar ou não interpretar estes campos.\n  * Muitos municípios estão migrando para o novo padrão da <a href=\"/reference/enviardpsnacional\">API de NFSe Nacional</a>, verifique em nosso <a href=\"https://focusnfe.com.br/guides/reforma-tributaria/\">Guia da Reforma Tributária</a>.\n\n   ⚠ **ATENÇÃO** Alguns municípios podem ter campos adicionais ou regras específicas para preenchimento de campos.\nEstas exceções tem se mostrado frequentes em função da **Reforma Tributária**.\nConsulte nossa lista de [Municípios Integrados](https://focusnfe.com.br/cidades-integradas-nfse/) para orientações sobre especificidades de seu município.\n\nAbaixo você poderá verificar uma listagem dos principais campos disponíveis.\n",
+                            "operationId": "enviarNFSe",
+                            "parameters": [
+                                {
+                                    "name": "ref",
+                                    "in": "query",
+                                    "required": true,
+                                    "description": "Referência da NFSe",
+                                    "schema": {
+                                        "type": "string",
+                                        "example": "123456"
+                                    }
+                                }
+                            ],
+                            "requestBody": {
+                                "required": true,
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Campos de envio",
+                                            "type": "object",
+                                            "required": [
+                                                "data_emissao",
+                                                "natureza_operacao",
+                                                "optante_simples_nacional",
+                                                "prestador",
+                                                "tomador",
+                                                "servico"
+                                            ],
+                                            "properties": {
+                                                "data_emissao": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "description": "Data/hora de emissão da NFSe. Alguns municípios não utilizam hora e ela será descartada caso seja fornecida. Formato padrão ISO 8601.\n",
+                                                    "example": "2016-12-25T12:00:00-03:00"
+                                                },
+                                                "natureza_operacao": {
+                                                    "type": "string",
+                                                    "description": "Natureza da operação. Informar um dos códigos abaixo. Valor padrão: 1. Campo ignorado em alguns municípios.<br>\n  1: Tributação no município<br>\n  2: Tributação fora do município<br>\n  3: Isenção<br>\n  4: Imune<br>\n  5: Exigibilidade suspensa por decisão judicial<br>\n  6: Exigibilidade suspensa por procedimento administrativo\n",
+                                                    "enum": [
+                                                        "1",
+                                                        "2",
+                                                        "3",
+                                                        "4",
+                                                        "5",
+                                                        "6"
+                                                    ],
+                                                    "example": "1"
+                                                },
+                                                "regime_especial_tributacao": {
+                                                    "type": "string",
+                                                    "description": "Código do regime especial de tributação. Campo ignorado em alguns municípios<br>\n  1: Microempresa municipal<br>\n  2: Estimativa<br>\n  3: Sociedade de profissionais<br>\n  4: Cooperativa<br>\n  5: MEI - Simples Nacional<br>\n  6: ME EPP- Simples Nacional\n",
+                                                    "enum": [
+                                                        "1",
+                                                        "2",
+                                                        "3",
+                                                        "4",
+                                                        "5",
+                                                        "6"
+                                                    ],
+                                                    "example": "5"
+                                                },
+                                                "optante_simples_nacional": {
+                                                    "type": "boolean",
+                                                    "description": "Informar true (verdadeiro) ou false (falso) se a empresa for optante pelo Simples Nacional. Campo ignorado em alguns municípios.\n",
+                                                    "example": true
+                                                },
+                                                "incentivador_cultural": {
+                                                    "type": "boolean",
+                                                    "description": "Informe true (verdadeiro) ou false (falso). Valor padrão: false. Campo ignorado em alguns municípios.\n",
+                                                    "example": false
+                                                },
+                                                "prestador": {
+                                                    "type": "object",
+                                                    "required": [
+                                                        "cnpj",
+                                                        "inscricao_municipal"
+                                                    ],
+                                                    "properties": {
+                                                        "cnpj": {
+                                                            "type": "string",
+                                                            "description": "CNPJ do prestador de serviços. Caracteres não numéricos são ignorados.",
+                                                            "pattern": "^\\d{14}$",
+                                                            "example": "12345678000123"
+                                                        },
+                                                        "inscricao_municipal": {
+                                                            "type": "string",
+                                                            "description": "Inscrição municipal do prestador.",
+                                                            "example": "123456"
+                                                        },
+                                                        "codigo_municipio": {
+                                                            "type": "string",
+                                                            "description": "Código IBGE de 7 dígitos do município do prestador.",
+                                                            "minLength": 7,
+                                                            "maxLength": 7,
+                                                            "example": "1234567"
+                                                        }
+                                                    },
+                                                    "x-readme-ref-name": "Prestador"
+                                                },
+                                                "tomador": {
+                                                    "type": "object",
+                                                    "required": [
+                                                        "cpf",
+                                                        "cnpj"
+                                                    ],
+                                                    "properties": {
+                                                        "cpf": {
+                                                            "type": "string",
+                                                            "description": "CPF do tomador, se aplicável. Caracteres não numéricos são ignorados.\n",
+                                                            "example": "12345678909",
+                                                            "pattern": "^[0-9]{11}$"
+                                                        },
+                                                        "cnpj": {
+                                                            "type": "string",
+                                                            "description": "CNPJ do tomador, se aplicável. Caracteres não numéricos são ignorados.\n",
+                                                            "example": "12345678000199",
+                                                            "pattern": "^[0-9]{14}$"
+                                                        },
+                                                        "nif": {
+                                                            "type": "string",
+                                                            "description": "<sup>(RT)</sup> *NIF (Número de Identificação Fiscal) do tomador estrangeiro, fornecido por órgão de administração tributária no exterior, se aplicável.*\n",
+                                                            "example": "123456789"
+                                                        },
+                                                        "motivo_ausencia_nif": {
+                                                            "type": "string",
+                                                            "description": "<sup>(RT)</sup> *Motivo para não informação do NIF do tomador estrangeiro, se aplicável.*<br>\n  *0: Não informado na nota de origem*<br>\n  *1: Dispensado do NIF*<br>\n  *2: Não exigência do NIF*\n",
+                                                            "enum": [
+                                                                "0",
+                                                                "1",
+                                                                "2"
+                                                            ],
+                                                            "example": "0"
+                                                        },
+                                                        "inscricao_municipal": {
+                                                            "type": "string",
+                                                            "description": "Inscrição municipal do tomador. Caracteres não numéricos são ignorados.\n",
+                                                            "example": "123456"
+                                                        },
+                                                        "razao_social": {
+                                                            "type": "string",
+                                                            "maxLength": 115,
+                                                            "description": "Razão social ou nome do tomador.",
+                                                            "example": "Empresa Exemplo LTDA"
+                                                        },
+                                                        "telefone": {
+                                                            "type": "string",
+                                                            "maxLength": 11,
+                                                            "description": "Telefone do tomador. Tamanho máximo: 11 caracteres (somente números).\n",
+                                                            "example": "11999998888",
+                                                            "pattern": "^[0-9]{10,11}$"
+                                                        },
+                                                        "email": {
+                                                            "type": "string",
+                                                            "maxLength": 80,
+                                                            "format": "email",
+                                                            "description": "Email do tomador.",
+                                                            "example": "tomador@example.com"
+                                                        },
+                                                        "endereco": {
+                                                            "title": "Endereço tomador",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "logradouro": {
+                                                                    "type": "string",
+                                                                    "maxLength": 125,
+                                                                    "description": "Nome do logradouro.",
+                                                                    "example": "Rua das Flores"
+                                                                },
+                                                                "tipo_logradouro": {
+                                                                    "type": "string",
+                                                                    "maxLength": 3,
+                                                                    "description": "Tipo do logradouro. Usado apenas para alguns municípios. Valor padrão: os 3 primeiros caracteres do logradouro.\n",
+                                                                    "example": "Rua"
+                                                                },
+                                                                "numero": {
+                                                                    "type": "string",
+                                                                    "maxLength": 10,
+                                                                    "description": "Número do endereço.",
+                                                                    "example": "123A"
+                                                                },
+                                                                "complemento": {
+                                                                    "type": "string",
+                                                                    "maxLength": 60,
+                                                                    "description": "Complemento do endereço.",
+                                                                    "example": "Apto 45, Bloco B"
+                                                                },
+                                                                "bairro": {
+                                                                    "type": "string",
+                                                                    "maxLength": 60,
+                                                                    "description": "Bairro do endereço.",
+                                                                    "example": "Centro"
+                                                                },
+                                                                "codigo_municipio": {
+                                                                    "type": "string",
+                                                                    "description": "Código IBGE do município.",
+                                                                    "example": "3550308"
+                                                                },
+                                                                "uf": {
+                                                                    "type": "string",
+                                                                    "maxLength": 2,
+                                                                    "minLength": 2,
+                                                                    "description": "UF do endereço.",
+                                                                    "example": "SP"
+                                                                },
+                                                                "cep": {
+                                                                    "type": "string",
+                                                                    "pattern": "^[0-9]{8}$",
+                                                                    "description": "CEP do endereço. Caracteres não numéricos são ignorados.\n",
+                                                                    "example": "01311000"
+                                                                }
+                                                            },
+                                                            "x-readme-ref-name": "EnderecoTomador"
+                                                        }
+                                                    },
+                                                    "x-readme-ref-name": "Tomador"
+                                                },
+                                                "servico": {
+                                                    "type": "object",
+                                                    "required": [
+                                                        "valor_servicos",
+                                                        "iss_retido",
+                                                        "item_lista_servico",
+                                                        "discriminacao",
+                                                        "codigo_municipio"
+                                                    ],
+                                                    "properties": {
+                                                        "valor_servicos": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "Valor dos serviços.",
+                                                            "example": 1500
+                                                        },
+                                                        "valor_deducoes": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "Valor das deduções.",
+                                                            "example": 0
+                                                        },
+                                                        "valor_pis": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "Valor do PIS.",
+                                                            "example": 10.5
+                                                        },
+                                                        "valor_cofins": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "Valor do COFINS.",
+                                                            "example": 5.75
+                                                        },
+                                                        "valor_inss": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "Valor do INSS.",
+                                                            "example": 20
+                                                        },
+                                                        "valor_ir": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "Valor do IRRF.",
+                                                            "example": 18
+                                                        },
+                                                        "valor_csll": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "Valor do CSLL.",
+                                                            "example": 12
+                                                        },
+                                                        "iss_retido": {
+                                                            "type": "boolean",
+                                                            "description": "Informar se o ISS foi retido.",
+                                                            "example": false
+                                                        },
+                                                        "valor_iss": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "Valor do ISS. Campo ignorado por alguns municípios que realizam seu próprio cálculo.",
+                                                            "example": 45
+                                                        },
+                                                        "valor_iss_retido": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "Valor do ISS Retido. Campo ignorado em alguns municípios.",
+                                                            "example": 0
+                                                        },
+                                                        "outras_retencoes": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "Valor de outras retenções. Campo ignorado em alguns municípios.",
+                                                            "example": 0
+                                                        },
+                                                        "base_calculo": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "Base de cálculo do ISS. Valor padrão igual ao valor_servicos. Campo ignorado em alguns municípios.",
+                                                            "example": 1500
+                                                        },
+                                                        "aliquota": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "Alíquota do ISS. Algumas cidades permitem usar até 4 dígitos decimais.",
+                                                            "example": 0.05
+                                                        },
+                                                        "desconto_incondicionado": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "Valor do desconto incondicionado. Campo ignorado em alguns municípios.",
+                                                            "example": 0
+                                                        },
+                                                        "desconto_condicionado": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "Valor do desconto condicionado. Campo ignorado em alguns municípios.",
+                                                            "example": 0
+                                                        },
+                                                        "item_lista_servico": {
+                                                            "type": "string",
+                                                            "description": "Código da lista de serviços, conforme Lei Complementar 116/2003.\n<sup>(RT)</sup> *Com a Reforma Tributária, alguns municípios passaram adotar o padrão nacional (vide [Tabela Lista Serviço Nacional](https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual/anexo_b-nbs2-lista_servico_nacional-snnfse.xlsx)).*\n",
+                                                            "example": "17.09"
+                                                        },
+                                                        "codigo_cnae": {
+                                                            "type": "string",
+                                                            "description": "Código CNAE de 7 dígitos. Campo ignorado em alguns municípios.",
+                                                            "example": "6201501"
+                                                        },
+                                                        "codigo_tributario_municipio": {
+                                                            "type": "string",
+                                                            "description": "Código tributário conforme tabela do município.",
+                                                            "example": "123456"
+                                                        },
+                                                        "discriminacao": {
+                                                            "type": "string",
+                                                            "description": "Discriminação dos serviços. Tamanho pode variar conforme o município.",
+                                                            "example": "Serviços de desenvolvimento de sistemas sob demanda"
+                                                        },
+                                                        "codigo_municipio": {
+                                                            "type": "string",
+                                                            "description": "Código IBGE do município de prestação do serviço (7 dígitos).",
+                                                            "example": "3550308"
+                                                        },
+                                                        "percentual_total_tributos": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "Percentual aproximado de todos os impostos, de acordo com a Lei da Transparência. Disponível apenas em alguns municípios.",
+                                                            "example": 0.34
+                                                        },
+                                                        "fonte_total_tributos": {
+                                                            "type": "string",
+                                                            "description": "Fonte da informação de total de tributos (ex: \"IBPT\"). Disponível apenas para alguns municípios.\n",
+                                                            "example": "IBPT"
+                                                        },
+                                                        "codigo_nbs": {
+                                                            "type": "string",
+                                                            "description": "<sup>(RT)</sup> *Código da lista de Nomenclatura Brasileira de Serviços (vide [Tabela NBS](https://www.gov.br/mdic/pt-br/images/REPOSITORIO/scs/decos/NBS/NBSa_2-0.csv)).*\n",
+                                                            "example": "1.0101.11.00"
+                                                        },
+                                                        "codigo_indicador_operacao": {
+                                                            "type": "string",
+                                                            "description": "<sup>(RT)</sup> *Código indicador de operação (vide [Tabela IndOp](https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/anexovii-indop_ibscbs_v1-00-00.xlsx)).*\n",
+                                                            "example": "020101"
+                                                        },
+                                                        "ibs_cbs_classificacao_tributaria": {
+                                                            "type": "string",
+                                                            "description": "<sup>(RT)</sup> *Código de Classificação Tributária do IBS e CBS (vide [Tabela de Correlação NBS-cClassTrib](https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/anexoviii-correlacaoitemnbsindopcclasstrib_ibscbs_v1-00-00.xlsx) e [Tabela de Classificação Tributária](https://dfe-portal.svrs.rs.gov.br/DFE/ClassificacaoTributaria)).*\n",
+                                                            "example": "400001"
+                                                        },
+                                                        "ibs_cbs_situacao_tributaria": {
+                                                            "type": "string",
+                                                            "description": "<sup>(RT)</sup> *Código de Situação Tributária do IBS e CBS (vide tabelas acima).*\n",
+                                                            "example": "400"
+                                                        },
+                                                        "ibs_cbs_base_calculo": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "<sup>(RT)</sup> *Base de cálculo do IBS e CBS.*\n",
+                                                            "example": 1500
+                                                        },
+                                                        "ibs_uf_aliquota": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "<sup>(RT)</sup> *Alíquota da UF para IBS da localidade de incidência.*\n",
+                                                            "example": 0.0167
+                                                        },
+                                                        "ibs_mun_aliquota": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "<sup>(RT)</sup> *Alíquota do Município para IBS da localidade de incidência.*\n",
+                                                            "example": 0.0833
+                                                        },
+                                                        "cbs_aliquota": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "<sup>(RT)</sup> *Alíquota da União para CBS.*\n",
+                                                            "example": 0.9
+                                                        },
+                                                        "ibs_uf_valor": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "<sup>(RT)</sup> *Valor do IBS da UF calculado.*\n",
+                                                            "example": 0
+                                                        },
+                                                        "ibs_mun_valor": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "<sup>(RT)</sup> *Valor do IBS do Município calculado.*\n",
+                                                            "example": 0
+                                                        },
+                                                        "cbs_valor": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "description": "<sup>(RT)</sup> *Valor do CBS da União calculado.*\n",
+                                                            "example": 0
+                                                        }
+                                                    },
+                                                    "x-readme-ref-name": "Servico"
+                                                },
+                                                "intermediario": {
+                                                    "type": "object",
+                                                    "description": "Esta seção é ignorada se não suportada pelo município.",
+                                                    "properties": {
+                                                        "cpf": {
+                                                            "type": "string",
+                                                            "description": "CPF do intermediário, se aplicável. Caracteres não numéricos são ignorados.\n",
+                                                            "example": "12345678909",
+                                                            "pattern": "^[0-9]{11}$"
+                                                        },
+                                                        "cnpj": {
+                                                            "type": "string",
+                                                            "description": "CNPJ do intermediário, se aplicável. Caracteres não numéricos são ignorados.\n",
+                                                            "example": "12345678000199",
+                                                            "pattern": "^[0-9]{14}$"
+                                                        },
+                                                        "nif": {
+                                                            "type": "string",
+                                                            "description": "<sup>(RT)</sup> *NIF (Número de Identificação Fiscal) do intermediario estrangeiro, fornecido por órgão de administração tributária no exterior, se aplicável.*\n",
+                                                            "example": "123456789"
+                                                        },
+                                                        "motivo_ausencia_nif": {
+                                                            "type": "string",
+                                                            "description": "<sup>(RT)</sup> *Motivo para não informação do NIF do intermediário estrangeiro, se aplicável.*<br>\n  *0: Não informado na nota de origem*<br>\n  *1: Dispensado do NIF*<br>\n  *2: Não exigência do NIF*\n",
+                                                            "enum": [
+                                                                "0",
+                                                                "1",
+                                                                "2"
+                                                            ],
+                                                            "example": "0"
+                                                        },
+                                                        "inscricao_municipal": {
+                                                            "type": "string",
+                                                            "description": "Inscrição municipal do intermediário. Caracteres não numéricos são ignorados.\n",
+                                                            "example": "123456"
+                                                        },
+                                                        "razao_social": {
+                                                            "type": "string",
+                                                            "maxLength": 115,
+                                                            "description": "Razão social ou nome do intermediário.",
+                                                            "example": "Empresa Exemplo LTDA"
+                                                        }
+                                                    },
+                                                    "x-readme-ref-name": "Intermediario"
+                                                },
+                                                "codigo_obra": {
+                                                    "type": "string",
+                                                    "maxLength": 15,
+                                                    "description": "Código da obra quando construção civil. Tamanho máximo: 15 caracteres.",
+                                                    "example": "123456789012345"
+                                                },
+                                                "art": {
+                                                    "type": "string",
+                                                    "description": "Código ART quando construção civil. Este campo é ignorado em alguns municípios.",
+                                                    "example": "ART2023000123"
+                                                },
+                                                "numero_nfse_substituido": {
+                                                    "type": "string",
+                                                    "description": "Caso o município permita substituição de notas, aqui você poderá informar o número da NFSe a ser substituída.\n",
+                                                    "example": "678"
+                                                },
+                                                "numero_rps_substituido": {
+                                                    "type": "string",
+                                                    "description": "Caso o município permita substituição de notas, aqui você poderá informar o número do RPS a ser substituído.\n",
+                                                    "example": "12345"
+                                                },
+                                                "serie_rps_substituido": {
+                                                    "type": "string",
+                                                    "description": "Obrigatório se informado o campo numero_rps_substituido. Indica a série do RPS a ser substituído.\n",
+                                                    "example": "A1"
+                                                },
+                                                "tipo_rps_substituido": {
+                                                    "type": "string",
+                                                    "description": "Obrigatório se informado o campo numero_rps_substituido. Indica o tipo do RPS a ser substituído. Caso desconheça este valor, utilize \"1\".\n",
+                                                    "example": "1"
+                                                }
+                                            },
+                                            "x-readme-ref-name": "NFSeRequest"
+                                        },
+                                        "examples": {
+                                            "NFSe": {
+                                                "summary": "NFSe",
+                                                "value": {
+                                                    "data_emissao": "2024-01-15T10:30:00-03:00",
+                                                    "prestador": {
+                                                        "cnpj": "12345678000123",
+                                                        "inscricao_municipal": "123456"
+                                                    },
+                                                    "tomador": {
+                                                        "cnpj": "12345678000199",
+                                                        "razao_social": "Empresa Tomadora LTDA",
+                                                        "endereco": {
+                                                            "logradouro": "Rua das Flores",
+                                                            "numero": "123",
+                                                            "bairro": "Centro",
+                                                            "codigo_municipio": "3550308",
+                                                            "uf": "SP",
+                                                            "cep": "01234-567"
+                                                        }
+                                                    },
+                                                    "servico": {
+                                                        "valor_servicos": 100,
+                                                        "item_lista_servico": "0107",
+                                                        "codigo_tributacao_municipio": "0107",
+                                                        "discriminacao": "Serviço de consultoria em informática",
+                                                        "codigo_municipio": "3550308"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "responses": {
+                                "201": {
+                                    "description": "Recurso criado com sucesso",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "title": "Processando autorização",
+                                                "type": "object",
+                                                "properties": {
+                                                    "cnpj_prestador": {
+                                                        "type": "string",
+                                                        "description": "CNPJ do prestador"
+                                                    },
+                                                    "ref": {
+                                                        "type": "string",
+                                                        "description": "Referência da NFSe"
+                                                    },
+                                                    "numero_rps": {
+                                                        "type": "string",
+                                                        "description": "Número do RPS"
+                                                    },
+                                                    "serie_rps": {
+                                                        "type": "string",
+                                                        "description": "Série do RPS"
+                                                    },
+                                                    "tipo_rps": {
+                                                        "type": "string",
+                                                        "description": "Tipo do RPS"
+                                                    },
+                                                    "status": {
+                                                        "type": "string",
+                                                        "description": "Status da NFSe"
+                                                    }
+                                                },
+                                                "x-readme-ref-name": "ProcessandoAutorizacaoResponse"
+                                            },
+                                            "examples": {
+                                                "Processando autorização": {
+                                                    "value": {
+                                                        "cnpj_prestador": "12345678000123",
+                                                        "ref": "123456",
+                                                        "numero_rps": "1",
+                                                        "serie_rps": "1",
+                                                        "tipo_rps": "1",
+                                                        "status": "processando_autorizacao"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "400": {
+                                    "description": "Requisição inválida",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "title": "Erro",
+                                                "type": "object",
+                                                "properties": {
+                                                    "codigo": {
+                                                        "type": "string",
+                                                        "description": "Código do erro"
+                                                    },
+                                                    "mensagem": {
+                                                        "type": "string",
+                                                        "description": "Mensagem descritiva do erro"
+                                                    },
+                                                    "correcao": {
+                                                        "type": "string",
+                                                        "description": "Correção do erro"
+                                                    }
+                                                },
+                                                "x-readme-ref-name": "ErrorResponse"
+                                            },
+                                            "examples": {
+                                                "Requisição inválida": {
+                                                    "value": {
+                                                        "codigo": "requisicao_invalida",
+                                                        "mensagem": "Parâmetro \"prestador.codigo_municipio\" não informado"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "401": {
+                                    "description": "Não autorizado",
+                                    "content": {
+                                        "text/html": {
+                                            "schema": {
+                                                "type": "string",
+                                                "example": "HTTP Basic: Access denied"
+                                            }
+                                        }
+                                    }
+                                },
+                                "422": {
+                                    "description": "O servidor entendeu a requisição, mas os dados são inválidos ou não podem ser processados",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "title": "Erro",
+                                                "type": "object",
+                                                "properties": {
+                                                    "codigo": {
+                                                        "type": "string",
+                                                        "description": "Código do erro"
+                                                    },
+                                                    "mensagem": {
+                                                        "type": "string",
+                                                        "description": "Mensagem descritiva do erro"
+                                                    },
+                                                    "correcao": {
+                                                        "type": "string",
+                                                        "description": "Correção do erro"
+                                                    }
+                                                },
+                                                "x-readme-ref-name": "ErrorResponse"
+                                            },
+                                            "examples": {
+                                                "Erro validação": {
+                                                    "value": {
+                                                        "codigo": "erro_validacao",
+                                                        "mensagem": "O emitente da nota fiscal é diferente do usado no primeiro envio"
+                                                    }
+                                                },
+                                                "Já autorizada": {
+                                                    "value": {
+                                                        "codigo": "nfe_autorizada",
+                                                        "mensagem": "Nota fiscal já autorizada"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "/nfse/{referencia}": {
+                        "get": {
+                            "tags": [
+                                "NFSe"
+                            ],
+                            "summary": "Consultar",
+                            "description": "Após enviar uma nota, você poderá usar a operação de consulta para verificar se a nota está em processamento ou se já foi processada.\n\nComo retorno você receberá os campos descritos nos exemplos abaixo, de acordo com o status da nota.\n",
+                            "operationId": "consultarNFSePorReferencia",
+                            "parameters": [
+                                {
+                                    "name": "referencia",
+                                    "in": "path",
+                                    "required": true,
+                                    "description": "Referência da NFSe",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                }
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "Requisição processada com sucesso",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "oneOf": [
+                                                    {
+                                                        "title": "Processando autorização",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "cnpj_prestador": {
+                                                                "type": "string",
+                                                                "description": "CNPJ do prestador"
+                                                            },
+                                                            "ref": {
+                                                                "type": "string",
+                                                                "description": "Referência da NFSe"
+                                                            },
+                                                            "numero_rps": {
+                                                                "type": "string",
+                                                                "description": "Número do RPS"
+                                                            },
+                                                            "serie_rps": {
+                                                                "type": "string",
+                                                                "description": "Série do RPS"
+                                                            },
+                                                            "tipo_rps": {
+                                                                "type": "string",
+                                                                "description": "Tipo do RPS"
+                                                            },
+                                                            "status": {
+                                                                "type": "string",
+                                                                "description": "Status da NFSe"
+                                                            }
+                                                        },
+                                                        "x-readme-ref-name": "ProcessandoAutorizacaoResponse"
+                                                    },
+                                                    {
+                                                        "title": "Autorizada",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "cnpj_prestador": {
+                                                                "type": "string",
+                                                                "description": "CNPJ do prestador"
+                                                            },
+                                                            "ref": {
+                                                                "type": "string",
+                                                                "description": "Referência da NFSe"
+                                                            },
+                                                            "numero_rps": {
+                                                                "type": "string",
+                                                                "description": "Número do RPS"
+                                                            },
+                                                            "serie_rps": {
+                                                                "type": "string",
+                                                                "description": "Série do RPS"
+                                                            },
+                                                            "tipo_rps": {
+                                                                "type": "string",
+                                                                "description": "Tipo do RPS"
+                                                            },
+                                                            "status": {
+                                                                "type": "string",
+                                                                "description": "Status da NFSe",
+                                                                "enum": [
+                                                                    "autorizado"
+                                                                ]
+                                                            },
+                                                            "numero": {
+                                                                "type": "string",
+                                                                "description": "Número da NFSe",
+                                                                "example": "1"
+                                                            },
+                                                            "codigo_verificacao": {
+                                                                "type": "string",
+                                                                "description": "Código de verificação da NFSe"
+                                                            },
+                                                            "data_emissao": {
+                                                                "type": "string",
+                                                                "description": "Data da emissão da NFSe"
+                                                            },
+                                                            "url": {
+                                                                "type": "string",
+                                                                "description": "URL do espelho da NFSe"
+                                                            },
+                                                            "caminho_xml_nota_fiscal": {
+                                                                "type": "string",
+                                                                "description": "Caminho do XML da NFSe"
+                                                            },
+                                                            "url_danfse": {
+                                                                "type": "string",
+                                                                "description": "Caminho do XML da NFSe"
+                                                            }
+                                                        },
+                                                        "x-readme-ref-name": "AutorizadaResponse"
+                                                    },
+                                                    {
+                                                        "title": "Cancelada",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "cnpj_prestador": {
+                                                                "type": "string",
+                                                                "description": "CNPJ do prestador"
+                                                            },
+                                                            "ref": {
+                                                                "type": "string",
+                                                                "description": "Referência da NFSe"
+                                                            },
+                                                            "numero_rps": {
+                                                                "type": "string",
+                                                                "description": "Número do RPS"
+                                                            },
+                                                            "serie_rps": {
+                                                                "type": "string",
+                                                                "description": "Série do RPS"
+                                                            },
+                                                            "tipo_rps": {
+                                                                "type": "string",
+                                                                "description": "Tipo do RPS"
+                                                            },
+                                                            "status": {
+                                                                "type": "string",
+                                                                "description": "Status da NFSe",
+                                                                "enum": [
+                                                                    "cancelado"
+                                                                ]
+                                                            },
+                                                            "numero": {
+                                                                "type": "string",
+                                                                "description": "Número da NFSe",
+                                                                "example": "1"
+                                                            },
+                                                            "codigo_verificacao": {
+                                                                "type": "string",
+                                                                "description": "Código de verificação da NFSe"
+                                                            },
+                                                            "data_emissao": {
+                                                                "type": "string",
+                                                                "description": "Data da emissão da NFSe"
+                                                            },
+                                                            "url": {
+                                                                "type": "string",
+                                                                "description": "URL do espelho da NFSe"
+                                                            },
+                                                            "caminho_xml_nota_fiscal": {
+                                                                "type": "string",
+                                                                "description": "Caminho do XML da NFSe"
+                                                            },
+                                                            "caminho_xml_cancelamento": {
+                                                                "type": "string",
+                                                                "description": "Caminho do XML de cancelamento da NFSe"
+                                                            },
+                                                            "url_danfse": {
+                                                                "type": "string",
+                                                                "description": "Caminho do XML da NFSe"
+                                                            }
+                                                        },
+                                                        "x-readme-ref-name": "CanceladaResponse"
+                                                    },
+                                                    {
+                                                        "title": "Erro autorização",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "cnpj_prestador": {
+                                                                "type": "string",
+                                                                "description": "CNPJ do prestador"
+                                                            },
+                                                            "ref": {
+                                                                "type": "string",
+                                                                "description": "Referência da NFSe"
+                                                            },
+                                                            "numero_rps": {
+                                                                "type": "string",
+                                                                "description": "Número do RPS"
+                                                            },
+                                                            "serie_rps": {
+                                                                "type": "string",
+                                                                "description": "Série do RPS"
+                                                            },
+                                                            "tipo_rps": {
+                                                                "type": "string",
+                                                                "description": "Tipo do RPS"
+                                                            },
+                                                            "status": {
+                                                                "type": "string",
+                                                                "description": "Status da NFSe"
+                                                            },
+                                                            "erros": {
+                                                                "type": "array",
+                                                                "description": "Lista de erros",
+                                                                "items": {
+                                                                    "title": "Erro",
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "codigo": {
+                                                                            "type": "string",
+                                                                            "description": "Código do erro"
+                                                                        },
+                                                                        "mensagem": {
+                                                                            "type": "string",
+                                                                            "description": "Mensagem descritiva do erro"
+                                                                        },
+                                                                        "correcao": {
+                                                                            "type": "string",
+                                                                            "description": "Correção do erro"
+                                                                        }
+                                                                    },
+                                                                    "x-readme-ref-name": "ErrorResponse"
+                                                                }
+                                                            }
+                                                        },
+                                                        "x-readme-ref-name": "ErroAutorizacaoResponse"
+                                                    }
+                                                ]
+                                            },
+                                            "examples": {
+                                                "Processando autorização": {
+                                                    "value": {
+                                                        "cnpj_prestador": "12345678000123",
+                                                        "ref": "123456",
+                                                        "numero_rps": "1",
+                                                        "serie_rps": "1",
+                                                        "tipo_rps": "1",
+                                                        "status": "processando_autorizacao"
+                                                    }
+                                                },
+                                                "Autorizada": {
+                                                    "value": {
+                                                        "cnpj_prestador": "12345678000123",
+                                                        "ref": "123456",
+                                                        "numero_rps": "1",
+                                                        "serie_rps": "1",
+                                                        "tipo_rps": "1",
+                                                        "status": "autorizado",
+                                                        "numero": "1",
+                                                        "codigo_verificacao": "ABC123",
+                                                        "data_emissao": "2025-01-01T10:00:00-03:00",
+                                                        "url": "https://api.focusnfe.com.br/notas_fiscais_servico/chave_nfse.html",
+                                                        "caminho_xml_nota_fiscal": "/arquivos/12345678901_123/202501/XMLsNFSe/chave_nfse.xml",
+                                                        "url_danfse": "https://focusnfe.s3.sa-east-1.amazonaws.com/arquivos/12345678901_123/202501/DANFSEs/chave_nfse.pdf"
+                                                    }
+                                                },
+                                                "Cancelada": {
+                                                    "value": {
+                                                        "cnpj_prestador": "12345678000123",
+                                                        "ref": "123456",
+                                                        "numero_rps": "1",
+                                                        "serie_rps": "1",
+                                                        "tipo_rps": "1",
+                                                        "status": "autorizado",
+                                                        "numero": "1",
+                                                        "codigo_verificacao": "ABC123",
+                                                        "data_emissao": "2025-01-01T10:00:00-03:00",
+                                                        "url": "https://api.focusnfe.com.br/notas_fiscais_servico/chave_nfse.html",
+                                                        "caminho_xml_nota_fiscal": "/arquivos/12345678901_123/202501/XMLsNFSe/chave_nfse.xml",
+                                                        "caminho_xml_cancelamento": "/arquivos/12345678901_123/202501/XMLsNFSe/chave_nfse.xml",
+                                                        "url_danfse": "https://focusnfe.s3.sa-east-1.amazonaws.com/arquivos/12345678901_123/202501/DANFSEs/chave_nfse.pdf"
+                                                    }
+                                                },
+                                                "Erro autorização": {
+                                                    "value": {
+                                                        "cnpj_prestador": "12345678000123",
+                                                        "ref": "123456",
+                                                        "numero_rps": "1",
+                                                        "serie_rps": "1",
+                                                        "tipo_rps": "1",
+                                                        "status": "erro_autorizacao",
+                                                        "erros": [
+                                                            {
+                                                                "codigo": "L99",
+                                                                "mensagem": "Regime Especial de Tributação ausente/inválido",
+                                                                "correcao": "Corrija o Regime Especial de Tributação"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "404": {
+                                    "description": "Recurso não encontrado",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "title": "Erro",
+                                                "type": "object",
+                                                "properties": {
+                                                    "codigo": {
+                                                        "type": "string",
+                                                        "description": "Código do erro"
+                                                    },
+                                                    "mensagem": {
+                                                        "type": "string",
+                                                        "description": "Mensagem descritiva do erro"
+                                                    },
+                                                    "correcao": {
+                                                        "type": "string",
+                                                        "description": "Correção do erro"
+                                                    }
+                                                },
+                                                "x-readme-ref-name": "ErrorResponse"
+                                            },
+                                            "example": {
+                                                "codigo": "nao_encontrado",
+                                                "mensagem": "Nota fiscal não encontrada"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "delete": {
+                            "tags": [
+                                "NFSe"
+                            ],
+                            "summary": "Cancelar",
+                            "description": "Apenas notas com status \"autorizado\" podem ser canceladas. O cancelamento é definitivo e não pode ser desfeito.\n\nEste endpoint possui retorno **síncrono**. Como resposta você poderá receber os campos descritos abaixo. Os exemplos de resposta mostram os campos retornados de acordo com o status da nota.\n\nAlgumas prefeituras não permitem o cancelamento notas por webservice. Recomendamos que você consulte nossa [lista de municípios atendidos](https://focusnfe.com.br/guides/nfse/municipios-integrados/) e verifique como sua cidade trata deste tema.\n",
+                            "operationId": "cancelarNFSe",
+                            "parameters": [
+                                {
+                                    "name": "referencia",
+                                    "in": "path",
+                                    "required": true,
+                                    "description": "Referência da NFSe",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                }
+                            ],
+                            "requestBody": {
+                                "required": false,
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "justificativa": {
+                                                    "type": "string",
+                                                    "description": "Justificativa para o cancelamento (deverá conter de 15 a 255 caracteres)",
+                                                    "minLength": 15,
+                                                    "maxLength": 255
+                                                }
+                                            }
+                                        },
+                                        "example": {
+                                            "justificativa": "Erro na emissão da nota fiscal de serviços"
+                                        }
+                                    }
+                                }
+                            },
+                            "responses": {
+                                "200": {
+                                    "description": "Requisição processada com sucesso",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "oneOf": [
+                                                    {
+                                                        "title": "Cancelada",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "status": {
+                                                                "type": "string",
+                                                                "description": "Status da NFSe",
+                                                                "enum": [
+                                                                    "cancelado"
+                                                                ]
+                                                            }
+                                                        },
+                                                        "x-readme-ref-name": "CancelamentoResponse"
+                                                    },
+                                                    {
+                                                        "title": "Erro cancelamento",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "status": {
+                                                                "type": "string",
+                                                                "description": "Status da NFSe",
+                                                                "enum": [
+                                                                    "erro_cancelamento"
+                                                                ]
+                                                            },
+                                                            "erros": {
+                                                                "type": "array",
+                                                                "description": "Lista de erros",
+                                                                "items": {
+                                                                    "title": "Erro",
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "codigo": {
+                                                                            "type": "string",
+                                                                            "description": "Código do erro"
+                                                                        },
+                                                                        "mensagem": {
+                                                                            "type": "string",
+                                                                            "description": "Mensagem descritiva do erro"
+                                                                        },
+                                                                        "correcao": {
+                                                                            "type": "string",
+                                                                            "description": "Correção do erro"
+                                                                        }
+                                                                    },
+                                                                    "x-readme-ref-name": "ErrorResponse"
+                                                                }
+                                                            }
+                                                        },
+                                                        "x-readme-ref-name": "ErroCancelamentoResponse"
+                                                    }
+                                                ]
+                                            },
+                                            "examples": {
+                                                "Cancelada": {
+                                                    "value": {
+                                                        "status": "cancelado"
+                                                    }
+                                                },
+                                                "Erro cancelamento": {
+                                                    "value": {
+                                                        "status": "erro_cancelamento",
+                                                        "erros": [
+                                                            {
+                                                                "codigo": "V999",
+                                                                "mensagem": "NFSe fora do prazo de cancelamento permitido",
+                                                                "correcao": null
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "400": {
+                                    "description": "Requisição inválida",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "title": "Erro",
+                                                "type": "object",
+                                                "properties": {
+                                                    "codigo": {
+                                                        "type": "string",
+                                                        "description": "Código do erro"
+                                                    },
+                                                    "mensagem": {
+                                                        "type": "string",
+                                                        "description": "Mensagem descritiva do erro"
+                                                    },
+                                                    "correcao": {
+                                                        "type": "string",
+                                                        "description": "Correção do erro"
+                                                    }
+                                                },
+                                                "x-readme-ref-name": "ErrorResponse"
+                                            },
+                                            "examples": {
+                                                "Não autorizada": {
+                                                    "value": {
+                                                        "codigo": "nfe_nao_autorizada",
+                                                        "mensagem": "Nota fiscal não autorizada não pode ser cancelada"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "404": {
+                                    "description": "Recurso não encontrado",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "title": "Erro",
+                                                "type": "object",
+                                                "properties": {
+                                                    "codigo": {
+                                                        "type": "string",
+                                                        "description": "Código do erro"
+                                                    },
+                                                    "mensagem": {
+                                                        "type": "string",
+                                                        "description": "Mensagem descritiva do erro"
+                                                    },
+                                                    "correcao": {
+                                                        "type": "string",
+                                                        "description": "Correção do erro"
+                                                    }
+                                                },
+                                                "x-readme-ref-name": "ErrorResponse"
+                                            },
+                                            "example": {
+                                                "codigo": "nao_encontrado",
+                                                "mensagem": "Nota fiscal não encontrada"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "/nfse/{referencia}/email": {
+                        "post": {
+                            "tags": [
+                                "NFSe"
+                            ],
+                            "summary": "Reenviar email",
+                            "description": "É possível enviar a nota para um email diferente do que foi informado nos dados de emissão.\n\nA confirmação do recebimento desta solicitação é retornada de forma **síncrona**. Contudo, os emails são enviados em segundo plano, podendo levar alguns minutos até que cheguem ao destinatário.\n\nVeja abaixo os campos que podem ser enviados na requisição.\n",
+                            "operationId": "reenviarEmailNFSe",
+                            "parameters": [
+                                {
+                                    "name": "referencia",
+                                    "in": "path",
+                                    "required": true,
+                                    "description": "Referência da NFSe",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                }
+                            ],
+                            "requestBody": {
+                                "required": true,
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "type": "object",
+                                            "required": [
+                                                "emails"
+                                            ],
+                                            "properties": {
+                                                "emails": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "format": "email"
+                                                    },
+                                                    "description": "Array com uma lista de emails que deverão receber uma cópia da nota. Limitado a 10 emails por vez."
+                                                }
+                                            }
+                                        },
+                                        "example": {
+                                            "emails": [
+                                                "nome@example.org",
+                                                "nome2@example.org"
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            "responses": {
+                                "200": {
+                                    "description": "Requisição processada com sucesso",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "emails": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string",
+                                                            "format": "email"
+                                                        },
+                                                        "example": [
+                                                            "nome@example.org",
+                                                            "nome2@example.org"
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "404": {
+                                    "description": "Recurso não encontrado",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "title": "Erro",
+                                                "type": "object",
+                                                "properties": {
+                                                    "codigo": {
+                                                        "type": "string",
+                                                        "description": "Código do erro"
+                                                    },
+                                                    "mensagem": {
+                                                        "type": "string",
+                                                        "description": "Mensagem descritiva do erro"
+                                                    },
+                                                    "correcao": {
+                                                        "type": "string",
+                                                        "description": "Correção do erro"
+                                                    }
+                                                },
+                                                "x-readme-ref-name": "ErrorResponse"
+                                            },
+                                            "example": {
+                                                "codigo": "nao_encontrado",
+                                                "mensagem": "Nota fiscal não encontrada"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "/nfse/{referencia}/hook": {
+                        "post": {
+                            "tags": [
+                                "NFSe"
+                            ],
+                            "summary": "Solicitar reenvio de notificação",
+                            "operationId": "reenviarHookNFSe",
+                            "parameters": [
+                                {
+                                    "name": "referencia",
+                                    "in": "path",
+                                    "required": true,
+                                    "description": "Referência da NFSe",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                }
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "Lista de gatilhos acionados",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "array",
+                                                "items": {
+                                                    "title": "Gatilho",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "id": {
+                                                            "type": "string"
+                                                        },
+                                                        "url": {
+                                                            "type": "string",
+                                                            "format": "uri"
+                                                        },
+                                                        "authorization": {
+                                                            "type": "string",
+                                                            "nullable": true
+                                                        },
+                                                        "authorization_header": {
+                                                            "type": "string",
+                                                            "nullable": true
+                                                        },
+                                                        "event": {
+                                                            "type": "string",
+                                                            "description": "Evento monitorado",
+                                                            "enum": [
+                                                                "nfse"
+                                                            ]
+                                                        },
+                                                        "cnpj": {
+                                                            "type": "string",
+                                                            "description": "CNPJ vinculado ao gatilho"
+                                                        },
+                                                        "cpf": {
+                                                            "type": "string",
+                                                            "description": "CPF vinculado ao gatilho"
+                                                        }
+                                                    },
+                                                    "example": {
+                                                        "id": "Vj5rmkBq",
+                                                        "url": "http://minha.url/nfe",
+                                                        "authorization": null,
+                                                        "authorization_header": null,
+                                                        "event": "nfse",
+                                                        "cnpj": "12345678000123"
+                                                    },
+                                                    "x-readme-ref-name": "Hook"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "components": {
+                    "securitySchemes": {
+                        "ApiKeyAuth": {
+                            "type": "apiKey",
+                            "in": "header",
+                            "name": "Authorization",
+                            "description": "Token de acesso da API (formato Bearer {token})"
+                        }
+                    },
+                    "responses": {
+                        "NfseNaoEncontrada": {
+                            "description": "Recurso não encontrado",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "title": "Erro",
+                                        "type": "object",
+                                        "properties": {
+                                            "codigo": {
+                                                "type": "string",
+                                                "description": "Código do erro"
+                                            },
+                                            "mensagem": {
+                                                "type": "string",
+                                                "description": "Mensagem descritiva do erro"
+                                            },
+                                            "correcao": {
+                                                "type": "string",
+                                                "description": "Correção do erro"
+                                            }
+                                        },
+                                        "x-readme-ref-name": "ErrorResponse"
+                                    },
+                                    "example": {
+                                        "codigo": "nao_encontrado",
+                                        "mensagem": "Nota fiscal não encontrada"
+                                    }
+                                }
+                            }
+                        },
+                        "AccessDenied": {
+                            "description": "Não autorizado",
+                            "content": {
+                                "text/html": {
+                                    "schema": {
+                                        "type": "string",
+                                        "example": "HTTP Basic: Access denied"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "schemas": {
+                        "NFSeRequest": {
+                            "title": "Campos de envio",
+                            "type": "object",
+                            "required": [
+                                "data_emissao",
+                                "natureza_operacao",
+                                "optante_simples_nacional",
+                                "prestador",
+                                "tomador",
+                                "servico"
+                            ],
+                            "properties": {
+                                "data_emissao": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "Data/hora de emissão da NFSe. Alguns municípios não utilizam hora e ela será descartada caso seja fornecida. Formato padrão ISO 8601.\n",
+                                    "example": "2016-12-25T12:00:00-03:00"
+                                },
+                                "natureza_operacao": {
+                                    "type": "string",
+                                    "description": "Natureza da operação. Informar um dos códigos abaixo. Valor padrão: 1. Campo ignorado em alguns municípios.<br>\n  1: Tributação no município<br>\n  2: Tributação fora do município<br>\n  3: Isenção<br>\n  4: Imune<br>\n  5: Exigibilidade suspensa por decisão judicial<br>\n  6: Exigibilidade suspensa por procedimento administrativo\n",
+                                    "enum": [
+                                        "1",
+                                        "2",
+                                        "3",
+                                        "4",
+                                        "5",
+                                        "6"
+                                    ],
+                                    "example": "1"
+                                },
+                                "regime_especial_tributacao": {
+                                    "type": "string",
+                                    "description": "Código do regime especial de tributação. Campo ignorado em alguns municípios<br>\n  1: Microempresa municipal<br>\n  2: Estimativa<br>\n  3: Sociedade de profissionais<br>\n  4: Cooperativa<br>\n  5: MEI - Simples Nacional<br>\n  6: ME EPP- Simples Nacional\n",
+                                    "enum": [
+                                        "1",
+                                        "2",
+                                        "3",
+                                        "4",
+                                        "5",
+                                        "6"
+                                    ],
+                                    "example": "5"
+                                },
+                                "optante_simples_nacional": {
+                                    "type": "boolean",
+                                    "description": "Informar true (verdadeiro) ou false (falso) se a empresa for optante pelo Simples Nacional. Campo ignorado em alguns municípios.\n",
+                                    "example": true
+                                },
+                                "incentivador_cultural": {
+                                    "type": "boolean",
+                                    "description": "Informe true (verdadeiro) ou false (falso). Valor padrão: false. Campo ignorado em alguns municípios.\n",
+                                    "example": false
+                                },
+                                "prestador": {
+                                    "type": "object",
+                                    "required": [
+                                        "cnpj",
+                                        "inscricao_municipal"
+                                    ],
+                                    "properties": {
+                                        "cnpj": {
+                                            "type": "string",
+                                            "description": "CNPJ do prestador de serviços. Caracteres não numéricos são ignorados.",
+                                            "pattern": "^\\d{14}$",
+                                            "example": "12345678000123"
+                                        },
+                                        "inscricao_municipal": {
+                                            "type": "string",
+                                            "description": "Inscrição municipal do prestador.",
+                                            "example": "123456"
+                                        },
+                                        "codigo_municipio": {
+                                            "type": "string",
+                                            "description": "Código IBGE de 7 dígitos do município do prestador.",
+                                            "minLength": 7,
+                                            "maxLength": 7,
+                                            "example": "1234567"
+                                        }
+                                    },
+                                    "x-readme-ref-name": "Prestador"
+                                },
+                                "tomador": {
+                                    "type": "object",
+                                    "required": [
+                                        "cpf",
+                                        "cnpj"
+                                    ],
+                                    "properties": {
+                                        "cpf": {
+                                            "type": "string",
+                                            "description": "CPF do tomador, se aplicável. Caracteres não numéricos são ignorados.\n",
+                                            "example": "12345678909",
+                                            "pattern": "^[0-9]{11}$"
+                                        },
+                                        "cnpj": {
+                                            "type": "string",
+                                            "description": "CNPJ do tomador, se aplicável. Caracteres não numéricos são ignorados.\n",
+                                            "example": "12345678000199",
+                                            "pattern": "^[0-9]{14}$"
+                                        },
+                                        "nif": {
+                                            "type": "string",
+                                            "description": "<sup>(RT)</sup> *NIF (Número de Identificação Fiscal) do tomador estrangeiro, fornecido por órgão de administração tributária no exterior, se aplicável.*\n",
+                                            "example": "123456789"
+                                        },
+                                        "motivo_ausencia_nif": {
+                                            "type": "string",
+                                            "description": "<sup>(RT)</sup> *Motivo para não informação do NIF do tomador estrangeiro, se aplicável.*<br>\n  *0: Não informado na nota de origem*<br>\n  *1: Dispensado do NIF*<br>\n  *2: Não exigência do NIF*\n",
+                                            "enum": [
+                                                "0",
+                                                "1",
+                                                "2"
+                                            ],
+                                            "example": "0"
+                                        },
+                                        "inscricao_municipal": {
+                                            "type": "string",
+                                            "description": "Inscrição municipal do tomador. Caracteres não numéricos são ignorados.\n",
+                                            "example": "123456"
+                                        },
+                                        "razao_social": {
+                                            "type": "string",
+                                            "maxLength": 115,
+                                            "description": "Razão social ou nome do tomador.",
+                                            "example": "Empresa Exemplo LTDA"
+                                        },
+                                        "telefone": {
+                                            "type": "string",
+                                            "maxLength": 11,
+                                            "description": "Telefone do tomador. Tamanho máximo: 11 caracteres (somente números).\n",
+                                            "example": "11999998888",
+                                            "pattern": "^[0-9]{10,11}$"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "maxLength": 80,
+                                            "format": "email",
+                                            "description": "Email do tomador.",
+                                            "example": "tomador@example.com"
+                                        },
+                                        "endereco": {
+                                            "title": "Endereço tomador",
+                                            "type": "object",
+                                            "properties": {
+                                                "logradouro": {
+                                                    "type": "string",
+                                                    "maxLength": 125,
+                                                    "description": "Nome do logradouro.",
+                                                    "example": "Rua das Flores"
+                                                },
+                                                "tipo_logradouro": {
+                                                    "type": "string",
+                                                    "maxLength": 3,
+                                                    "description": "Tipo do logradouro. Usado apenas para alguns municípios. Valor padrão: os 3 primeiros caracteres do logradouro.\n",
+                                                    "example": "Rua"
+                                                },
+                                                "numero": {
+                                                    "type": "string",
+                                                    "maxLength": 10,
+                                                    "description": "Número do endereço.",
+                                                    "example": "123A"
+                                                },
+                                                "complemento": {
+                                                    "type": "string",
+                                                    "maxLength": 60,
+                                                    "description": "Complemento do endereço.",
+                                                    "example": "Apto 45, Bloco B"
+                                                },
+                                                "bairro": {
+                                                    "type": "string",
+                                                    "maxLength": 60,
+                                                    "description": "Bairro do endereço.",
+                                                    "example": "Centro"
+                                                },
+                                                "codigo_municipio": {
+                                                    "type": "string",
+                                                    "description": "Código IBGE do município.",
+                                                    "example": "3550308"
+                                                },
+                                                "uf": {
+                                                    "type": "string",
+                                                    "maxLength": 2,
+                                                    "minLength": 2,
+                                                    "description": "UF do endereço.",
+                                                    "example": "SP"
+                                                },
+                                                "cep": {
+                                                    "type": "string",
+                                                    "pattern": "^[0-9]{8}$",
+                                                    "description": "CEP do endereço. Caracteres não numéricos são ignorados.\n",
+                                                    "example": "01311000"
+                                                }
+                                            },
+                                            "x-readme-ref-name": "EnderecoTomador"
+                                        }
+                                    },
+                                    "x-readme-ref-name": "Tomador"
+                                },
+                                "servico": {
+                                    "type": "object",
+                                    "required": [
+                                        "valor_servicos",
+                                        "iss_retido",
+                                        "item_lista_servico",
+                                        "discriminacao",
+                                        "codigo_municipio"
+                                    ],
+                                    "properties": {
+                                        "valor_servicos": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "Valor dos serviços.",
+                                            "example": 1500
+                                        },
+                                        "valor_deducoes": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "Valor das deduções.",
+                                            "example": 0
+                                        },
+                                        "valor_pis": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "Valor do PIS.",
+                                            "example": 10.5
+                                        },
+                                        "valor_cofins": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "Valor do COFINS.",
+                                            "example": 5.75
+                                        },
+                                        "valor_inss": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "Valor do INSS.",
+                                            "example": 20
+                                        },
+                                        "valor_ir": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "Valor do IRRF.",
+                                            "example": 18
+                                        },
+                                        "valor_csll": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "Valor do CSLL.",
+                                            "example": 12
+                                        },
+                                        "iss_retido": {
+                                            "type": "boolean",
+                                            "description": "Informar se o ISS foi retido.",
+                                            "example": false
+                                        },
+                                        "valor_iss": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "Valor do ISS. Campo ignorado por alguns municípios que realizam seu próprio cálculo.",
+                                            "example": 45
+                                        },
+                                        "valor_iss_retido": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "Valor do ISS Retido. Campo ignorado em alguns municípios.",
+                                            "example": 0
+                                        },
+                                        "outras_retencoes": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "Valor de outras retenções. Campo ignorado em alguns municípios.",
+                                            "example": 0
+                                        },
+                                        "base_calculo": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "Base de cálculo do ISS. Valor padrão igual ao valor_servicos. Campo ignorado em alguns municípios.",
+                                            "example": 1500
+                                        },
+                                        "aliquota": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "Alíquota do ISS. Algumas cidades permitem usar até 4 dígitos decimais.",
+                                            "example": 0.05
+                                        },
+                                        "desconto_incondicionado": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "Valor do desconto incondicionado. Campo ignorado em alguns municípios.",
+                                            "example": 0
+                                        },
+                                        "desconto_condicionado": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "Valor do desconto condicionado. Campo ignorado em alguns municípios.",
+                                            "example": 0
+                                        },
+                                        "item_lista_servico": {
+                                            "type": "string",
+                                            "description": "Código da lista de serviços, conforme Lei Complementar 116/2003.\n<sup>(RT)</sup> *Com a Reforma Tributária, alguns municípios passaram adotar o padrão nacional (vide [Tabela Lista Serviço Nacional](https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual/anexo_b-nbs2-lista_servico_nacional-snnfse.xlsx)).*\n",
+                                            "example": "17.09"
+                                        },
+                                        "codigo_cnae": {
+                                            "type": "string",
+                                            "description": "Código CNAE de 7 dígitos. Campo ignorado em alguns municípios.",
+                                            "example": "6201501"
+                                        },
+                                        "codigo_tributario_municipio": {
+                                            "type": "string",
+                                            "description": "Código tributário conforme tabela do município.",
+                                            "example": "123456"
+                                        },
+                                        "discriminacao": {
+                                            "type": "string",
+                                            "description": "Discriminação dos serviços. Tamanho pode variar conforme o município.",
+                                            "example": "Serviços de desenvolvimento de sistemas sob demanda"
+                                        },
+                                        "codigo_municipio": {
+                                            "type": "string",
+                                            "description": "Código IBGE do município de prestação do serviço (7 dígitos).",
+                                            "example": "3550308"
+                                        },
+                                        "percentual_total_tributos": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "Percentual aproximado de todos os impostos, de acordo com a Lei da Transparência. Disponível apenas em alguns municípios.",
+                                            "example": 0.34
+                                        },
+                                        "fonte_total_tributos": {
+                                            "type": "string",
+                                            "description": "Fonte da informação de total de tributos (ex: \"IBPT\"). Disponível apenas para alguns municípios.\n",
+                                            "example": "IBPT"
+                                        },
+                                        "codigo_nbs": {
+                                            "type": "string",
+                                            "description": "<sup>(RT)</sup> *Código da lista de Nomenclatura Brasileira de Serviços (vide [Tabela NBS](https://www.gov.br/mdic/pt-br/images/REPOSITORIO/scs/decos/NBS/NBSa_2-0.csv)).*\n",
+                                            "example": "1.0101.11.00"
+                                        },
+                                        "codigo_indicador_operacao": {
+                                            "type": "string",
+                                            "description": "<sup>(RT)</sup> *Código indicador de operação (vide [Tabela IndOp](https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/anexovii-indop_ibscbs_v1-00-00.xlsx)).*\n",
+                                            "example": "020101"
+                                        },
+                                        "ibs_cbs_classificacao_tributaria": {
+                                            "type": "string",
+                                            "description": "<sup>(RT)</sup> *Código de Classificação Tributária do IBS e CBS (vide [Tabela de Correlação NBS-cClassTrib](https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/anexoviii-correlacaoitemnbsindopcclasstrib_ibscbs_v1-00-00.xlsx) e [Tabela de Classificação Tributária](https://dfe-portal.svrs.rs.gov.br/DFE/ClassificacaoTributaria)).*\n",
+                                            "example": "400001"
+                                        },
+                                        "ibs_cbs_situacao_tributaria": {
+                                            "type": "string",
+                                            "description": "<sup>(RT)</sup> *Código de Situação Tributária do IBS e CBS (vide tabelas acima).*\n",
+                                            "example": "400"
+                                        },
+                                        "ibs_cbs_base_calculo": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "<sup>(RT)</sup> *Base de cálculo do IBS e CBS.*\n",
+                                            "example": 1500
+                                        },
+                                        "ibs_uf_aliquota": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "<sup>(RT)</sup> *Alíquota da UF para IBS da localidade de incidência.*\n",
+                                            "example": 0.0167
+                                        },
+                                        "ibs_mun_aliquota": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "<sup>(RT)</sup> *Alíquota do Município para IBS da localidade de incidência.*\n",
+                                            "example": 0.0833
+                                        },
+                                        "cbs_aliquota": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "<sup>(RT)</sup> *Alíquota da União para CBS.*\n",
+                                            "example": 0.9
+                                        },
+                                        "ibs_uf_valor": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "<sup>(RT)</sup> *Valor do IBS da UF calculado.*\n",
+                                            "example": 0
+                                        },
+                                        "ibs_mun_valor": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "<sup>(RT)</sup> *Valor do IBS do Município calculado.*\n",
+                                            "example": 0
+                                        },
+                                        "cbs_valor": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "<sup>(RT)</sup> *Valor do CBS da União calculado.*\n",
+                                            "example": 0
+                                        }
+                                    },
+                                    "x-readme-ref-name": "Servico"
+                                },
+                                "intermediario": {
+                                    "type": "object",
+                                    "description": "Esta seção é ignorada se não suportada pelo município.",
+                                    "properties": {
+                                        "cpf": {
+                                            "type": "string",
+                                            "description": "CPF do intermediário, se aplicável. Caracteres não numéricos são ignorados.\n",
+                                            "example": "12345678909",
+                                            "pattern": "^[0-9]{11}$"
+                                        },
+                                        "cnpj": {
+                                            "type": "string",
+                                            "description": "CNPJ do intermediário, se aplicável. Caracteres não numéricos são ignorados.\n",
+                                            "example": "12345678000199",
+                                            "pattern": "^[0-9]{14}$"
+                                        },
+                                        "nif": {
+                                            "type": "string",
+                                            "description": "<sup>(RT)</sup> *NIF (Número de Identificação Fiscal) do intermediario estrangeiro, fornecido por órgão de administração tributária no exterior, se aplicável.*\n",
+                                            "example": "123456789"
+                                        },
+                                        "motivo_ausencia_nif": {
+                                            "type": "string",
+                                            "description": "<sup>(RT)</sup> *Motivo para não informação do NIF do intermediário estrangeiro, se aplicável.*<br>\n  *0: Não informado na nota de origem*<br>\n  *1: Dispensado do NIF*<br>\n  *2: Não exigência do NIF*\n",
+                                            "enum": [
+                                                "0",
+                                                "1",
+                                                "2"
+                                            ],
+                                            "example": "0"
+                                        },
+                                        "inscricao_municipal": {
+                                            "type": "string",
+                                            "description": "Inscrição municipal do intermediário. Caracteres não numéricos são ignorados.\n",
+                                            "example": "123456"
+                                        },
+                                        "razao_social": {
+                                            "type": "string",
+                                            "maxLength": 115,
+                                            "description": "Razão social ou nome do intermediário.",
+                                            "example": "Empresa Exemplo LTDA"
+                                        }
+                                    },
+                                    "x-readme-ref-name": "Intermediario"
+                                },
+                                "codigo_obra": {
+                                    "type": "string",
+                                    "maxLength": 15,
+                                    "description": "Código da obra quando construção civil. Tamanho máximo: 15 caracteres.",
+                                    "example": "123456789012345"
+                                },
+                                "art": {
+                                    "type": "string",
+                                    "description": "Código ART quando construção civil. Este campo é ignorado em alguns municípios.",
+                                    "example": "ART2023000123"
+                                },
+                                "numero_nfse_substituido": {
+                                    "type": "string",
+                                    "description": "Caso o município permita substituição de notas, aqui você poderá informar o número da NFSe a ser substituída.\n",
+                                    "example": "678"
+                                },
+                                "numero_rps_substituido": {
+                                    "type": "string",
+                                    "description": "Caso o município permita substituição de notas, aqui você poderá informar o número do RPS a ser substituído.\n",
+                                    "example": "12345"
+                                },
+                                "serie_rps_substituido": {
+                                    "type": "string",
+                                    "description": "Obrigatório se informado o campo numero_rps_substituido. Indica a série do RPS a ser substituído.\n",
+                                    "example": "A1"
+                                },
+                                "tipo_rps_substituido": {
+                                    "type": "string",
+                                    "description": "Obrigatório se informado o campo numero_rps_substituido. Indica o tipo do RPS a ser substituído. Caso desconheça este valor, utilize \"1\".\n",
+                                    "example": "1"
+                                }
+                            },
+                            "x-readme-ref-name": "NFSeRequest"
+                        },
+                        "Prestador": {
+                            "type": "object",
+                            "required": [
+                                "cnpj",
+                                "inscricao_municipal"
+                            ],
+                            "properties": {
+                                "cnpj": {
+                                    "type": "string",
+                                    "description": "CNPJ do prestador de serviços. Caracteres não numéricos são ignorados.",
+                                    "pattern": "^\\d{14}$",
+                                    "example": "12345678000123"
+                                },
+                                "inscricao_municipal": {
+                                    "type": "string",
+                                    "description": "Inscrição municipal do prestador.",
+                                    "example": "123456"
+                                },
+                                "codigo_municipio": {
+                                    "type": "string",
+                                    "description": "Código IBGE de 7 dígitos do município do prestador.",
+                                    "minLength": 7,
+                                    "maxLength": 7,
+                                    "example": "1234567"
+                                }
+                            },
+                            "x-readme-ref-name": "Prestador"
+                        },
+                        "Tomador": {
+                            "type": "object",
+                            "required": [
+                                "cpf",
+                                "cnpj"
+                            ],
+                            "properties": {
+                                "cpf": {
+                                    "type": "string",
+                                    "description": "CPF do tomador, se aplicável. Caracteres não numéricos são ignorados.\n",
+                                    "example": "12345678909",
+                                    "pattern": "^[0-9]{11}$"
+                                },
+                                "cnpj": {
+                                    "type": "string",
+                                    "description": "CNPJ do tomador, se aplicável. Caracteres não numéricos são ignorados.\n",
+                                    "example": "12345678000199",
+                                    "pattern": "^[0-9]{14}$"
+                                },
+                                "nif": {
+                                    "type": "string",
+                                    "description": "<sup>(RT)</sup> *NIF (Número de Identificação Fiscal) do tomador estrangeiro, fornecido por órgão de administração tributária no exterior, se aplicável.*\n",
+                                    "example": "123456789"
+                                },
+                                "motivo_ausencia_nif": {
+                                    "type": "string",
+                                    "description": "<sup>(RT)</sup> *Motivo para não informação do NIF do tomador estrangeiro, se aplicável.*<br>\n  *0: Não informado na nota de origem*<br>\n  *1: Dispensado do NIF*<br>\n  *2: Não exigência do NIF*\n",
+                                    "enum": [
+                                        "0",
+                                        "1",
+                                        "2"
+                                    ],
+                                    "example": "0"
+                                },
+                                "inscricao_municipal": {
+                                    "type": "string",
+                                    "description": "Inscrição municipal do tomador. Caracteres não numéricos são ignorados.\n",
+                                    "example": "123456"
+                                },
+                                "razao_social": {
+                                    "type": "string",
+                                    "maxLength": 115,
+                                    "description": "Razão social ou nome do tomador.",
+                                    "example": "Empresa Exemplo LTDA"
+                                },
+                                "telefone": {
+                                    "type": "string",
+                                    "maxLength": 11,
+                                    "description": "Telefone do tomador. Tamanho máximo: 11 caracteres (somente números).\n",
+                                    "example": "11999998888",
+                                    "pattern": "^[0-9]{10,11}$"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "maxLength": 80,
+                                    "format": "email",
+                                    "description": "Email do tomador.",
+                                    "example": "tomador@example.com"
+                                },
+                                "endereco": {
+                                    "title": "Endereço tomador",
+                                    "type": "object",
+                                    "properties": {
+                                        "logradouro": {
+                                            "type": "string",
+                                            "maxLength": 125,
+                                            "description": "Nome do logradouro.",
+                                            "example": "Rua das Flores"
+                                        },
+                                        "tipo_logradouro": {
+                                            "type": "string",
+                                            "maxLength": 3,
+                                            "description": "Tipo do logradouro. Usado apenas para alguns municípios. Valor padrão: os 3 primeiros caracteres do logradouro.\n",
+                                            "example": "Rua"
+                                        },
+                                        "numero": {
+                                            "type": "string",
+                                            "maxLength": 10,
+                                            "description": "Número do endereço.",
+                                            "example": "123A"
+                                        },
+                                        "complemento": {
+                                            "type": "string",
+                                            "maxLength": 60,
+                                            "description": "Complemento do endereço.",
+                                            "example": "Apto 45, Bloco B"
+                                        },
+                                        "bairro": {
+                                            "type": "string",
+                                            "maxLength": 60,
+                                            "description": "Bairro do endereço.",
+                                            "example": "Centro"
+                                        },
+                                        "codigo_municipio": {
+                                            "type": "string",
+                                            "description": "Código IBGE do município.",
+                                            "example": "3550308"
+                                        },
+                                        "uf": {
+                                            "type": "string",
+                                            "maxLength": 2,
+                                            "minLength": 2,
+                                            "description": "UF do endereço.",
+                                            "example": "SP"
+                                        },
+                                        "cep": {
+                                            "type": "string",
+                                            "pattern": "^[0-9]{8}$",
+                                            "description": "CEP do endereço. Caracteres não numéricos são ignorados.\n",
+                                            "example": "01311000"
+                                        }
+                                    },
+                                    "x-readme-ref-name": "EnderecoTomador"
+                                }
+                            },
+                            "x-readme-ref-name": "Tomador"
+                        },
+                        "EnderecoTomador": {
+                            "title": "Endereço tomador",
+                            "type": "object",
+                            "properties": {
+                                "logradouro": {
+                                    "type": "string",
+                                    "maxLength": 125,
+                                    "description": "Nome do logradouro.",
+                                    "example": "Rua das Flores"
+                                },
+                                "tipo_logradouro": {
+                                    "type": "string",
+                                    "maxLength": 3,
+                                    "description": "Tipo do logradouro. Usado apenas para alguns municípios. Valor padrão: os 3 primeiros caracteres do logradouro.\n",
+                                    "example": "Rua"
+                                },
+                                "numero": {
+                                    "type": "string",
+                                    "maxLength": 10,
+                                    "description": "Número do endereço.",
+                                    "example": "123A"
+                                },
+                                "complemento": {
+                                    "type": "string",
+                                    "maxLength": 60,
+                                    "description": "Complemento do endereço.",
+                                    "example": "Apto 45, Bloco B"
+                                },
+                                "bairro": {
+                                    "type": "string",
+                                    "maxLength": 60,
+                                    "description": "Bairro do endereço.",
+                                    "example": "Centro"
+                                },
+                                "codigo_municipio": {
+                                    "type": "string",
+                                    "description": "Código IBGE do município.",
+                                    "example": "3550308"
+                                },
+                                "uf": {
+                                    "type": "string",
+                                    "maxLength": 2,
+                                    "minLength": 2,
+                                    "description": "UF do endereço.",
+                                    "example": "SP"
+                                },
+                                "cep": {
+                                    "type": "string",
+                                    "pattern": "^[0-9]{8}$",
+                                    "description": "CEP do endereço. Caracteres não numéricos são ignorados.\n",
+                                    "example": "01311000"
+                                }
+                            },
+                            "x-readme-ref-name": "EnderecoTomador"
+                        },
+                        "Servico": {
+                            "type": "object",
+                            "required": [
+                                "valor_servicos",
+                                "iss_retido",
+                                "item_lista_servico",
+                                "discriminacao",
+                                "codigo_municipio"
+                            ],
+                            "properties": {
+                                "valor_servicos": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Valor dos serviços.",
+                                    "example": 1500
+                                },
+                                "valor_deducoes": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Valor das deduções.",
+                                    "example": 0
+                                },
+                                "valor_pis": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Valor do PIS.",
+                                    "example": 10.5
+                                },
+                                "valor_cofins": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Valor do COFINS.",
+                                    "example": 5.75
+                                },
+                                "valor_inss": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Valor do INSS.",
+                                    "example": 20
+                                },
+                                "valor_ir": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Valor do IRRF.",
+                                    "example": 18
+                                },
+                                "valor_csll": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Valor do CSLL.",
+                                    "example": 12
+                                },
+                                "iss_retido": {
+                                    "type": "boolean",
+                                    "description": "Informar se o ISS foi retido.",
+                                    "example": false
+                                },
+                                "valor_iss": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Valor do ISS. Campo ignorado por alguns municípios que realizam seu próprio cálculo.",
+                                    "example": 45
+                                },
+                                "valor_iss_retido": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Valor do ISS Retido. Campo ignorado em alguns municípios.",
+                                    "example": 0
+                                },
+                                "outras_retencoes": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Valor de outras retenções. Campo ignorado em alguns municípios.",
+                                    "example": 0
+                                },
+                                "base_calculo": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Base de cálculo do ISS. Valor padrão igual ao valor_servicos. Campo ignorado em alguns municípios.",
+                                    "example": 1500
+                                },
+                                "aliquota": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Alíquota do ISS. Algumas cidades permitem usar até 4 dígitos decimais.",
+                                    "example": 0.05
+                                },
+                                "desconto_incondicionado": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Valor do desconto incondicionado. Campo ignorado em alguns municípios.",
+                                    "example": 0
+                                },
+                                "desconto_condicionado": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Valor do desconto condicionado. Campo ignorado em alguns municípios.",
+                                    "example": 0
+                                },
+                                "item_lista_servico": {
+                                    "type": "string",
+                                    "description": "Código da lista de serviços, conforme Lei Complementar 116/2003.\n<sup>(RT)</sup> *Com a Reforma Tributária, alguns municípios passaram adotar o padrão nacional (vide [Tabela Lista Serviço Nacional](https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual/anexo_b-nbs2-lista_servico_nacional-snnfse.xlsx)).*\n",
+                                    "example": "17.09"
+                                },
+                                "codigo_cnae": {
+                                    "type": "string",
+                                    "description": "Código CNAE de 7 dígitos. Campo ignorado em alguns municípios.",
+                                    "example": "6201501"
+                                },
+                                "codigo_tributario_municipio": {
+                                    "type": "string",
+                                    "description": "Código tributário conforme tabela do município.",
+                                    "example": "123456"
+                                },
+                                "discriminacao": {
+                                    "type": "string",
+                                    "description": "Discriminação dos serviços. Tamanho pode variar conforme o município.",
+                                    "example": "Serviços de desenvolvimento de sistemas sob demanda"
+                                },
+                                "codigo_municipio": {
+                                    "type": "string",
+                                    "description": "Código IBGE do município de prestação do serviço (7 dígitos).",
+                                    "example": "3550308"
+                                },
+                                "percentual_total_tributos": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Percentual aproximado de todos os impostos, de acordo com a Lei da Transparência. Disponível apenas em alguns municípios.",
+                                    "example": 0.34
+                                },
+                                "fonte_total_tributos": {
+                                    "type": "string",
+                                    "description": "Fonte da informação de total de tributos (ex: \"IBPT\"). Disponível apenas para alguns municípios.\n",
+                                    "example": "IBPT"
+                                },
+                                "codigo_nbs": {
+                                    "type": "string",
+                                    "description": "<sup>(RT)</sup> *Código da lista de Nomenclatura Brasileira de Serviços (vide [Tabela NBS](https://www.gov.br/mdic/pt-br/images/REPOSITORIO/scs/decos/NBS/NBSa_2-0.csv)).*\n",
+                                    "example": "1.0101.11.00"
+                                },
+                                "codigo_indicador_operacao": {
+                                    "type": "string",
+                                    "description": "<sup>(RT)</sup> *Código indicador de operação (vide [Tabela IndOp](https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/anexovii-indop_ibscbs_v1-00-00.xlsx)).*\n",
+                                    "example": "020101"
+                                },
+                                "ibs_cbs_classificacao_tributaria": {
+                                    "type": "string",
+                                    "description": "<sup>(RT)</sup> *Código de Classificação Tributária do IBS e CBS (vide [Tabela de Correlação NBS-cClassTrib](https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/anexoviii-correlacaoitemnbsindopcclasstrib_ibscbs_v1-00-00.xlsx) e [Tabela de Classificação Tributária](https://dfe-portal.svrs.rs.gov.br/DFE/ClassificacaoTributaria)).*\n",
+                                    "example": "400001"
+                                },
+                                "ibs_cbs_situacao_tributaria": {
+                                    "type": "string",
+                                    "description": "<sup>(RT)</sup> *Código de Situação Tributária do IBS e CBS (vide tabelas acima).*\n",
+                                    "example": "400"
+                                },
+                                "ibs_cbs_base_calculo": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "<sup>(RT)</sup> *Base de cálculo do IBS e CBS.*\n",
+                                    "example": 1500
+                                },
+                                "ibs_uf_aliquota": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "<sup>(RT)</sup> *Alíquota da UF para IBS da localidade de incidência.*\n",
+                                    "example": 0.0167
+                                },
+                                "ibs_mun_aliquota": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "<sup>(RT)</sup> *Alíquota do Município para IBS da localidade de incidência.*\n",
+                                    "example": 0.0833
+                                },
+                                "cbs_aliquota": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "<sup>(RT)</sup> *Alíquota da União para CBS.*\n",
+                                    "example": 0.9
+                                },
+                                "ibs_uf_valor": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "<sup>(RT)</sup> *Valor do IBS da UF calculado.*\n",
+                                    "example": 0
+                                },
+                                "ibs_mun_valor": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "<sup>(RT)</sup> *Valor do IBS do Município calculado.*\n",
+                                    "example": 0
+                                },
+                                "cbs_valor": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "<sup>(RT)</sup> *Valor do CBS da União calculado.*\n",
+                                    "example": 0
+                                }
+                            },
+                            "x-readme-ref-name": "Servico"
+                        },
+                        "Intermediario": {
+                            "type": "object",
+                            "description": "Esta seção é ignorada se não suportada pelo município.",
+                            "properties": {
+                                "cpf": {
+                                    "type": "string",
+                                    "description": "CPF do intermediário, se aplicável. Caracteres não numéricos são ignorados.\n",
+                                    "example": "12345678909",
+                                    "pattern": "^[0-9]{11}$"
+                                },
+                                "cnpj": {
+                                    "type": "string",
+                                    "description": "CNPJ do intermediário, se aplicável. Caracteres não numéricos são ignorados.\n",
+                                    "example": "12345678000199",
+                                    "pattern": "^[0-9]{14}$"
+                                },
+                                "nif": {
+                                    "type": "string",
+                                    "description": "<sup>(RT)</sup> *NIF (Número de Identificação Fiscal) do intermediario estrangeiro, fornecido por órgão de administração tributária no exterior, se aplicável.*\n",
+                                    "example": "123456789"
+                                },
+                                "motivo_ausencia_nif": {
+                                    "type": "string",
+                                    "description": "<sup>(RT)</sup> *Motivo para não informação do NIF do intermediário estrangeiro, se aplicável.*<br>\n  *0: Não informado na nota de origem*<br>\n  *1: Dispensado do NIF*<br>\n  *2: Não exigência do NIF*\n",
+                                    "enum": [
+                                        "0",
+                                        "1",
+                                        "2"
+                                    ],
+                                    "example": "0"
+                                },
+                                "inscricao_municipal": {
+                                    "type": "string",
+                                    "description": "Inscrição municipal do intermediário. Caracteres não numéricos são ignorados.\n",
+                                    "example": "123456"
+                                },
+                                "razao_social": {
+                                    "type": "string",
+                                    "maxLength": 115,
+                                    "description": "Razão social ou nome do intermediário.",
+                                    "example": "Empresa Exemplo LTDA"
+                                }
+                            },
+                            "x-readme-ref-name": "Intermediario"
+                        },
+                        "ProcessandoAutorizacaoResponse": {
+                            "title": "Processando autorização",
+                            "type": "object",
+                            "properties": {
+                                "cnpj_prestador": {
+                                    "type": "string",
+                                    "description": "CNPJ do prestador"
+                                },
+                                "ref": {
+                                    "type": "string",
+                                    "description": "Referência da NFSe"
+                                },
+                                "numero_rps": {
+                                    "type": "string",
+                                    "description": "Número do RPS"
+                                },
+                                "serie_rps": {
+                                    "type": "string",
+                                    "description": "Série do RPS"
+                                },
+                                "tipo_rps": {
+                                    "type": "string",
+                                    "description": "Tipo do RPS"
+                                },
+                                "status": {
+                                    "type": "string",
+                                    "description": "Status da NFSe"
+                                }
+                            },
+                            "x-readme-ref-name": "ProcessandoAutorizacaoResponse"
+                        },
+                        "AutorizadaResponse": {
+                            "title": "Autorizada",
+                            "type": "object",
+                            "properties": {
+                                "cnpj_prestador": {
+                                    "type": "string",
+                                    "description": "CNPJ do prestador"
+                                },
+                                "ref": {
+                                    "type": "string",
+                                    "description": "Referência da NFSe"
+                                },
+                                "numero_rps": {
+                                    "type": "string",
+                                    "description": "Número do RPS"
+                                },
+                                "serie_rps": {
+                                    "type": "string",
+                                    "description": "Série do RPS"
+                                },
+                                "tipo_rps": {
+                                    "type": "string",
+                                    "description": "Tipo do RPS"
+                                },
+                                "status": {
+                                    "type": "string",
+                                    "description": "Status da NFSe",
+                                    "enum": [
+                                        "autorizado"
+                                    ]
+                                },
+                                "numero": {
+                                    "type": "string",
+                                    "description": "Número da NFSe",
+                                    "example": "1"
+                                },
+                                "codigo_verificacao": {
+                                    "type": "string",
+                                    "description": "Código de verificação da NFSe"
+                                },
+                                "data_emissao": {
+                                    "type": "string",
+                                    "description": "Data da emissão da NFSe"
+                                },
+                                "url": {
+                                    "type": "string",
+                                    "description": "URL do espelho da NFSe"
+                                },
+                                "caminho_xml_nota_fiscal": {
+                                    "type": "string",
+                                    "description": "Caminho do XML da NFSe"
+                                },
+                                "url_danfse": {
+                                    "type": "string",
+                                    "description": "Caminho do XML da NFSe"
+                                }
+                            },
+                            "x-readme-ref-name": "AutorizadaResponse"
+                        },
+                        "CanceladaResponse": {
+                            "title": "Cancelada",
+                            "type": "object",
+                            "properties": {
+                                "cnpj_prestador": {
+                                    "type": "string",
+                                    "description": "CNPJ do prestador"
+                                },
+                                "ref": {
+                                    "type": "string",
+                                    "description": "Referência da NFSe"
+                                },
+                                "numero_rps": {
+                                    "type": "string",
+                                    "description": "Número do RPS"
+                                },
+                                "serie_rps": {
+                                    "type": "string",
+                                    "description": "Série do RPS"
+                                },
+                                "tipo_rps": {
+                                    "type": "string",
+                                    "description": "Tipo do RPS"
+                                },
+                                "status": {
+                                    "type": "string",
+                                    "description": "Status da NFSe",
+                                    "enum": [
+                                        "cancelado"
+                                    ]
+                                },
+                                "numero": {
+                                    "type": "string",
+                                    "description": "Número da NFSe",
+                                    "example": "1"
+                                },
+                                "codigo_verificacao": {
+                                    "type": "string",
+                                    "description": "Código de verificação da NFSe"
+                                },
+                                "data_emissao": {
+                                    "type": "string",
+                                    "description": "Data da emissão da NFSe"
+                                },
+                                "url": {
+                                    "type": "string",
+                                    "description": "URL do espelho da NFSe"
+                                },
+                                "caminho_xml_nota_fiscal": {
+                                    "type": "string",
+                                    "description": "Caminho do XML da NFSe"
+                                },
+                                "caminho_xml_cancelamento": {
+                                    "type": "string",
+                                    "description": "Caminho do XML de cancelamento da NFSe"
+                                },
+                                "url_danfse": {
+                                    "type": "string",
+                                    "description": "Caminho do XML da NFSe"
+                                }
+                            },
+                            "x-readme-ref-name": "CanceladaResponse"
+                        },
+                        "ErroAutorizacaoResponse": {
+                            "title": "Erro autorização",
+                            "type": "object",
+                            "properties": {
+                                "cnpj_prestador": {
+                                    "type": "string",
+                                    "description": "CNPJ do prestador"
+                                },
+                                "ref": {
+                                    "type": "string",
+                                    "description": "Referência da NFSe"
+                                },
+                                "numero_rps": {
+                                    "type": "string",
+                                    "description": "Número do RPS"
+                                },
+                                "serie_rps": {
+                                    "type": "string",
+                                    "description": "Série do RPS"
+                                },
+                                "tipo_rps": {
+                                    "type": "string",
+                                    "description": "Tipo do RPS"
+                                },
+                                "status": {
+                                    "type": "string",
+                                    "description": "Status da NFSe"
+                                },
+                                "erros": {
+                                    "type": "array",
+                                    "description": "Lista de erros",
+                                    "items": {
+                                        "title": "Erro",
+                                        "type": "object",
+                                        "properties": {
+                                            "codigo": {
+                                                "type": "string",
+                                                "description": "Código do erro"
+                                            },
+                                            "mensagem": {
+                                                "type": "string",
+                                                "description": "Mensagem descritiva do erro"
+                                            },
+                                            "correcao": {
+                                                "type": "string",
+                                                "description": "Correção do erro"
+                                            }
+                                        },
+                                        "x-readme-ref-name": "ErrorResponse"
+                                    }
+                                }
+                            },
+                            "x-readme-ref-name": "ErroAutorizacaoResponse"
+                        },
+                        "CancelamentoResponse": {
+                            "title": "Cancelada",
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "description": "Status da NFSe",
+                                    "enum": [
+                                        "cancelado"
+                                    ]
+                                }
+                            },
+                            "x-readme-ref-name": "CancelamentoResponse"
+                        },
+                        "ErroCancelamentoResponse": {
+                            "title": "Erro cancelamento",
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "description": "Status da NFSe",
+                                    "enum": [
+                                        "erro_cancelamento"
+                                    ]
+                                },
+                                "erros": {
+                                    "type": "array",
+                                    "description": "Lista de erros",
+                                    "items": {
+                                        "title": "Erro",
+                                        "type": "object",
+                                        "properties": {
+                                            "codigo": {
+                                                "type": "string",
+                                                "description": "Código do erro"
+                                            },
+                                            "mensagem": {
+                                                "type": "string",
+                                                "description": "Mensagem descritiva do erro"
+                                            },
+                                            "correcao": {
+                                                "type": "string",
+                                                "description": "Correção do erro"
+                                            }
+                                        },
+                                        "x-readme-ref-name": "ErrorResponse"
+                                    }
+                                }
+                            },
+                            "x-readme-ref-name": "ErroCancelamentoResponse"
+                        },
+                        "ErrorResponse": {
+                            "title": "Erro",
+                            "type": "object",
+                            "properties": {
+                                "codigo": {
+                                    "type": "string",
+                                    "description": "Código do erro"
+                                },
+                                "mensagem": {
+                                    "type": "string",
+                                    "description": "Mensagem descritiva do erro"
+                                },
+                                "correcao": {
+                                    "type": "string",
+                                    "description": "Correção do erro"
+                                }
+                            },
+                            "x-readme-ref-name": "ErrorResponse"
+                        },
+                        "Hook": {
+                            "title": "Gatilho",
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "type": "string",
+                                    "format": "uri"
+                                },
+                                "authorization": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "authorization_header": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "event": {
+                                    "type": "string",
+                                    "description": "Evento monitorado",
+                                    "enum": [
+                                        "nfse"
+                                    ]
+                                },
+                                "cnpj": {
+                                    "type": "string",
+                                    "description": "CNPJ vinculado ao gatilho"
+                                },
+                                "cpf": {
+                                    "type": "string",
+                                    "description": "CPF vinculado ao gatilho"
+                                }
+                            },
+                            "example": {
+                                "id": "Vj5rmkBq",
+                                "url": "http://minha.url/nfe",
+                                "authorization": null,
+                                "authorization_header": null,
+                                "event": "nfse",
+                                "cnpj": "12345678000123"
+                            },
+                            "x-readme-ref-name": "Hook"
+                        }
+                    },
+                    "examples": {
+                        "ProcessandoAutorizacaoResponse": {
+                            "value": {
+                                "cnpj_prestador": "12345678000123",
+                                "ref": "123456",
+                                "numero_rps": "1",
+                                "serie_rps": "1",
+                                "tipo_rps": "1",
+                                "status": "processando_autorizacao"
+                            }
+                        },
+                        "AutorizadaResponse": {
+                            "value": {
+                                "cnpj_prestador": "12345678000123",
+                                "ref": "123456",
+                                "numero_rps": "1",
+                                "serie_rps": "1",
+                                "tipo_rps": "1",
+                                "status": "autorizado",
+                                "numero": "1",
+                                "codigo_verificacao": "ABC123",
+                                "data_emissao": "2025-01-01T10:00:00-03:00",
+                                "url": "https://api.focusnfe.com.br/notas_fiscais_servico/chave_nfse.html",
+                                "caminho_xml_nota_fiscal": "/arquivos/12345678901_123/202501/XMLsNFSe/chave_nfse.xml",
+                                "url_danfse": "https://focusnfe.s3.sa-east-1.amazonaws.com/arquivos/12345678901_123/202501/DANFSEs/chave_nfse.pdf"
+                            }
+                        },
+                        "CanceladaResponse": {
+                            "value": {
+                                "cnpj_prestador": "12345678000123",
+                                "ref": "123456",
+                                "numero_rps": "1",
+                                "serie_rps": "1",
+                                "tipo_rps": "1",
+                                "status": "autorizado",
+                                "numero": "1",
+                                "codigo_verificacao": "ABC123",
+                                "data_emissao": "2025-01-01T10:00:00-03:00",
+                                "url": "https://api.focusnfe.com.br/notas_fiscais_servico/chave_nfse.html",
+                                "caminho_xml_nota_fiscal": "/arquivos/12345678901_123/202501/XMLsNFSe/chave_nfse.xml",
+                                "caminho_xml_cancelamento": "/arquivos/12345678901_123/202501/XMLsNFSe/chave_nfse.xml",
+                                "url_danfse": "https://focusnfe.s3.sa-east-1.amazonaws.com/arquivos/12345678901_123/202501/DANFSEs/chave_nfse.pdf"
+                            }
+                        },
+                        "ErroAutorizacaoResponse": {
+                            "value": {
+                                "cnpj_prestador": "12345678000123",
+                                "ref": "123456",
+                                "numero_rps": "1",
+                                "serie_rps": "1",
+                                "tipo_rps": "1",
+                                "status": "erro_autorizacao",
+                                "erros": [
+                                    {
+                                        "codigo": "L99",
+                                        "mensagem": "Regime Especial de Tributação ausente/inválido",
+                                        "correcao": "Corrija o Regime Especial de Tributação"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "stats": {
+                "additional_properties": false,
+                "callbacks": false,
+                "circular_references": false,
+                "common_parameters": false,
+                "discriminators": false,
+                "links": false,
+                "polymorphism": false,
+                "references": true,
+                "server_variables": false,
+                "style": false,
+                "webhooks": false,
+                "xml_requests": false,
+                "xml_responses": false,
+                "xml_schemas": false
+            },
+            "source": "form",
+            "uri": "/branches/2.0/apis/nfse.yaml",
+            "validation": {
+                "status": "valid",
+                "reason": null
+            }
+        },
+        "connections": {
+            "recipes": []
+        },
+        "href": {
+            "dash": "https://dash.readme.com/project/focus-nfe/v2.0/refs/enviarnfse",
+            "hub": "https://doc.focusnfe.com.br/reference/enviarnfse",
+            "github_url": null
+        },
+        "links": {
+            "project": "/projects/me"
+        },
+        "project": {
+            "name": "FocusNFe",
+            "subdomain": "focus-nfe",
+            "uri": "/projects/me"
+        },
+        "renderable": {
+            "status": true
+        },
+        "updated_at": "2025-12-24T17:17:35.249Z",
+        "uri": "/branches/2.0/reference/enviarnfse"
+    }
+}

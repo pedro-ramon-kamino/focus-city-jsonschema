@@ -1,0 +1,12 @@
+{
+  "obrigatorios": {},
+  "ignorados": {},
+  "opcionais": {
+    "$.servico.codigo_nbs": "Código de Nomenclatura Brasileira de Serviços",
+    "$.servico.data_fim_evento": "Data do fim do evento. Formato: AAAAMMDD",
+    "$.servico.data_inicio_evento": "Data do início do evento. Formato: AAAAMMDD",
+    "$.servico.nome_evento": "Nome do evento Artístico, Cultural, Esportivo, entre outros. Obrigatório para atividades com código de serviço iniciados em 12 (serviços relativos à atividades de eventos, diversões, lazer, entretenimento e congeneres).",
+    "$.servico.vinculo_servico_prestado": "Campo necessário apenas em caso de tomador estrageiro. Possíveis valores:0 - Sem vínculo com o Tomador / Prestador1 - Controlada2 - Controladora3 - Coligada4 - Matriz5 - Filial ou sucursal6 - Outro vínculo",
+    "$.tomador.nif": "Número de Identificação Fiscal do tomador estrangeiro"
+  }
+}

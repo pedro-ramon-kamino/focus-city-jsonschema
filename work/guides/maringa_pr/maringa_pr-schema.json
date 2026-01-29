@@ -1,0 +1,6 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Emissão de NFS-e em Maringá (PR) pela API da Focus NFe",
+  "type": "object",
+  "properties": {}
+}

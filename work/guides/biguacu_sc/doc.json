@@ -1,0 +1,469 @@
+{
+  "servico": {
+    "type": "object",
+    "description": "",
+    "mapeadoNFSe": true,
+    "required": false,
+    "proibido": false,
+    "situacao_tributaria_pis_cofins": {
+      "type": "string",
+      "description": "Código da Situação Tributária do PIS e COFINS",
+      "required": false,
+      "proibido": false
+    },
+    "tipo_retencao_pis_cofins": {
+      "type": "string",
+      "description": "Deverá indicar se o serviço terá retenção de PIS e COFINSValores possíveis:1 - PIS/COFINS Retido2 - PIS/COFINS Não Retido3 - PIS Retido/COFINS Não Retido4 - PIS Não Retido/COFINS retido",
+      "required": false,
+      "proibido": false
+    },
+    "base_calculo_pis_cofins": {
+      "type": "string",
+      "description": "Valor da Base de Cálculo de PIS e COFINS",
+      "required": false,
+      "proibido": false
+    },
+    "aliquota_pis": {
+      "type": "string",
+      "description": "Alíquota do PIS",
+      "required": false,
+      "proibido": false
+    },
+    "aliquota_cofins": {
+      "type": "string",
+      "description": "Alíquota do COFINS",
+      "required": false,
+      "proibido": false
+    },
+    "codigo_nbs": {
+      "type": "string",
+      "description": "Código da lista de Nomenclatura Brasileira de Serviços (NBS)",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "perc_reducao_aliquota_compra_governamental": {
+      "type": "string",
+      "description": "Percentual de redução de alíquota em compra governamental",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_cbs_base_calculo": {
+      "type": "string",
+      "description": "Valor da base de cálculo IBS/CBS",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "ibs_uf_aliquota": {
+      "type": "string",
+      "description": "Alíquota da UF para IBS da localidade de incidência parametrizada no sistema",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "ibs_uf_percentual_reducao_aliquota": {
+      "type": "string",
+      "description": "Percentual de redução de alíquota estadual",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_uf_aliquota_efetiva": {
+      "type": "string",
+      "description": "Alíquota efetiva IBS UF",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_mun_aliquota": {
+      "type": "string",
+      "description": "Alíquota do município para IBS da localidade de incidência parametrizada no sistema",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "ibs_mun_percentual_reducao_aliquota": {
+      "type": "string",
+      "description": "Percentual de redução de alíquota municipal",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_mun_aliquota_efetiva": {
+      "type": "string",
+      "description": "Alíquota efetiva municipal",
+      "required": false,
+      "proibido": false
+    },
+    "cbs_aliquota": {
+      "type": "string",
+      "description": "Alíquota da CBS",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "cbs_percentual_reducao_aliquota": {
+      "type": "string",
+      "description": "Percentual de redução de alíquota CBS",
+      "required": false,
+      "proibido": false
+    },
+    "cbs_aliquota_efetiva": {
+      "type": "string",
+      "description": "Alíquota efetiva CBS",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_cbs_valor_total": {
+      "type": "string",
+      "description": "Valor Total da NF considerando os impostos por fora: IBS e CBS",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_uf_aliquota_efetiva_regular": {
+      "type": "string",
+      "description": "Alíquota efetiva de tributação regular do IBS estadual",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_uf_valor_regular": {
+      "type": "string",
+      "description": "Valor da tributação regular do IBS estadual",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_mun_aliquota_efetiva_regular": {
+      "type": "string",
+      "description": "Alíquota efetiva de tributação regular do IBS municipal",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_mun_valor_regular": {
+      "type": "string",
+      "description": "Valor da tributação regular do IBS municipal",
+      "required": false,
+      "proibido": false
+    },
+    "cbs_aliquota_efetiva_regular": {
+      "type": "string",
+      "description": "Alíquota efetiva de tributação regular da CBS",
+      "required": false,
+      "proibido": false
+    },
+    "cbs_valor_tributo_regular": {
+      "type": "string",
+      "description": "Valor da tributação regular da CBS",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_uf_aliquota_governamental": {
+      "type": "string",
+      "description": "Alíquota do IBS de competência do Estado",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_uf_valor_governamental": {
+      "type": "string",
+      "description": "Valor do Tributo do IBS da UF calculado",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_mun_aliquota_governamental": {
+      "type": "string",
+      "description": "Alíquota do IBS de competência do Município",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_mun_valor_governamental": {
+      "type": "string",
+      "description": "Valor do Tributo do IBS do Município calculado",
+      "required": false,
+      "proibido": false
+    },
+    "cbs_aliquota_governamental": {
+      "type": "string",
+      "description": "Alíq. da CBS",
+      "required": false,
+      "proibido": false
+    },
+    "cbs_valor_governamental": {
+      "type": "string",
+      "description": "Valor do Tributo da CBS calculado",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_valor_total": {
+      "type": "string",
+      "description": "Valor total do IBS",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_percentual_credito_presumido": {
+      "type": "string",
+      "description": "Alíquota do crédito presumido para o IBS",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_valor_credito_presumido": {
+      "type": "string",
+      "description": "Valor do Crédito Presumido IBS",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_uf_valor_total_diferimento": {
+      "type": "string",
+      "description": "Total do Diferimento do IBS estadual",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_uf_valor": {
+      "type": "string",
+      "description": "Total valor do IBS estadual",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "ibs_mun_valor_total_diferimento": {
+      "type": "string",
+      "description": "Total do Diferimento do IBS municipal",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_mun_valor": {
+      "type": "string",
+      "description": "Total valor do IBS municipal",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "cbs_credito_percentual": {
+      "type": "string",
+      "description": "Alíquota do crédito presumido para a CBS",
+      "required": false,
+      "proibido": false
+    },
+    "cbs_valor_credito_presumido": {
+      "type": "string",
+      "description": "Valor do Crédito Presumido da CBS",
+      "required": false,
+      "proibido": false
+    },
+    "cbs_valor_total_diferimento": {
+      "type": "string",
+      "description": "Total do Diferimento CBS",
+      "required": false,
+      "proibido": false
+    },
+    "cbs_valor_total": {
+      "type": "string",
+      "description": "Total valor da CBS da União",
+      "required": false,
+      "proibido": false
+    },
+    "codigo_indicador_operacao": {
+      "type": "string",
+      "description": "Código indicador da operação de fornecimento",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "ibs_cbs_situacao_tributaria": {
+      "type": "string",
+      "description": "Código de Situação Tributária do IBS e da CBS",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "ibs_cbs_classificacao_tributaria": {
+      "type": "string",
+      "description": "Código de Classificação Tributária do IBS e da CBS",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "ibs_cbs_credito_codigo_classificacao": {
+      "type": "string",
+      "description": "Código e classificação do crédito presumido do IBS e CBS",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_cbs_situacao_tributaria_regular": {
+      "type": "string",
+      "description": "Cód. Situação Trib. Regular IBS/CBS",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_cbs_classificacao_tributaria_regular": {
+      "type": "string",
+      "description": "Class. Trib. Regular IBS/CBS",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_uf_percentual_diferimento": {
+      "type": "string",
+      "description": "Percentual de diferimento para o IBS estadual",
+      "required": false,
+      "proibido": false
+    },
+    "ibs_mun_percentual_diferimento": {
+      "type": "string",
+      "description": "Percentual de diferimento para o IBS municipal",
+      "required": false,
+      "proibido": false
+    },
+    "cbs_percentual_diferimento": {
+      "type": "string",
+      "description": "Percentual de diferimento para a CBS",
+      "required": false,
+      "proibido": false
+    }
+  },
+  "obra": {
+    "type": "object",
+    "description": "Obra",
+    "required": false,
+    "proibido": false,
+    "codigo": {
+      "type": "string",
+      "description": "Código Obra",
+      "required": false,
+      "proibido": false
+    },
+    "art": {
+      "type": "string",
+      "description": "ART Obra",
+      "required": false,
+      "proibido": false
+    }
+  },
+  "evento": {
+    "type": "object",
+    "description": "Evento",
+    "required": false,
+    "proibido": false,
+    "nome": {
+      "type": "string",
+      "description": "Identificação/Nome Evento",
+      "required": false,
+      "proibido": false
+    },
+    "descricao": {
+      "type": "string",
+      "description": "Descrição do evento",
+      "required": false,
+      "proibido": false
+    }
+  },
+  "finalidade_emissao": {
+    "type": "string",
+    "description": "Indicador da finalidade da emissão de NFS-eValores possíveis:0 - NFS-e regular",
+    "required": false,
+    "proibido": false
+  },
+  "consumidor_final": {
+    "type": "string",
+    "description": "Indica operação de uso ou consumo pessoalValores possíveis:0 - Não1 - Sim",
+    "required": false,
+    "proibido": false
+  },
+  "tipo_operacao_governamental": {
+    "type": "string",
+    "description": "Tipo de Operação com Entes Governanementais ou outros serviços sobre bens imóveisValores possíveis:1 - Fornecimento com pagamento posterior2 - Recebimento do pagamento com fornecimento já realizado3 - Fornecimento com pagamento já realizado4 - Recebimento do pagamento com fornecimento posterior5 - Fornecimento e recebimento do pagamento concomitantes",
+    "required": false,
+    "proibido": false
+  },
+  "chaves_nfse_referenciadas": {
+    "type": "string",
+    "description": "Lista de objetos do tipo chave_nfse",
+    "required": false,
+    "proibido": false
+  },
+  "chaves_nfse_referenciadas[]": {
+    "type": "object",
+    "description": "",
+    "required": false,
+    "proibido": false,
+    "chave_nfse": {
+      "type": "string",
+      "description": "Chave da NFS-e referenciada",
+      "required": false,
+      "proibido": false
+    }
+  },
+  "tipo_ente_governamental": {
+    "type": "string",
+    "description": "Tipo de ente governamental para administração pública direta e suas autarquias e fundaçõesValores possíveis:1 - União2 - Estado3 - Distrito Federal4 - Município",
+    "required": false,
+    "proibido": false
+  },
+  "imovel": {
+    "type": "object",
+    "description": "Imóvel",
+    "required": false,
+    "proibido": false,
+    "inscricao_imobiliaria": {
+      "type": "string",
+      "description": "Inscrição Imobiliária",
+      "required": false,
+      "proibido": false
+    },
+    "codigo_cib": {
+      "type": "string",
+      "description": "Código Imóvel",
+      "required": false,
+      "proibido": false
+    },
+    "endereco": {
+      "type": "object",
+      "description": "Endereço Imóvel",
+      "required": false,
+      "proibido": false,
+      "cep": {
+        "type": "string",
+        "description": "CEP",
+        "required": false,
+        "proibido": false
+      },
+      "cep_ext": {
+        "type": "string",
+        "description": "Código postal",
+        "required": false,
+        "proibido": false
+      },
+      "nome_cidade_ext": {
+        "type": "string",
+        "description": "Cidade",
+        "required": false,
+        "proibido": false
+      },
+      "regiao_ext": {
+        "type": "string",
+        "description": "Estado/Província/Região",
+        "required": false,
+        "proibido": false
+      },
+      "logradouro": {
+        "type": "string",
+        "description": "Logradouro",
+        "required": false,
+        "proibido": false
+      },
+      "numero": {
+        "type": "string",
+        "description": "Número",
+        "required": false,
+        "proibido": false
+      },
+      "complemento": {
+        "type": "string",
+        "description": "Complemento",
+        "required": false,
+        "proibido": false
+      },
+      "bairro": {
+        "type": "string",
+        "description": "Bairro",
+        "required": false,
+        "proibido": false
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "servico": {
+    "codigo_nbs": "string",
+    "ibs_cbs_classificacao_tributaria": "string",
+    "codigo_indicador_operacao": "string"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "data_emissao": "2026-01-11T18:24:40-0300",
+  "natureza_operacao": 1,
+  "optante_simples_nacional": false,
+  "prestador": {
+    "cnpj": "00000000000000",
+    "inscricao_municipal": "123456",
+    "codigo_municipio": 2609600
+  },
+  "tomador": {
+    "cnpj": "11.111.111/0001-11",
+    "razao_social": "Fictício Tomador",
+    "endereco": {
+      "logradouro": "Rua Fictícia",
+      "numero": "2",
+      "complemento": "ap02",
+      "bairro": "Centro",
+      "codigo_municipio": 2609600,
+      "uf": "PE",
+      "cep": "53130-555"
+    },
+    "telefone": "11 1111-1111",
+    "email": "test@example.com"
+  },
+  "servico": {
+    "discriminacao": "Nota emitida em caráter de TESTE de integração com Webservice \n Quebra de linha",
+    "valor_servicos": 1.0,
+    "aliquota": 2.0,
+    "item_lista_servico": "17.03",
+    "codigo_cnae": "8211300",
+    "codigo_nbs": "114011200",
+    "iss_retido": false
+  }
+}

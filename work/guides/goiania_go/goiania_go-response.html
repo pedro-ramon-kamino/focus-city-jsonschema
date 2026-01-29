@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        
+        <title>Emissão de NFS-e em Goiânia (GO) pela API da Focus NFe</title>
+        <meta name="description" content="Veja como emitir NFS-e em Goiânia (GO) com a API REST da Focus NFe. Este guia técnico traz os campos obrigatórios, exemplos de JSON e pontos de atenção.">
+        
+
+        
+
+        <link rel="canonical" href="https://focusnfe.com.br/guides/nfse/municipios-integrados/goiania-go/">
+
+        <!-- Favicon padrão -->
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/favicon/android-chrome-512x512.png">
+
+        <!-- Ícone para Apple (iPhones e iPads) -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+
+        <!-- Favicon clássico para navegadores antigos -->
+        <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+
+        <!-- Metatags para redes sociais -->
+        <meta property="og:image" content="https://focusnfe.com.br/assets/img/default-share-image.png" />
+        <meta name="twitter:image" content="https://focusnfe.com.br/assets/img/default-share-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:type" content="website" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+        <link rel="stylesheet" href="/assets/css/styles.css" />
+        
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5ZH7WMQ');</script>
+        <!-- End Google Tag Manager -->
+
+    </head>
+
+    <body class="body-guides bg-body" data-bs-theme="light">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZH7WMQ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        <header>
+  <nav class="navbar navbar-expand-lg pb-md-4 pt-3 bg-body border-bottom">
+    <div class="container justify-content-center justify-content-md-between">
+      <a class="navbar-brand" href="/guides/">
+        <svg width="250" version="1.1" viewBox="0 0 1889.8 425.95" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="a" x2="1" gradientTransform="matrix(239.59,-239.59,-239.59,-239.59,39.932,279.53)" gradientUnits="userSpaceOnUse"><stop stop-color="#f2521b" offset="0"/><stop stop-color="#f2521b" offset=".15"/><stop stop-color="#f57c1d" offset=".85"/><stop stop-color="#f57c1d" offset="1"/></linearGradient><clipPath id="b"><path d="m239.59 239.59v-137.79c0-12.118-9.824-21.943-21.942-21.943h-137.79v-79.864h146.1c8.729 0 17.101 3.468 23.274 9.6398l60.584 60.584c6.172 6.1719 9.64 14.545 9.64 23.274v146.1zm-119.8-119.8h79.865v79.865h-79.865zm-39.932 97.855v-137.79h-79.865v146.1c0 8.73 3.468 17.101 9.6402 23.274l60.584 60.584c6.1727 6.172 14.544 9.64 23.273 9.64h146.1v-79.864h-137.79c-12.118 0-21.942-9.824-21.942-21.943z"/></clipPath></defs><path transform="matrix(1.3333,0,0,-1.3333,0,425.95)" d="m239.59 239.59v-137.79c0-12.118-9.824-21.943-21.942-21.943h-137.79v-79.864h146.1c8.729 0 17.101 3.468 23.274 9.6398l60.584 60.584c6.172 6.1719 9.64 14.545 9.64 23.274v146.1zm-119.8-119.8h79.865v79.865h-79.865zm-39.932 97.855v-137.79h-79.865v146.1c0 8.73 3.468 17.101 9.6402 23.274l60.584 60.584c6.1727 6.172 14.544 9.64 23.273 9.64h146.1v-79.864h-137.79c-12.118 0-21.942-9.824-21.942-21.943" clip-path="url(#b)" fill="url(#a)"/><path d="m1317.4 181.22c21.006 0 34.406 10.392 34.406 17.545h36.052c0-29.951-30.946-53.412-70.458-53.412-39.514 0-70.464 23.461-70.464 53.412 0 44.508 46.035 50.421 68.154 53.261 36.715 4.7186 36.715 11.02 36.715 17.693 0 7.1518-13.4 17.545-34.406 17.545-21.007 0-34.408-10.393-34.408-17.545h-36.055c0 29.951 30.95 53.412 70.464 53.412 39.512 0 70.458-23.461 70.458-53.412 0-44.506-46.026-50.421-68.148-53.267-36.719-4.7132-36.719-11.016-36.719-17.688 0-7.1532 13.401-17.545 34.408-17.545zm254.85 118.48-119.77-151.45h-13.386v171.21h12.706v-151.44l119.78 151.44h13.373v-171.21h-12.706zm50.319 19.768h12.706v-77.187h80.211v-12.173h-80.211v-69.674h102.93v-12.18h-115.64zm253.87-89.596c-6.7332-28.401-32.066-49.532-62.358-49.532-30.292 0-55.612 21.137-62.372 49.532zm13.386 12.293h-139.81c-0.04 0.92531-0.1333 1.8346-0.1333 2.7693 0 35.674 28.746 64.593 64.198 64.593 21.573 0 40.612-10.735 52.252-27.145l10.88 4.8986c-13.613 20.491-36.799 33.996-63.132 33.996-41.906 0-75.878-34.18-75.878-76.343 0-42.163 33.972-76.342 75.878-76.342 40.986 0 74.292 32.705 75.745 73.573zm-1314.7-93.911h105.49v-41.532h-148.1v212.55h42.623v-69.886h81.45v-41.532h-81.45zm246.07 85.986c0-28.555-23.149-51.704-51.704-51.704-28.555 0-51.704 23.149-51.704 51.704 0 28.555 23.149 51.704 51.704 51.704 28.555 0 51.704-23.149 51.704-51.704zm37.186 0c0 49.092-39.798 88.89-88.89 88.89-49.092 0-88.89-39.798-88.89-88.89 0-49.092 39.798-88.888 88.89-88.888 49.092 0 88.89 39.796 88.89 88.888zm113.13-51.704c18.118 0 34.032 9.3358 43.266 23.441l29.457-22.753c-16.081-22.882-42.631-37.872-72.722-37.872-49.092 0-88.89 39.796-88.89 88.888 0 49.092 39.798 88.89 88.89 88.89 30.091 0 56.641-14.992 72.722-37.872l-29.457-22.754c-9.2331 14.105-25.147 23.441-43.266 23.441-28.557 0-51.703-23.149-51.703-51.704 0-28.555 23.146-51.704 51.703-51.704zm212.46-33.859h36.25v98.919c0 41.716-33.819 75.534-75.534 75.534-41.716 0-75.534-33.818-75.534-75.534v-98.919h36.248v98.542c0 21.695 17.589 39.284 39.286 39.284 21.695 0 39.284-17.589 39.284-39.284v-98.542" fill="currentColor" stroke-width="1.3333"/></svg>
+      </a>
+      <div class="d-flex flex-column flex-sm-row mt-4 mt-sm-0">
+        <ul class="navbar-nav me-auto flex-row">
+          <li class="nav-item mx-2">
+            <a href="https://focusnfe.com.br/" class="link-body-emphasis text-decoration-none h6">Site Principal</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="https://focusnfe.com.br/doc/" target="_blank" class="link-body-emphasis text-decoration-none h6">Documentação da API</a>
+          </li>
+        </ul>
+        <div class="form-check form-switch ms-md-3 align-self-center mt-3 mt-md-0">
+          <input class="form-check-input" type="checkbox" role="switch" id="themeSwitch" style="background-color: var(--orange1);border-color: var(--orange1);">
+          <label class="form-check-label" for="themeSwitch">
+            <i id="themeIcon" class="bi"></i>
+          </label>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 py-4">
+      <a class="btn btn-link text-orange2 px-0 text-decoration-none fw-semibold" href="/guides/">
+        <i class="bi bi-chevron-compact-left"></i> Voltar
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-md-12 col-lg-9 mb-4 order-2 order-lg-1">
+      <div class="guides-text__content text-body">
+        <h1>Guia técnico de emissão de NFS-e em Goiânia/GO pela API da Focus NFe</h1>
+<p>Saiba como emitir NFS-e em Goiânia (GO) pela API da Focus NFe. Este guia é voltado para clientes e para quem está testando a nossa API. Aqui, você encontra os campos obrigatórios, exemplos e observações específicas para desenvolvedores.</p>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-4 text-body bg-body-secondary border-0 shadow-sm">
+      <div class="card-body">
+        <h2 class="section-title fs-4 mb-4">
+          <i class="bi bi-newspaper "></i> Informações Gerais
+        </h2>
+        
+        
+
+        <div class="row g-2">
+          <!-- Provedor -->
+          <div class="col-md-6">
+            <div class="bg-body rounded-3 p-3 h-100">
+              <div class="d-flex align-items-center mb-1">
+                <i class="bi bi-building text-orange1 me-2 fs-5"></i>
+                <span class="text-muted small text-uppercase fw-semibold">Provedor</span>
+              </div>
+              <div class="fs-6 fw-medium">IssNet</div>
+            </div>
+          </div>
+
+          <!-- Padrão -->
+          <div class="col-md-6">
+            <div class="bg-body rounded-3 p-3 h-100">
+              <div class="d-flex align-items-center mb-1">
+                <i class="bi bi-file-earmark-code text-orange1 me-2 fs-5"></i>
+                <span class="text-muted small text-uppercase fw-semibold">Padrão</span>
+              </div>
+              <div class="fs-6 fw-medium">ABRASF 2.0 (com poucas variações)</div>
+            </div>
+          </div>
+
+          <!-- Autenticação -->
+          <div class="col-12">
+            <div class="bg-body rounded-3 p-3">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-shield-lock text-orange1 me-2 fs-5"></i>
+                <span class="text-muted small text-uppercase fw-semibold">Autenticação</span>
+              </div>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="badge badge-obrigatoriedade badge-orange-municipio">Certificado digital</span>
+              </div>
+              
+            </div>
+          </div>
+
+          <!-- Cancelamento -->
+          <div class="col-12">
+            <div class="bg-body rounded-3 p-3">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-x-circle text-orange1 me-2 fs-5"></i>
+                <span class="text-muted small text-uppercase fw-semibold">Cancelamento</span>
+              </div>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="badge badge-obrigatoriedade badge-orange-municipio">Não permite por webservices</span> <span class="badge badge-obrigatoriedade badge-orange-municipio">Apenas via portal / requisição na prefeitura</span>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-4 text-body bg-body-secondary border-0 shadow-sm">
+      <div class="card-body">
+        <h2 class="section-title fs-4 mb-3">
+          <i class="bi bi-globe"></i> Ambientes Disponíveis
+        </h2>
+        <div class="d-flex align-items-center py-2 px-3 small text-muted fw-semibold">
+          <div style="width: 30%;">Ambiente</div>
+          <div class="text-center" style="width: 30%;">Disponível</div>
+          <div class="text-center" style="width: 30%;">Portal de Acesso</div>
+        </div>
+        <div class="d-flex flex-column gap-2">
+        <div class="d-flex align-items-center py-2 px-3 bg-body rounded-2">
+  <div style="width: 30%;">Produção</div>
+  <div class="d-flex justify-content-center align-items-center" style="width: 30%;"><span class="badge badge-obrigatoriedade text-bg-success">Sim</span></div>
+  <div class="d-flex justify-content-center align-items-center" style="width: 30%;"><a href="http://www.issnetonline.com.br/goiania/" target="_blank" class="text-decoration-none small">Acessar <i class="bi bi-arrow-right"></i></a></div>
+</div>
+<div class="d-flex align-items-center py-2 px-3 bg-body rounded-2">
+  <div style="width: 30%;">Homologação</div>
+  <div class="d-flex justify-content-center align-items-center" style="width: 30%;"><span class="badge badge-obrigatoriedade text-bg-success">Sim</span></div>
+  <div class="d-flex justify-content-center align-items-center" style="width: 30%;"><a href="https://www.issnetonline.com.br/homologaabrasf/" target="_blank" class="text-decoration-none small">Acessar <i class="bi bi-arrow-right"></i></a></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row"> 
+  <div class="col-12">
+    <div class="card mb-4 text-body bg-body-secondary border-0 shadow-sm">
+      <div class="card-body">
+        <h2 class="section-title fs-4 mb-3"><i class="bi bi-tools"></i> Campos Importantes</h2>
+        <div class="table-responsive rounded-3 overflow-hidden campos-municipio-lista">
+          <table class="table table-striped bg-body table-bg-muted table-divider-thin mb-0 align-middle">
+            <thead class="bg-body-tertiary">
+              <tr><th class="py-2" style="min-width: 20%; width: 20%;">Campo</th><th class="py-2 text-center" style="min-width: 15%; max-width: 15%; width: 15%;">Obrigatoriedade</th><th class="py-2">Observação</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="py-2 fw-medium">CPF/CNPJ do Tomador</td><td class="text-center py-2"><span class="badge badge-obrigatoriedade bg-secondary">Opcional</span></td><td class="py-2"></td></tr><tr><td class="py-2 fw-medium">Endereço do Tomador</td><td class="text-center py-2"><span class="badge badge-obrigatoriedade bg-secondary">Opcional</span></td><td class="py-2"></td></tr><tr><td class="py-2 fw-medium">Item Lista Serviço</td><td class="text-center py-2"><span class="badge badge-obrigatoriedade badge-orange-municipio">Obrigatório</span></td><td class="py-2">Utiliza o padrão da <a href="http://sped.rfb.gov.br/pagina/show/1601" target="_blank" rel="noopener noreferrer">Lei Complementar 116/2003</a></td></tr><tr><td class="py-2 fw-medium">Código CNAE</td><td class="text-center py-2"><span class="badge badge-obrigatoriedade badge-orange-municipio">Obrigatório</span></td><td class="py-2"></td></tr><tr><td class="py-2 fw-medium">Código Tributário Município</td><td class="text-center py-2"><span class="badge badge-obrigatoriedade badge-orange-municipio">Obrigatório</span></td><td class="py-2">Utiliza o mesmo valor do Item Lista Serviço</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-4 text-body bg-body-secondary">
+      <div class="card-body">
+        <h2 class="section-title fs-4"><i class="bi bi-newspaper"></i> Outras Informações</h2>
+        <ul class="list-unstyled outras-info-list"><li class="list-item list-item--level-0">
+  <span class="list-item__text">Necessário solicitar ao provedor liberação para emissão de notas via webservices em produção (suporte@notaeletronica.com.br).</span>
+  
+</li>
+<li class="list-item list-item--level-0">
+  <span class="list-item__text">Necessário solicitar liberação de lote RPS no portal da prefeitura &gt; Solicitação de Documentos Fiscais.</span>
+  
+</li>
+</ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .copy-btn {
+    border: none;
+    color: white;
+    padding: 5px;   /* reduzido */
+    font-size: 14px;        /* menor fonte */
+    border-radius: 0.2rem;
+  }          
+  .copy-btn:hover {
+    background-color: var(--cinza);
+    color: white;
+  }
+  .nav-tabs {
+    border-color: transparent;
+  }
+  .nav-tabs .nav-item:first-child .nav-link {
+    margin-left: 0.75rem;
+  }
+  .nav-tabs .nav-item .nav-link:hover {
+    border-color: #6c757d;
+    border-bottom-color: transparent;
+    color: var(--cinza-claro);
+  }
+  .json-box {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    word-wrap: break-word;
+    position: relative;
+  }
+  pre {
+    margin: 0;
+    font-family: Consolas, Monaco, 'Courier New', monospace;
+  }
+</style>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-4 text-body bg-body-secondary">
+      <div class="card-body">
+        <h2 class="section-title fs-4 mb-3"><i class="bi bi-code-square"></i> JSONs de Exemplo</h2>
+        <ul class="nav nav-tabs" id="tab-8270-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+  <button class="nav-link active text-body" id="tab-8270-tab-0" data-bs-toggle="tab" data-bs-target="#tab-8270-pane-0" type="button" role="tab">
+    Padrão
+  </button>
+</li>
+
+        </ul>
+        <div class="tab-content" id="tab-8270-content">
+          <div class="tab-pane fade show active" id="tab-8270-pane-0" role="tabpanel">
+  <div class="json-box mt-0 position-relative bg-body text-body">
+    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode(this)" style="position: absolute; top: 0.5rem; right: 0.5rem;"><i class="bi bi-copy"></i> Copiar</button>
+    <pre><code>{
+  "data_emissao": "2025-10-01T07:34:56-0300",
+  "natureza_operacao": 1,
+  "optante_simples_nacional": true,
+  "regime_especial_tributacao": 6,
+  "prestador": {
+    "cnpj": "**************",
+    "inscricao_municipal": "****",
+    "codigo_municipio": 5208707
+  },
+  "tomador": {
+    "cnpj": "85.904.290/0001-50",
+    "razao_social": "Fictício Tomador",
+    "endereco": {
+      "logradouro": "Rua Fictícia",
+      "numero": "2",
+      "complemento": "ap02",
+      "bairro": "Centro",
+      "codigo_municipio": 5208707,
+      "uf": "GO",
+      "cep": "82900-010"
+    },
+    "telefone": "41 3256-8060",
+    "email": "test@example.com"
+  },
+  "servico": {
+    "discriminacao": "Nota emitida em caráter de TESTE",
+    "valor_servicos": 1.0,
+    "aliquota": 2.0,
+    "item_lista_servico": "1.01",
+    "codigo_tributario_municipio": "1.01",
+    "codigo_cnae": "6319400",
+    "iss_retido": false
+  }
+}</code></pre>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function copyCode(button) {
+    const pre = button.closest(".tab-pane").querySelector("pre code");
+    const text = pre.innerText;
+    navigator.clipboard.writeText(text)
+  }
+</script>
+
+
+      </div>
+    </div>
+    <div class="col mb-4 mb-lg-0 order-1 order-lg-2">
+      <nav id="guides-nav-text" class="bg-body-secondary body">
+        <div class="row">
+          <div class="col-12">
+            <div class="row align-items-center mb-4">
+              <div class="col-auto">
+                <i class="bi bi-bookmark display-6 text-body"></i>
+              </div>
+              <div class="col">
+                <h2 class="fs-4 fw-700 text-body">Sumário</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="guides-nav-itens orange-scroll-default">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="guides-sidebar__list"></ul>
+                </div>
+            </div>
+        </div>        
+      </nav>
+    </div>
+  </div>
+</div>
+
+<script>
+// Objeto para rastrear a contagem de IDs já utilizados em todos os cabeçalhos.
+const usedIds = {};
+
+// Função para criar o sumário dinamicamente
+function generateTOC() {
+    const toc = document.querySelector('#guides-nav-text ul');
+    // Seleciona h2 e h3. Se você usa h4 (como sugere a sua lógica de clique), inclua-o aqui também.
+    const headers = document.querySelectorAll('.guides-text__content h2, .guides-text__content h3'); 
+
+    headers.forEach(header => {
+        const level = header.tagName.toLowerCase();
+        const text = header.innerText;
+
+        // 1. Gera o ID base (slug)
+        let baseId = text.toLowerCase()
+            .replace(/[^\w\s-]/g, '') // Remove pontuações/caracteres especiais
+            .replace(/\s+/g, '-')     // Substitui espaços por hífen
+            .replace(/-+$/, '');      // Remove hífen do final (se houver)
+
+        // 2. Lógica para garantir Unicidade do ID
+        let id = baseId;
+        if (usedIds[baseId] > 0) {
+            // Se já foi usado, incrementa o contador e cria um ID único com sufixo numérico.
+            usedIds[baseId]++;
+            // O sufixo começa em -1 para o primeiro duplicado.
+            id = `${baseId}-${usedIds[baseId] - 1}`; 
+        } else {
+            // Primeiro uso do ID base (ou se o ID não for válido, será 1).
+            usedIds[baseId] = 1;
+        }
+
+        // 3. Aplica o ID único ao cabeçalho (corpo do guia)
+        header.id = id;
+
+        // 4. Criação do item do Sumário (TOC)
+        const li = document.createElement('li');
+        li.classList.add(level);
+        const a = document.createElement('a');
+        a.href = `#${id}`;
+        a.innerText = text;
+        a.classList.add('text-body'); 
+        li.appendChild(a);
+        toc.appendChild(li);
+        
+        // Adiciona evento de clique no título
+        a.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            removeActiveClasses(); 
+            
+            // Se o título for h4, ativa o h3 anterior
+            if (level === 'h4') {
+                let previousH3 = header.previousElementSibling;
+                while (previousH3 && previousH3.tagName.toLowerCase() !== 'h3') {
+                    previousH3 = previousH3.previousElementSibling; 
+                }
+                if (previousH3) {
+                    const previousH3Id = previousH3.id;
+                    const previousH3Link = document.querySelector(`#guides-nav-text ul li a[href="#${previousH3Id}"]`);
+                    if (previousH3Link) {
+                        previousH3Link.parentElement.classList.add('active');
+                    }
+                }
+            } else {
+                li.classList.add('active'); 
+            }
+
+            // Faz a rolagem suave para o cabeçalho correspondente
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            lastActiveHeader = li; 
+            isClicked = true; 
+        });
+    });
+}
+
+// --- Funções Auxiliares (Não Modificadas) ---
+
+// Função para remover a classe ativa de todos os links do sumário
+function removeActiveClasses() {
+    document.querySelectorAll('#guides-nav-text ul li').forEach(li => {
+        li.classList.remove('active');
+    });
+}
+
+// Variáveis para controlar o estado do título ativo
+let lastActiveHeader = null; // Variável para armazenar o último cabeçalho ativo
+let isClicked = false; // Variável para verificar se um título foi clicado
+
+// Função para destacar o título no sumário e rolar o sumário
+function observeHeaders() {
+    // Note que a seleção aqui deve ser consistente com generateTOC()
+    const headers = document.querySelectorAll('.guides-text__content h2, .guides-text__content h3'); 
+    let lastScrollTop = 0; 
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        let activeHeader = null;
+
+        headers.forEach((header) => {
+            const rect = header.getBoundingClientRect();
+            const headerTop = rect.top + scrollTop; 
+            
+            // Verifica se o cabeçalho está a 50px do topo da tela
+            if (headerTop <= scrollTop + 50 && rect.bottom > 0) {
+                activeHeader = header; 
+            }
+        });
+
+        // Se não houve um clique recente, atualize a lógica do scroll
+        if (!isClicked) {
+            if (activeHeader) {
+                const id = activeHeader.id;
+                const tocLink = document.querySelector(`#guides-nav-text ul li a[href="#${id}"]`);
+                if (tocLink) {
+                    removeActiveClasses(); 
+                    tocLink.parentElement.classList.add('active'); 
+                    lastActiveHeader = tocLink.parentElement; 
+                    scrollTOCToActive(tocLink.parentElement); 
+                }
+            } else if (lastActiveHeader) {
+                lastActiveHeader.classList.add('active'); 
+            }
+        }
+
+        // Lógica para scroll para cima e ajuste (mantida a original)
+        if (scrollTop < lastScrollTop) {
+            let closestHeader = null;
+            headers.forEach((header) => {
+                const rect = header.getBoundingClientRect();
+                const headerTop = rect.top + scrollTop;
+
+                if (headerTop <= scrollTop + 50 && rect.bottom > 0) {
+                    closestHeader = header; 
+                }
+            });
+
+            if (closestHeader) {
+                const id = closestHeader.id;
+                const tocLink = document.querySelector(`#guides-nav-text ul li a[href="#${id}"]`);
+                if (tocLink) {
+                    removeActiveClasses(); 
+                    tocLink.parentElement.classList.add('active'); 
+                    lastActiveHeader = tocLink.parentElement; 
+                    scrollTOCToActive(tocLink.parentElement); 
+                }
+            }
+        }
+
+        // Verifica se o scroll chegou ao fim da página (mantida a original)
+        if ((window.innerHeight + scrollTop) >= document.body.offsetHeight) {
+            let lastVisibleHeader = null;
+            headers.forEach((header) => {
+                const rect = header.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    lastVisibleHeader = header; 
+                }
+            });
+
+            if (lastVisibleHeader) {
+                const id = lastVisibleHeader.id;
+                const tocLink = document.querySelector(`#guides-nav-text ul li a[href="#${id}"]`);
+                if (tocLink) {
+                    removeActiveClasses(); 
+                    tocLink.parentElement.classList.add('active'); 
+                    lastActiveHeader = tocLink.parentElement; 
+                    scrollTOCToActive(tocLink.parentElement); 
+                }
+            }
+        }
+
+        lastScrollTop = scrollTop; 
+    });
+}
+
+// Função para rolar o sumário para o item ativo
+function scrollTOCToActive(activeItem) {
+    const toc = document.querySelector('.guides-nav-itens');
+    const tocRect = toc.getBoundingClientRect();
+    const activeRect = activeItem.getBoundingClientRect();
+
+    if (activeRect.top < tocRect.top || activeRect.bottom > tocRect.bottom) {
+        toc.scrollTop += activeRect.top - tocRect.top; 
+    }
+}
+
+// Reseta a variável isClicked ao scrollar
+window.addEventListener('scroll', () => {
+    if (isClicked) {
+        // Um pequeno timeout para garantir que o scroll suave termine antes de reativar a observação
+        setTimeout(() => {
+            isClicked = false;
+        }, 300); 
+    }
+});
+
+// --- Inicialização do Script ---
+
+// Chama as funções quando o DOM estiver completamente carregado
+document.addEventListener('DOMContentLoaded', () => {
+    generateTOC();
+    observeHeaders();
+});
+
+// Adiciona classes Bootstrap a todas as tabelas dentro do conteúdo (mantida a original)
+document.addEventListener('DOMContentLoaded', () => {
+  const tables = document.querySelectorAll('.guides-text__content table');
+
+  tables.forEach((table) => {
+    // Adiciona as classes do Bootstrap
+    table.classList.add('table', 'table-bordered');
+
+    // Cria o div com a classe table-responsive
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('table-responsive');
+
+    // Insere o wrapper no DOM antes da tabela
+    table.parentNode.insertBefore(wrapper, table);
+
+    // Move a tabela para dentro do wrapper
+    wrapper.appendChild(table);
+  });
+});
+</script>
+
+
+<!-- Script para modo claro/escuro do guides -->
+<script>
+  const themeSwitch = document.getElementById('themeSwitch');
+  const themeIcon = document.getElementById('themeIcon');
+  const body = document.body;
+  const savedTheme = localStorage.getItem('theme') || 'light';
+
+  function updateIcon(theme) {
+    themeIcon.className = theme === 'dark'
+      ? 'bi bi-sun-fill'
+      : 'bi bi-moon-stars-fill';
+  }
+
+  body.setAttribute('data-bs-theme', savedTheme);
+  themeSwitch.checked = savedTheme === 'dark';
+  updateIcon(savedTheme);
+
+  themeSwitch.addEventListener('change', () => {
+    const nextTheme = themeSwitch.checked ? 'dark' : 'light';
+    body.setAttribute('data-bs-theme', nextTheme);
+    localStorage.setItem('theme', nextTheme);
+    updateIcon(nextTheme);
+  });
+</script>
+
+        
+        <!-- Script do Active Campaign -->
+        <script>
+            (function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");
+            vgo('setAccount', '69126782');
+            vgo('setTrackByDefault', true);
+
+            vgo('process');
+        </script>
+        <!-- End Script do Active Campaign -->
+    </body>
+</html>

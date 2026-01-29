@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Emissão de NFS-e em Bauru (SP) pela API da Focus NFe",
+  "type": "object",
+  "properties": {
+    "codigo_municipio_incidencia": {
+      "title": "Cód. mun. Incidencia",
+      "description": "Código IBGE de 7 dígitos da localidade de incidência do ISSQN.",
+      "type": "string"
+    },
+    "iss_aliquota": {
+      "title": "Aliquota ISS",
+      "description": "Alíquota aplicada sobre a base de cálculo para apuração do ISSQN.",
+      "type": "string"
+    }
+  },
+  "optional": [
+    "codigo_municipio_incidencia",
+    "iss_aliquota"
+  ]
+}

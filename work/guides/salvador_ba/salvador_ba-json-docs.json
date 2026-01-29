@@ -1,0 +1,9 @@
+{
+  "obrigatorios": {},
+  "ignorados": {},
+  "opcionais": {
+    "$.servico.codigo_nbs": "Código de Nomenclatura Brasileira de Serviços",
+    "$.servico.ibs_cbs_classificacao_tributaria": "Código de Classificação Tributária do IBS e da CBS",
+    "$.servico.codigo_indicador_operacao": "Código indicador da operação do serviço"
+  }
+}

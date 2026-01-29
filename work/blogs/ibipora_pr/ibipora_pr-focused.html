@@ -1,0 +1,41 @@
+
+        <p>Ibiporã - PR é uma das centenas de <a href="https://focusnfe.com.br/cidades-integradas-nfse/">cidades integradas à API da Focus NFe</a>. Nossos clientes já podem fazer a emissão, consulta e cancelamento de notas fiscais de serviço (NFSe). Utilizamos um padrão simples e consistente de comunicação com o web service da prefeitura, garantido disponibilidade e rapidez. Conheça o formato único que nossa API utiliza na comunicação com todos os municípios <a href="https://focusnfe.com.br/doc/">clicando aqui</a>.</p>
+
+<p>Veja abaixo os detalhes deste município:</p>
+
+<p>[panel type=”info” heading=”Dados básicos”]</p>
+
+<p><strong>Provedor:</strong> Elotech203.</p>
+
+<p><strong>Utiliza padrão ABRASF:</strong> Sim (2.03) com modificações.</p>
+
+<p><strong>Necessita certificado digital:</strong> Sim, também requer senha exclusiva de webservices.</p>
+
+<p><strong>Endereço produção:</strong> https://ibipora.oxy.elotech.com.br/iss/home</p>
+
+<p><strong>Endereço homologação:</strong> https://ibipora.oxy.elotech.com.br/iss/</p>
+
+<p>[/panel]</p>
+
+<p>[panel type=”info” heading=”Campos em nossa API”]</p>
+
+<p><strong>item_lista_servico:</strong> Utiliza o padrão nacional da <a href="http://sped.rfb.gov.br/pagina/show/1601">Lei Complementar 116/2003</a>.</p>
+
+<p><strong>codigo_cnae:</strong> Campo obrigatório.</p>
+
+<p><strong>codigo_tributario_municipio:</strong> Campo não utilizado.</p>
+
+<p>[/panel]</p>
+
+<p>[jumbotron]</p>
+
+<p><strong>Observações:</strong></p>
+<ul>
+ 	<li>Necessário geração de senha pelo portal da prefeitura. A senha é enviada para o e-mail cadastrado no portal.</li>
+ 	<li>Para emitir em ambiente de produção ou homologação, precisa trocar no portal da prefeitura no menu "Informações da empresa" &gt; "Dados de integração entre sistemas" &gt; "Informações fiscais" &gt; "Emissão do lote" &gt; alternar entre "Produção" ou "Homologação" &gt; ir no canto direito inferior em "Salvar"</li>
+ 	<li>Não é obrigatório informar o cpf do tomador, mas nesse caso não será possível cancelar a nota pela API, será necessário abrir processo administrativo com a prefeitura.</li>
+ 	<li>Suporte prefeitura: 44 - 4009-3560 (WhatsApp)</li>
+</ul>
+<p>[/jumbotron]</p>
+
+      

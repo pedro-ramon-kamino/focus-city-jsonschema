@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Emissão de NFS-e em Barueri (SP) pela API da Focus NFe",
+  "type": "object",
+  "properties": {
+    "servico": {
+      "type": "object",
+      "properties": {
+        "codigo_nbs": {
+          "title": "Código NBS",
+          "description": "Código de Nomenclatura Brasileira de Serviços",
+          "type": "string"
+        },
+        "data_fim_evento": {
+          "title": "Data do fim do evento",
+          "description": "Data do fim do evento. Formato: AAAAMMDD",
+          "type": "string"
+        },
+        "data_inicio_evento": {
+          "title": "Data do início do evento",
+          "description": "Data do início do evento. Formato: AAAAMMDD",
+          "type": "string"
+        },
+        "nome_evento": {
+          "title": "Nome do evento",
+          "description": "Nome do evento Artístico, Cultural, Esportivo, entre outros. Obrigatório para atividades com código de serviço iniciados em 12 (serviços relativos à atividades de eventos, diversões, lazer, entretenimento e congeneres).",
+          "type": "string"
+        },
+        "vinculo_servico_prestado": {
+          "title": "Vínculo do serviço prestado",
+          "description": "Campo necessário apenas em caso de tomador estrageiro. Possíveis valores:0 - Sem vínculo com o Tomador / Prestador1 - Controlada2 - Controladora3 - Coligada4 - Matriz5 - Filial ou sucursal6 - Outro vínculo",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "codigo_nbs",
+        "data_fim_evento",
+        "data_inicio_evento",
+        "nome_evento",
+        "vinculo_servico_prestado"
+      ]
+    },
+    "tomador": {
+      "type": "object",
+      "properties": {
+        "nif": {
+          "title": "NIF do Tomador",
+          "description": "Número de Identificação Fiscal do tomador estrangeiro",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "nif"
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Emissão de NFS-e em Ribeirão Preto (SP) pela API da Focus NFe",
+  "type": "object",
+  "properties": {}
+}

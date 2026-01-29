@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "start": "node ./app.js"
+    },
+    "type": "module",
+    "dependencies": {
+        "jsdom": "^27.4.0"
+    }
+}

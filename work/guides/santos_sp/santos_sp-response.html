@@ -1,0 +1,1584 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        
+        <title>Emissão de NFS-e em Santos (SP) pela API da Focus NFe</title>
+        <meta name="description" content="Veja como emitir NFS-e em Santos (SP) com a API REST da Focus NFe. Este guia técnico traz os campos obrigatórios, exemplos de JSON e pontos de atenção.">
+        
+
+        
+
+        <link rel="canonical" href="https://focusnfe.com.br/guides/nfse/municipios-integrados/santos-sp/">
+
+        <!-- Favicon padrão -->
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/favicon/android-chrome-512x512.png">
+
+        <!-- Ícone para Apple (iPhones e iPads) -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+
+        <!-- Favicon clássico para navegadores antigos -->
+        <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+
+        <!-- Metatags para redes sociais -->
+        <meta property="og:image" content="https://focusnfe.com.br/assets/img/default-share-image.png" />
+        <meta name="twitter:image" content="https://focusnfe.com.br/assets/img/default-share-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:type" content="website" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+        <link rel="stylesheet" href="/assets/css/styles.css" />
+        
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5ZH7WMQ');</script>
+        <!-- End Google Tag Manager -->
+
+    </head>
+
+    <body class="body-guides bg-body" data-bs-theme="light">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZH7WMQ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        <header>
+  <nav class="navbar navbar-expand-lg pb-md-4 pt-3 bg-body border-bottom">
+    <div class="container justify-content-center justify-content-md-between">
+      <a class="navbar-brand" href="/guides/">
+        <svg width="250" version="1.1" viewBox="0 0 1889.8 425.95" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="a" x2="1" gradientTransform="matrix(239.59,-239.59,-239.59,-239.59,39.932,279.53)" gradientUnits="userSpaceOnUse"><stop stop-color="#f2521b" offset="0"/><stop stop-color="#f2521b" offset=".15"/><stop stop-color="#f57c1d" offset=".85"/><stop stop-color="#f57c1d" offset="1"/></linearGradient><clipPath id="b"><path d="m239.59 239.59v-137.79c0-12.118-9.824-21.943-21.942-21.943h-137.79v-79.864h146.1c8.729 0 17.101 3.468 23.274 9.6398l60.584 60.584c6.172 6.1719 9.64 14.545 9.64 23.274v146.1zm-119.8-119.8h79.865v79.865h-79.865zm-39.932 97.855v-137.79h-79.865v146.1c0 8.73 3.468 17.101 9.6402 23.274l60.584 60.584c6.1727 6.172 14.544 9.64 23.273 9.64h146.1v-79.864h-137.79c-12.118 0-21.942-9.824-21.942-21.943z"/></clipPath></defs><path transform="matrix(1.3333,0,0,-1.3333,0,425.95)" d="m239.59 239.59v-137.79c0-12.118-9.824-21.943-21.942-21.943h-137.79v-79.864h146.1c8.729 0 17.101 3.468 23.274 9.6398l60.584 60.584c6.172 6.1719 9.64 14.545 9.64 23.274v146.1zm-119.8-119.8h79.865v79.865h-79.865zm-39.932 97.855v-137.79h-79.865v146.1c0 8.73 3.468 17.101 9.6402 23.274l60.584 60.584c6.1727 6.172 14.544 9.64 23.273 9.64h146.1v-79.864h-137.79c-12.118 0-21.942-9.824-21.942-21.943" clip-path="url(#b)" fill="url(#a)"/><path d="m1317.4 181.22c21.006 0 34.406 10.392 34.406 17.545h36.052c0-29.951-30.946-53.412-70.458-53.412-39.514 0-70.464 23.461-70.464 53.412 0 44.508 46.035 50.421 68.154 53.261 36.715 4.7186 36.715 11.02 36.715 17.693 0 7.1518-13.4 17.545-34.406 17.545-21.007 0-34.408-10.393-34.408-17.545h-36.055c0 29.951 30.95 53.412 70.464 53.412 39.512 0 70.458-23.461 70.458-53.412 0-44.506-46.026-50.421-68.148-53.267-36.719-4.7132-36.719-11.016-36.719-17.688 0-7.1532 13.401-17.545 34.408-17.545zm254.85 118.48-119.77-151.45h-13.386v171.21h12.706v-151.44l119.78 151.44h13.373v-171.21h-12.706zm50.319 19.768h12.706v-77.187h80.211v-12.173h-80.211v-69.674h102.93v-12.18h-115.64zm253.87-89.596c-6.7332-28.401-32.066-49.532-62.358-49.532-30.292 0-55.612 21.137-62.372 49.532zm13.386 12.293h-139.81c-0.04 0.92531-0.1333 1.8346-0.1333 2.7693 0 35.674 28.746 64.593 64.198 64.593 21.573 0 40.612-10.735 52.252-27.145l10.88 4.8986c-13.613 20.491-36.799 33.996-63.132 33.996-41.906 0-75.878-34.18-75.878-76.343 0-42.163 33.972-76.342 75.878-76.342 40.986 0 74.292 32.705 75.745 73.573zm-1314.7-93.911h105.49v-41.532h-148.1v212.55h42.623v-69.886h81.45v-41.532h-81.45zm246.07 85.986c0-28.555-23.149-51.704-51.704-51.704-28.555 0-51.704 23.149-51.704 51.704 0 28.555 23.149 51.704 51.704 51.704 28.555 0 51.704-23.149 51.704-51.704zm37.186 0c0 49.092-39.798 88.89-88.89 88.89-49.092 0-88.89-39.798-88.89-88.89 0-49.092 39.798-88.888 88.89-88.888 49.092 0 88.89 39.796 88.89 88.888zm113.13-51.704c18.118 0 34.032 9.3358 43.266 23.441l29.457-22.753c-16.081-22.882-42.631-37.872-72.722-37.872-49.092 0-88.89 39.796-88.89 88.888 0 49.092 39.798 88.89 88.89 88.89 30.091 0 56.641-14.992 72.722-37.872l-29.457-22.754c-9.2331 14.105-25.147 23.441-43.266 23.441-28.557 0-51.703-23.149-51.703-51.704 0-28.555 23.146-51.704 51.703-51.704zm212.46-33.859h36.25v98.919c0 41.716-33.819 75.534-75.534 75.534-41.716 0-75.534-33.818-75.534-75.534v-98.919h36.248v98.542c0 21.695 17.589 39.284 39.286 39.284 21.695 0 39.284-17.589 39.284-39.284v-98.542" fill="currentColor" stroke-width="1.3333"/></svg>
+      </a>
+      <div class="d-flex flex-column flex-sm-row mt-4 mt-sm-0">
+        <ul class="navbar-nav me-auto flex-row">
+          <li class="nav-item mx-2">
+            <a href="https://focusnfe.com.br/" class="link-body-emphasis text-decoration-none h6">Site Principal</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="https://focusnfe.com.br/doc/" target="_blank" class="link-body-emphasis text-decoration-none h6">Documentação da API</a>
+          </li>
+        </ul>
+        <div class="form-check form-switch ms-md-3 align-self-center mt-3 mt-md-0">
+          <input class="form-check-input" type="checkbox" role="switch" id="themeSwitch" style="background-color: var(--orange1);border-color: var(--orange1);">
+          <label class="form-check-label" for="themeSwitch">
+            <i id="themeIcon" class="bi"></i>
+          </label>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 py-4">
+      <a class="btn btn-link text-orange2 px-0 text-decoration-none fw-semibold" href="/guides/">
+        <i class="bi bi-chevron-compact-left"></i> Voltar
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-md-12 col-lg-9 mb-4 order-2 order-lg-1">
+      <div class="guides-text__content text-body">
+        <h1>Guia técnico de emissão de NFS-e em Santos/SP pela API da Focus NFe</h1>
+<p>Saiba como emitir NFS-e em Santos (SP) pela API da Focus NFe. Este guia é voltado para clientes e para quem está testando a nossa API. Aqui, você encontra os campos obrigatórios, exemplos e observações específicas para desenvolvedores.</p>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-4 text-body bg-body-secondary border-0 shadow-sm">
+      <div class="card-body">
+        <h2 class="section-title fs-4 mb-4">
+          <i class="bi bi-newspaper "></i> Informações Gerais
+        </h2>
+        
+        
+
+        <div class="row g-2">
+          <!-- Provedor -->
+          <div class="col-md-6">
+            <div class="bg-body rounded-3 p-3 h-100">
+              <div class="d-flex align-items-center mb-1">
+                <i class="bi bi-building text-orange1 me-2 fs-5"></i>
+                <span class="text-muted small text-uppercase fw-semibold">Provedor</span>
+              </div>
+              <div class="fs-6 fw-medium">GissOnline</div>
+            </div>
+          </div>
+
+          <!-- Padrão -->
+          <div class="col-md-6">
+            <div class="bg-body rounded-3 p-3 h-100">
+              <div class="d-flex align-items-center mb-1">
+                <i class="bi bi-file-earmark-code text-orange1 me-2 fs-5"></i>
+                <span class="text-muted small text-uppercase fw-semibold">Padrão</span>
+              </div>
+              <div class="fs-6 fw-medium">ABRASF 2.04</div>
+            </div>
+          </div>
+
+          <!-- Autenticação -->
+          <div class="col-12">
+            <div class="bg-body rounded-3 p-3">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-shield-lock text-orange1 me-2 fs-5"></i>
+                <span class="text-muted small text-uppercase fw-semibold">Autenticação</span>
+              </div>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="badge badge-obrigatoriedade badge-orange-municipio">Certificado digital</span>
+              </div>
+              
+            </div>
+          </div>
+
+          <!-- Cancelamento -->
+          <div class="col-12">
+            <div class="bg-body rounded-3 p-3">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-x-circle text-orange1 me-2 fs-5"></i>
+                <span class="text-muted small text-uppercase fw-semibold">Cancelamento</span>
+              </div>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="badge badge-obrigatoriedade badge-orange-municipio">Ativo</span>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-4 text-body bg-body-secondary border-0 shadow-sm">
+      <div class="card-body">
+        <h2 class="section-title fs-4 mb-3">
+          <i class="bi bi-globe"></i> Ambientes Disponíveis
+        </h2>
+        <div class="d-flex align-items-center py-2 px-3 small text-muted fw-semibold">
+          <div style="width: 30%;">Ambiente</div>
+          <div class="text-center" style="width: 30%;">Disponível</div>
+          <div class="text-center" style="width: 30%;">Portal de Acesso</div>
+        </div>
+        <div class="d-flex flex-column gap-2">
+        <div class="d-flex align-items-center py-2 px-3 bg-body rounded-2">
+  <div style="width: 30%;">Produção</div>
+  <div class="d-flex justify-content-center align-items-center" style="width: 30%;"><span class="badge badge-obrigatoriedade text-bg-success">Sim</span></div>
+  <div class="d-flex justify-content-center align-items-center" style="width: 30%;"><a href="https://santos.giss.com.br/" target="_blank" class="text-decoration-none small">Acessar <i class="bi bi-arrow-right"></i></a></div>
+</div>
+<div class="d-flex align-items-center py-2 px-3 bg-body rounded-2">
+  <div style="width: 30%;">Homologação</div>
+  <div class="d-flex justify-content-center align-items-center" style="width: 30%;"><span class="badge badge-obrigatoriedade text-bg-success">Sim</span></div>
+  <div class="d-flex justify-content-center align-items-center" style="width: 30%;"><span class="text-muted small">Não disponível</span></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row"> 
+  <div class="col-12">
+    <div class="card mb-4 text-body bg-body-secondary border-0 shadow-sm">
+      <div class="card-body">
+        <h2 class="section-title fs-4 mb-3"><i class="bi bi-tools"></i> Campos Importantes</h2>
+        <div class="table-responsive rounded-3 overflow-hidden campos-municipio-lista">
+          <table class="table table-striped bg-body table-bg-muted table-divider-thin mb-0 align-middle">
+            <thead class="bg-body-tertiary">
+              <tr><th class="py-2" style="min-width: 20%; width: 20%;">Campo</th><th class="py-2 text-center" style="min-width: 15%; max-width: 15%; width: 15%;">Obrigatoriedade</th><th class="py-2">Observação</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="py-2 fw-medium">CPF/CNPJ do Tomador</td><td class="text-center py-2"><span class="badge badge-obrigatoriedade bg-secondary">Opcional</span></td><td class="py-2"></td></tr><tr><td class="py-2 fw-medium">Endereço do Tomador</td><td class="text-center py-2"><span class="badge badge-obrigatoriedade bg-secondary">Opcional</span></td><td class="py-2"></td></tr><tr><td class="py-2 fw-medium">Item Lista Serviço</td><td class="text-center py-2"><span class="badge badge-obrigatoriedade badge-orange-municipio">Obrigatório</span></td><td class="py-2">Utiliza o padrão da <a href="http://sped.rfb.gov.br/pagina/show/1601" target="_blank" rel="noopener noreferrer">Lei Complementar 116/2003</a></td></tr><tr><td class="py-2 fw-medium">Código CNAE</td><td class="text-center py-2"><span class="badge badge-obrigatoriedade bg-secondary">Opcional</span></td><td class="py-2"></td></tr><tr><td class="py-2 fw-medium">Código Tributário Município</td><td class="text-center py-2"><span class="badge badge-obrigatoriedade badge-orange-municipio">Obrigatório</span></td><td class="py-2">Variação do Código CNAE com 9 dígitos</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-4 text-body bg-body-secondary border-0 shadow-sm">
+      <div class="card-body">
+        <h2 class="section-title fs-4 mb-3"><i class="bi bi-file-earmark-code me-2"></i>Campos do Provedor</h2>
+        <div class="campos-xml-lista d-flex flex-column gap-2">
+          <div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: 0; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">CST PIS/COFINS</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.situacao_tributaria_pis_cofins</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:CST</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Código de Situação Tributária do PIS/COFINS (CST)</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">00 - Nenhum;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">01 - Operação Tributável com Alíquota Básica;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">02 - Operação Tributável com Alíquota Diferenciada;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">03 - Operação Tributável com Alíquota por Unidade de Medida de Produto;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">04 - Operação Tributável monofásica - Revenda a Alíquota Zero;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">05 - Operação Tributável por Substituição Tributária;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">06 - Operação Tributável a Alíquota Zero;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">07 - Operação Tributável da Contribuição;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">08 - Operação sem Incidência da Contribuição;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">09 - Operação com Suspensão da Contribuição;</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">BC PIS/COFINS</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.base_calculo_pis_cofins</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:vBCPisCofins</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Valor da Base de Cálculo do PIS/COFINS (R$)</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Alíq. PIS</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.aliquota_pis</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:pAliqPis</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Valor da Alíquota do PIS (%)</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Alíq. COFINS</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.aliquota_cofins</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:pAliqCofins</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Valor da Alíquota da COFINS (%)</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Valor PIS</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.valor_pis</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:vPis</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Valor monetário do PIS (R$)</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Valor COFINS</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.valor_cofins</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:vCofins</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Valor monetário do COFINS (R$)</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Tipo ret. PIS/COFINS</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.tipo_retencao_pis_cofins</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:tpRetPisCofins</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Tipo de retencao do Pis/Cofins</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">1 - Retido;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">2 - Não Retido;</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Perc. total Federal</h6>
+        <code class="px-2 py-1 rounded json-path">$.percentual_total_tributos_federais</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:pTotTribFed</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Valor percentual total aproximado dos tributos federais (%)</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Perc. total UF</h6>
+        <code class="px-2 py-1 rounded json-path">$.percentual_total_tributos_estaduais</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:pTotTribEst</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Valor percentual total aproximado dos tributos estaduais (%)</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Perc. total Mun.</h6>
+        <code class="px-2 py-1 rounded json-path">$.percentual_total_tributos_municipais</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:pTotTribMun</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Valor percentual total aproximado dos tributos municipais (%)</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Perc. total SN</h6>
+        <code class="px-2 py-1 rounded json-path">$.percentual_total_tributos_simples_nacional</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:pTotTribSN</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Valor percentual aproximado do total dos tributos da alíquota do Simples Nacional (%)</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Indic. Emissão</h6>
+        <code class="px-2 py-1 rounded json-path">$.finalidade_emissao</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:finNFSe</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Indicador da finalidade da emissão de NFS-e</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">0 - NFS-e regular;</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Indic. Operação</h6>
+        <code class="px-2 py-1 rounded json-path">$.consumidor_final</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:indFinal</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Indica operação de uso ou consumo pessoal (art. 57)</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">0 - Não;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">1 - Sim;</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Cód. indic. Operação</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.codigo_indicador_operacao</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:cIndOp</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Código indicador da operação de fornecimento, conforme tabela 'código indicador de operação'</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Tipo Ope. gov.</h6>
+        <code class="px-2 py-1 rounded json-path">$.tipo_operacao_governamental</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:tpOper</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Tipo de Operação com Entes Governanementais ou outros serviços sobre bens imóveis</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">1 - Fornecimento com pagamento posterior;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">2 - Recebimento do pagamento com fornecimento já realizado;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">3 - Fornecimento com pagamento já realizado;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">4 - Recebimento do pagamento com fornecimento posterior;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">5 - Fornecimento e recebimento do pagamento concomitantes.</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">NFSeReferenciada</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.chaves_nfse_referenciadas</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:gRefNFSe</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"></div>
+    </div>
+    
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: 0; margin-bottom: 0; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Chave NFS-e Ref.</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.chaves_nfse_referenciadas[].chave_nfse</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:refNFSe</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Chave da NFS-e referenciada</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Tipo governamental</h6>
+        <code class="px-2 py-1 rounded json-path">$.tipo_ente_governamental</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:tpEnteGov</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Tipo de ente governamental. Para administração pública direta e suas autarquias e fundações</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">1 - União;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">2 - Estado;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">3 - Distrito Federal;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">4 - Município;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">9 - Outro;</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Indic. destinatário</h6>
+        <code class="px-2 py-1 rounded json-path">$.indicador_destinatario</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:indDest</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">A respeito do Destinatário dos serviços</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">0 - O tomador identificado na NFS-e é o adquirente e o destinatário do fornecimento (tomador = adquirente = destinatário);</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">1 - O tomador e o adquirente são a mesma pessoa, mas o destinatário é uma pessoa física ou jurídica ou equiparada diversa do indicado como tomador/adquirente ou se trata de um estabelecimento do adquirente diferente do indicado no campo “tomador” (tomador = adquirente ≠ destinatário);</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">DocumentosDfe</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:gReeRepRes</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"></div>
+    </div>
+    
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: 0; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Tipo Chave DF-e</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].tipo_chave_dfe</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:tipoChaveDFe</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Documento fiscal a que se refere a chaveDfe que seja um dos documentos do Repositório Nacional</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">1 - NFS-e;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">2 - NF-e;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">3 - CT-e;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">9 - Outro;</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Descrição DF-e</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].descricao_chave_dfe</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:xTipoChaveDFe</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Descrição da DF-e a que se refere a chaveDfe que seja um dos documentos do Repositório Nacional. Deve ser preenchido apenas quando 'tipoChaveDFe = 9 (Outro)'</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Chave DF-e</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].chave_dfe</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:chaveDFe</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Chave do Documento Fiscal eletrônico do repositório nacional referenciado para os casos de operações já tributadas</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Cod.Mun. Emissor</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].codigo_municipio_documento_fiscal_outro</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:cMunDocFiscal</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Código do município emissor do documento fiscal que não se encontra no repositório nacional</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Num. Doc. Fiscal</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].numero_documento_fiscal_outro</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:nDocFiscal</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Número do documento fiscal que não se encontra no repositório nacional</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Desc. Doc. Fiscal</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].descricao_documento_fiscal_outro</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:xDocFiscal</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Descrição do documento fiscal</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Num. Doc. Fiscal</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].numero_documento_nao_fiscal_outro</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:nDoc</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Número do documento não fiscal</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Desc. Doc. Fiscal</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].descricao_documento_nao_fiscal_outro</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:xDoc</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Descrição do documento não fiscal</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">CNPJ Fornecedor</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].cnpj_fornecedor</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:CNPJ</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Número da inscrição no Cadastro Nacional de Pessoa Jurídica (CNPJ) do Fornecedor do serviço</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">CPF Fornecedor</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].cpf_fornecedor</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:CPF</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Número da inscrição no Cadastro de Pessoa Física (CPF) do Fornecedor do serviço</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">NIF Fornecedor</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].nif_fornecedor</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:NIF</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Este elemento só deverá ser preenchido para fornecedores não residentes no Brasil</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Não NIF Fornecedor</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].motivo_ausencia_nif_fornecedor</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:cNaoNIF</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Motivo para não informação do NIF</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">0 - Não informado na nota de origem;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">1 - Dispensado do NIF;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">2 - Não exigência do NIF;</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Nome Fornecedor</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].razao_social_fornecedor</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:xNome</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Nome / Razão Social do do Fornecedor do serviço</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Dt. Emissão Doc.</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].data_emissao_documento_dedutivel</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:dtEmiDoc</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Data da emissão do documento dedutível. Ano, mês e dia (AAAA-MM-DD)</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Dt. Comp. Doc.</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].data_competencia_documento_dedutivel</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:dtCompDoc</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Data da competência do documento dedutível. Ano, mês e dia (AAAA-MM-DD)</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Tipo valor incluido</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].tipo_valor_incluido</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:tpReeRepRes</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Tipo de valor incluído neste documento, recebido por motivo de estarem relacionadas a operações de terceiros, objeto de reembolso, repasse ou ressarcimento pelo recebedor, já tributados e aqui referenciados</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">01 - Repasse de remuneração por intermediação de imóveis a demais corretores envolvidos na operação;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">02 - Repasse de valores a fornecedor relativo a fornecimento intermediado por agência de turismo;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">03 - Reembolso ou ressarcimento recebido por agência de propaganda e publicidade por valores pagos relativos a serviços de produção externa por conta e ordem de terceiro;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">04 - Reembolso ou ressarcimento recebido por agência de propaganda e publicidade por valores pagos relativos a serviços de mídia por conta e ordem de terceiro;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">99 - Outros reembolsos ou ressarcimentos recebidos por valores pagos relativos a operações por conta e ordem de terceiro;</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Des. tipo valor incluido</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].descricao_tipo_valor_incluido</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:xTpReeRepRes</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Descrição do reembolso ou ressarcimento quando a opção é '99 - Outros reembolsos ou ressarcimentos recebidos por valores pagos relativos a operações por conta e ordem de terceiro'</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div><div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: 0; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Valor repasse</h6>
+        <code class="px-2 py-1 rounded json-path">$.documentos_referenciados[].valor_repasse</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:vlrReeRepRes</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Valor monetário (total ou parcial, conforme documento informado) utilizado para não inclusão na base de cálculo do ISS e do IBS e da CBS da NFS-e que está sendo emitida (R$)</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">CST IBS/CBS</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.ibs_cbs_situacao_tributaria</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:CST</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Código de Situação Tributária do IBS e da CBS</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Cód. Trib. IBS/CBS</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.ibs_cbs_classificacao_tributaria</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:cClassTrib</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Código de Classificação Tributária do IBS e da CBS</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Doc. Mun. Incidencia</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.codigo_municipio_incidencia</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:cLocalidadeIncid</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Código IBGE da localidade de incidência do IBS/CBS (local da operação)</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Perc. red. alíq. gov.</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.perc_reducao_aliquota_compra_governamental</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:pRedutor</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Percentual de redução de aliquota em compra governamental</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">BC IBS/CBS</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.ibs_cbs_base_calculo</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:vBC</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Valor da Base de Cálculo do ISSQN (R$) = Valor do Serviço - Desconto Incondicionado - Deduções/Reduções - Benefício Municipal. vBC = vServ - descIncond - (vDR ou vCalcDR + vCalcReeRepRes) - (vRedBCBM ou VCalcBM)</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Cód. NBS</h6>
+        <code class="px-2 py-1 rounded json-path">$.servico.codigo_nbs</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:CodigoNbs</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Código da lista de Nomenclatura Brasileira de Serviços (NBS)</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Modo prestação</h6>
+        <code class="px-2 py-1 rounded json-path">$.modo_prestacao</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:mdPrestacao</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">0 - Desconhecido (tipo não informado na nota de origem);</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">1 - Transfronteiriço;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">2 - Consumo no Brasil;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">3 - Movimento Temporário de Pessoas Físicas;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">4 - Consumo no Exterior;</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Vínculo negócio</h6>
+        <code class="px-2 py-1 rounded json-path">$.vinculo_negocio</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:vincPrest</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Vínculo entre as partes no negócio</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">0 - Sem vínculo com o Tomador/Prestador</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">1 - Controlada;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">2 - Controladora;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">3 - Coligada;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">4 - Matriz;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">5 - Filial ou sucursal;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">6 - Outro vínculo;</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Cód. moeda</h6>
+        <code class="px-2 py-1 rounded json-path">$.codigo_moeda</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:tpMoeda</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Identifica a moeda da transação comercial</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Valor serv. ext.</h6>
+        <code class="px-2 py-1 rounded json-path">$.valor_servico_ext</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:vServMoeda</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Valor do serviço prestado expresso em moeda estrangeira especificada em tpmoeda</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Apoio prestador ext.</h6>
+        <code class="px-2 py-1 rounded json-path">$.mecanismo_comercio_ext_prestador</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:mecAFComexP</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Mecanismo de apoio/fomento ao Comércio Exterior utilizado pelo prestador do serviço</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">00 - Desconhecido (tipo não informado na nota de origem);</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">01 - Nenhum;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">02 - ACC - Adiantamento sobre Contrato de Câmbio - Redução a Zero do IR e do IOF;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">03 - ACE - Adiantamento sobre Cambiais Entregues - Redução a Zero do IR e do IOF;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">04 - BNDES-Exim Pós-Embarque - Serviços;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">05 - BNDES-Exim Pré-Embarque - Serviços;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">06 - FGE - Fundo de Garantia à Exportação;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">07 - PROEX - EQUALIZAÇÃO</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">08 - PROEX - Financiamento;</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Apoio tomador ext.</h6>
+        <code class="px-2 py-1 rounded json-path">$.mecanismo_comercio_ext_tomador</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:mecAFComexT</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Mecanismo de apoio/fomento ao Comércio Exterior utilizado pelo tomador do serviço</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">00 - Desconhecido (tipo não informado na nota de origem);</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">01 - Nenhum;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">02 - Adm. Pública e Repr. Internacional;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">03 - Alugueis e Arrend. Mercantil de maquinas, equip., embarc. e aeronaves;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">04 - Arrendamento Mercantil de aeronave para empresa de transporte aéreo público;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">05 - Comissão a agentes externos na exportação;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">06 - Despesas de armazenagem, mov. e transporte de carga no exterior;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">07 - Eventos FIFA (subsidiária);</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">08 - Eventos FIFA;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">09 - Fretes, arrendamentos de embarcações ou aeronaves e outros;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">10 - Material Aeronáutico;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">11 - Promoção de Bens no Exterior;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">12 - Promoção de Dest. Turísticos Brasileiros;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">13 - Promoção do Brasil no Exterior;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">14 - Promoção Serviços no Exterior;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">15 - RECINE;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">16 - RECOPA;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">17 - Registro e Manutenção de marcas, patentes e cultivares;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">18 - REICOMP;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">19 - REIDI;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">20 - REPENEC;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">21 - REPES;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">22 - RETAERO;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">23 - RETID;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">24 - Royalties, Assistência Técnica, Científica e Assemelhados;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">25 - Serviços de avaliação da conformidade vinculados aos Acordos da OMC;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">26 - ZPE;</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Movimentação Temporária</h6>
+        <code class="px-2 py-1 rounded json-path">$.movimentacao_temporaria_bens</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:movTempBens</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Vínculo da Operação à Movimentação Temporária de Bens</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">0 - Desconhecido (tipo não informado na nota de origem);</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">1 - Não;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">2 - Vinculada - Declaração de Importação;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">3 - Vinculada - Declaração de Exportação;</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Núm. Declaração Imp.</h6>
+        <code class="px-2 py-1 rounded json-path">$.numero_declaracao_importacao</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:nDI</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Número da Declaração de Importação (DI/DSI/DA/DRI-E) averbado</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Núm. Registro Exp.</h6>
+        <code class="px-2 py-1 rounded json-path">$.numero_registro_exportacao</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:nRE</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small">Número do Registro de Exportação (RE) averbado</div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">MDIC</h6>
+        <code class="px-2 py-1 rounded json-path">$.mdic</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:mdic</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    <div class="mt-2 pt-2 border-top border-opacity-25">
+  <div class="text-body-secondary small"><ul class="mb-0 ps-3"><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Compartilhar as informações da NFS-e gerada a partir desta DPS com a Secretaria de Comércio Exterior</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">Valores possíveis:</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">0 - Não enviar para o MDIC;</li><li class="mb-1" style="list-style: none; margin-left: -1.25rem;">1 - Enviar para o MDIC;</li></ul></div>
+</div>
+
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: -0.5rem; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Nome Evento</h6>
+        <code class="px-2 py-1 rounded json-path">$.evento.nome</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:IdentificacaoEvento</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    
+  </div>
+</div>
+<div class="d-flex">
+  <div style="width: 3px; background-color: #484d53; margin-right: 0.75rem; margin-top: -0.5rem; margin-bottom: 0; flex-shrink: 0;"></div>
+  <div class="campo-xml-item ps-3 pe-3 py-2 bg-body rounded flex-grow-1">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+      <div class="d-flex flex-wrap align-items-center gap-2" style="min-width: 0;">
+        <h6 class="mb-0 fw-semibold text-body" style="word-break: break-word;">Descrição Evento</h6>
+        <code class="px-2 py-1 rounded json-path">$.evento.descricao</code>
+        <code class="px-2 py-1 rounded xml-path text-muted">/p1:DescricaoEvento</code>
+      </div>
+      <div class="d-flex flex-row align-items-center gap-1 flex-shrink-0"><span class="badge badge-obrigatoriedade bg-success">Reforma</span></div>
+    </div>
+    
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .copy-btn {
+    border: none;
+    color: white;
+    padding: 5px;   /* reduzido */
+    font-size: 14px;        /* menor fonte */
+    border-radius: 0.2rem;
+  }          
+  .copy-btn:hover {
+    background-color: var(--cinza);
+    color: white;
+  }
+  .nav-tabs {
+    border-color: transparent;
+  }
+  .nav-tabs .nav-item:first-child .nav-link {
+    margin-left: 0.75rem;
+  }
+  .nav-tabs .nav-item .nav-link:hover {
+    border-color: #6c757d;
+    border-bottom-color: transparent;
+    color: var(--cinza-claro);
+  }
+  .json-box {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    word-wrap: break-word;
+    position: relative;
+  }
+  pre {
+    margin: 0;
+    font-family: Consolas, Monaco, 'Courier New', monospace;
+  }
+</style>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-4 text-body bg-body-secondary">
+      <div class="card-body">
+        <h2 class="section-title fs-4 mb-3"><i class="bi bi-code-square"></i> JSONs de Exemplo</h2>
+        <ul class="nav nav-tabs" id="tab-5829-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+  <button class="nav-link active text-body" id="tab-5829-tab-0" data-bs-toggle="tab" data-bs-target="#tab-5829-pane-0" type="button" role="tab">
+    Padrão
+  </button>
+</li>
+
+        </ul>
+        <div class="tab-content" id="tab-5829-content">
+          <div class="tab-pane fade show active" id="tab-5829-pane-0" role="tabpanel">
+  <div class="json-box mt-0 position-relative bg-body text-body">
+    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode(this)" style="position: absolute; top: 0.5rem; right: 0.5rem;"><i class="bi bi-copy"></i> Copiar</button>
+    <pre><code>{
+  "data_emissao": "2026-01-15T07:34:56-0300",
+  "natureza_operacao": 1,
+  "optante_simples_nacional": true,
+  "regime_especial_tributacao": 6,
+  "prestador": {
+    "cnpj": "00000000000000",
+    "inscricao_municipal": "123445",
+    "codigo_municipio": 3548500
+  },
+  "tomador": {
+    "cnpj": "11.111.111/0001-11",
+    "razao_social": "Fictício Tomador",
+    "endereco": {
+      "logradouro": "Rua Fictícia",
+      "numero": "2",
+      "complemento": "ap02",
+      "bairro": "Centro",
+      "codigo_municipio": 3548500,
+      "uf": "SP",
+      "cep": "11015-145"
+    },
+    "telefone": "11 1111-1111",
+    "email": "test@example.com"
+  },
+  "servico": {
+    "discriminacao": "Nota emitida em caráter de TESTE de integração com Webservice \n Quebra de linha 1 | Quebra de linha 2",
+    "valor_servicos": 1.0,
+    "aliquota": 5.0,
+    "item_lista_servico": "14.05",
+    "codigo_tributario_municipio": "452000204",
+    "codigo_nbs": "118029000",
+    "codigo_indicador_operacao": "050101",
+    "ibs_cbs_situacao_tributaria": "000",
+    "ibs_cbs_classificacao_tributaria": "000001",
+    "codigo_municipio_incidencia": 3548500,
+    "iss_retido": false
+  },
+  "percentual_total_tributos_simples_nacional": 0.0,
+  "consumidor_final": 0,
+  "indicador_destinatario": 0
+}</code></pre>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function copyCode(button) {
+    const pre = button.closest(".tab-pane").querySelector("pre code");
+    const text = pre.innerText;
+    navigator.clipboard.writeText(text)
+  }
+</script>
+
+
+      </div>
+    </div>
+    <div class="col mb-4 mb-lg-0 order-1 order-lg-2">
+      <nav id="guides-nav-text" class="bg-body-secondary body">
+        <div class="row">
+          <div class="col-12">
+            <div class="row align-items-center mb-4">
+              <div class="col-auto">
+                <i class="bi bi-bookmark display-6 text-body"></i>
+              </div>
+              <div class="col">
+                <h2 class="fs-4 fw-700 text-body">Sumário</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="guides-nav-itens orange-scroll-default">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="guides-sidebar__list"></ul>
+                </div>
+            </div>
+        </div>        
+      </nav>
+    </div>
+  </div>
+</div>
+
+<script>
+// Objeto para rastrear a contagem de IDs já utilizados em todos os cabeçalhos.
+const usedIds = {};
+
+// Função para criar o sumário dinamicamente
+function generateTOC() {
+    const toc = document.querySelector('#guides-nav-text ul');
+    // Seleciona h2 e h3. Se você usa h4 (como sugere a sua lógica de clique), inclua-o aqui também.
+    const headers = document.querySelectorAll('.guides-text__content h2, .guides-text__content h3'); 
+
+    headers.forEach(header => {
+        const level = header.tagName.toLowerCase();
+        const text = header.innerText;
+
+        // 1. Gera o ID base (slug)
+        let baseId = text.toLowerCase()
+            .replace(/[^\w\s-]/g, '') // Remove pontuações/caracteres especiais
+            .replace(/\s+/g, '-')     // Substitui espaços por hífen
+            .replace(/-+$/, '');      // Remove hífen do final (se houver)
+
+        // 2. Lógica para garantir Unicidade do ID
+        let id = baseId;
+        if (usedIds[baseId] > 0) {
+            // Se já foi usado, incrementa o contador e cria um ID único com sufixo numérico.
+            usedIds[baseId]++;
+            // O sufixo começa em -1 para o primeiro duplicado.
+            id = `${baseId}-${usedIds[baseId] - 1}`; 
+        } else {
+            // Primeiro uso do ID base (ou se o ID não for válido, será 1).
+            usedIds[baseId] = 1;
+        }
+
+        // 3. Aplica o ID único ao cabeçalho (corpo do guia)
+        header.id = id;
+
+        // 4. Criação do item do Sumário (TOC)
+        const li = document.createElement('li');
+        li.classList.add(level);
+        const a = document.createElement('a');
+        a.href = `#${id}`;
+        a.innerText = text;
+        a.classList.add('text-body'); 
+        li.appendChild(a);
+        toc.appendChild(li);
+        
+        // Adiciona evento de clique no título
+        a.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            removeActiveClasses(); 
+            
+            // Se o título for h4, ativa o h3 anterior
+            if (level === 'h4') {
+                let previousH3 = header.previousElementSibling;
+                while (previousH3 && previousH3.tagName.toLowerCase() !== 'h3') {
+                    previousH3 = previousH3.previousElementSibling; 
+                }
+                if (previousH3) {
+                    const previousH3Id = previousH3.id;
+                    const previousH3Link = document.querySelector(`#guides-nav-text ul li a[href="#${previousH3Id}"]`);
+                    if (previousH3Link) {
+                        previousH3Link.parentElement.classList.add('active');
+                    }
+                }
+            } else {
+                li.classList.add('active'); 
+            }
+
+            // Faz a rolagem suave para o cabeçalho correspondente
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            lastActiveHeader = li; 
+            isClicked = true; 
+        });
+    });
+}
+
+// --- Funções Auxiliares (Não Modificadas) ---
+
+// Função para remover a classe ativa de todos os links do sumário
+function removeActiveClasses() {
+    document.querySelectorAll('#guides-nav-text ul li').forEach(li => {
+        li.classList.remove('active');
+    });
+}
+
+// Variáveis para controlar o estado do título ativo
+let lastActiveHeader = null; // Variável para armazenar o último cabeçalho ativo
+let isClicked = false; // Variável para verificar se um título foi clicado
+
+// Função para destacar o título no sumário e rolar o sumário
+function observeHeaders() {
+    // Note que a seleção aqui deve ser consistente com generateTOC()
+    const headers = document.querySelectorAll('.guides-text__content h2, .guides-text__content h3'); 
+    let lastScrollTop = 0; 
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        let activeHeader = null;
+
+        headers.forEach((header) => {
+            const rect = header.getBoundingClientRect();
+            const headerTop = rect.top + scrollTop; 
+            
+            // Verifica se o cabeçalho está a 50px do topo da tela
+            if (headerTop <= scrollTop + 50 && rect.bottom > 0) {
+                activeHeader = header; 
+            }
+        });
+
+        // Se não houve um clique recente, atualize a lógica do scroll
+        if (!isClicked) {
+            if (activeHeader) {
+                const id = activeHeader.id;
+                const tocLink = document.querySelector(`#guides-nav-text ul li a[href="#${id}"]`);
+                if (tocLink) {
+                    removeActiveClasses(); 
+                    tocLink.parentElement.classList.add('active'); 
+                    lastActiveHeader = tocLink.parentElement; 
+                    scrollTOCToActive(tocLink.parentElement); 
+                }
+            } else if (lastActiveHeader) {
+                lastActiveHeader.classList.add('active'); 
+            }
+        }
+
+        // Lógica para scroll para cima e ajuste (mantida a original)
+        if (scrollTop < lastScrollTop) {
+            let closestHeader = null;
+            headers.forEach((header) => {
+                const rect = header.getBoundingClientRect();
+                const headerTop = rect.top + scrollTop;
+
+                if (headerTop <= scrollTop + 50 && rect.bottom > 0) {
+                    closestHeader = header; 
+                }
+            });
+
+            if (closestHeader) {
+                const id = closestHeader.id;
+                const tocLink = document.querySelector(`#guides-nav-text ul li a[href="#${id}"]`);
+                if (tocLink) {
+                    removeActiveClasses(); 
+                    tocLink.parentElement.classList.add('active'); 
+                    lastActiveHeader = tocLink.parentElement; 
+                    scrollTOCToActive(tocLink.parentElement); 
+                }
+            }
+        }
+
+        // Verifica se o scroll chegou ao fim da página (mantida a original)
+        if ((window.innerHeight + scrollTop) >= document.body.offsetHeight) {
+            let lastVisibleHeader = null;
+            headers.forEach((header) => {
+                const rect = header.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    lastVisibleHeader = header; 
+                }
+            });
+
+            if (lastVisibleHeader) {
+                const id = lastVisibleHeader.id;
+                const tocLink = document.querySelector(`#guides-nav-text ul li a[href="#${id}"]`);
+                if (tocLink) {
+                    removeActiveClasses(); 
+                    tocLink.parentElement.classList.add('active'); 
+                    lastActiveHeader = tocLink.parentElement; 
+                    scrollTOCToActive(tocLink.parentElement); 
+                }
+            }
+        }
+
+        lastScrollTop = scrollTop; 
+    });
+}
+
+// Função para rolar o sumário para o item ativo
+function scrollTOCToActive(activeItem) {
+    const toc = document.querySelector('.guides-nav-itens');
+    const tocRect = toc.getBoundingClientRect();
+    const activeRect = activeItem.getBoundingClientRect();
+
+    if (activeRect.top < tocRect.top || activeRect.bottom > tocRect.bottom) {
+        toc.scrollTop += activeRect.top - tocRect.top; 
+    }
+}
+
+// Reseta a variável isClicked ao scrollar
+window.addEventListener('scroll', () => {
+    if (isClicked) {
+        // Um pequeno timeout para garantir que o scroll suave termine antes de reativar a observação
+        setTimeout(() => {
+            isClicked = false;
+        }, 300); 
+    }
+});
+
+// --- Inicialização do Script ---
+
+// Chama as funções quando o DOM estiver completamente carregado
+document.addEventListener('DOMContentLoaded', () => {
+    generateTOC();
+    observeHeaders();
+});
+
+// Adiciona classes Bootstrap a todas as tabelas dentro do conteúdo (mantida a original)
+document.addEventListener('DOMContentLoaded', () => {
+  const tables = document.querySelectorAll('.guides-text__content table');
+
+  tables.forEach((table) => {
+    // Adiciona as classes do Bootstrap
+    table.classList.add('table', 'table-bordered');
+
+    // Cria o div com a classe table-responsive
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('table-responsive');
+
+    // Insere o wrapper no DOM antes da tabela
+    table.parentNode.insertBefore(wrapper, table);
+
+    // Move a tabela para dentro do wrapper
+    wrapper.appendChild(table);
+  });
+});
+</script>
+
+
+<!-- Script para modo claro/escuro do guides -->
+<script>
+  const themeSwitch = document.getElementById('themeSwitch');
+  const themeIcon = document.getElementById('themeIcon');
+  const body = document.body;
+  const savedTheme = localStorage.getItem('theme') || 'light';
+
+  function updateIcon(theme) {
+    themeIcon.className = theme === 'dark'
+      ? 'bi bi-sun-fill'
+      : 'bi bi-moon-stars-fill';
+  }
+
+  body.setAttribute('data-bs-theme', savedTheme);
+  themeSwitch.checked = savedTheme === 'dark';
+  updateIcon(savedTheme);
+
+  themeSwitch.addEventListener('change', () => {
+    const nextTheme = themeSwitch.checked ? 'dark' : 'light';
+    body.setAttribute('data-bs-theme', nextTheme);
+    localStorage.setItem('theme', nextTheme);
+    updateIcon(nextTheme);
+  });
+</script>
+
+        
+        <!-- Script do Active Campaign -->
+        <script>
+            (function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");
+            vgo('setAccount', '69126782');
+            vgo('setTrackByDefault', true);
+
+            vgo('process');
+        </script>
+        <!-- End Script do Active Campaign -->
+    </body>
+</html>

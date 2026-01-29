@@ -1,0 +1,54 @@
+{
+  "servico": {
+    "type": "object",
+    "description": "",
+    "mapeadoNFSe": true,
+    "required": false,
+    "proibido": false,
+    "codigo_nbs": {
+      "type": "string",
+      "description": "Código de Nomenclatura Brasileira de Serviços",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    },
+    "data_fim_evento": {
+      "type": "string",
+      "description": "Data do fim do evento. Formato: AAAAMMDD",
+      "required": false,
+      "proibido": false
+    },
+    "data_inicio_evento": {
+      "type": "string",
+      "description": "Data do início do evento. Formato: AAAAMMDD",
+      "required": false,
+      "proibido": false
+    },
+    "nome_evento": {
+      "type": "string",
+      "description": "Nome do evento Artístico, Cultural, Esportivo, entre outros. Obrigatório para atividades com código de serviço iniciados em 12 (serviços relativos à atividades de eventos, diversões, lazer, entretenimento e congeneres).",
+      "required": false,
+      "proibido": false
+    },
+    "vinculo_servico_prestado": {
+      "type": "string",
+      "description": "Campo necessário apenas em caso de tomador estrageiro. Possíveis valores:0 - Sem vínculo com o Tomador / Prestador1 - Controlada2 - Controladora3 - Coligada4 - Matriz5 - Filial ou sucursal6 - Outro vínculo",
+      "required": false,
+      "proibido": false
+    }
+  },
+  "tomador": {
+    "type": "object",
+    "description": "",
+    "mapeadoNFSe": true,
+    "required": false,
+    "proibido": false,
+    "nif": {
+      "type": "string",
+      "description": "Número de Identificação Fiscal do tomador estrangeiro",
+      "mapeadoNFSe": true,
+      "required": false,
+      "proibido": false
+    }
+  }
+}

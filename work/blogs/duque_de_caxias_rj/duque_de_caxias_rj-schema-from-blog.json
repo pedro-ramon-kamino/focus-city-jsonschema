@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Schema NFSe - Blog Format",
+  "type": "object",
+  "properties": {
+    "item_lista_servico": {
+      "title": "item_lista_servico",
+      "description": "Utiliza o padrão nacional da Lei Complementar 116/2003.",
+      "type": "string"
+    },
+    "codigo_cnae": {
+      "title": "codigo_cnae",
+      "description": "Campo",
+      "type": "string"
+    },
+    "codigo_tributario_municipio": {
+      "title": "codigo_tributario_municipio",
+      "description": "Campo , geralmente utiliza o valor do item_lista_servico sem pontuação (ex.: para 1.05 > 105). Consultar no XML de uma nota autorizada o valor desse campo.",
+      "type": "string"
+    }
+  },
+  "blogFormat": true,
+  "required": [
+    "codigo_cnae",
+    "codigo_tributario_municipio"
+  ],
+  "$blogMeta": {
+    "dadosBasicos": {
+      "provedor": "IssNet (v.B)",
+      "utiliza_padrão_abrasf": "Sim (2.04).",
+      "necessita_certificado_digital": "Sim.",
+      "endereço_produção": "https://issnetonline.com.br/duquedecaxias/",
+      "endereço_homologação": "https://www.issnetonline.com.br/homologaabrasf/"
+    },
+    "camposAPI": {
+      "item_lista_servico": {
+        "description": "Utiliza o padrão nacional da Lei Complementar 116/2003.",
+        "required": false
+      },
+      "codigo_cnae": {
+        "description": "Campo",
+        "required": true
+      },
+      "codigo_tributario_municipio": {
+        "description": "Campo , geralmente utiliza o valor do item_lista_servico sem pontuação (ex.: para 1.05 > 105). Consultar no XML de uma nota autorizada o valor desse campo.",
+        "required": true
+      }
+    },
+    "observacoes": "- Para emitir notas no ambiente de produção via webservice, deve-se anteriormente, solicitar autorização para emissão, enviando os dados da empresa prestadora para suporte@notacontrol.com.br\n    - Caso mesmo solicitando a liberação não seja possível emitir, com a validação:\n” A empresa não está habilitada no ambiente de integração”\n    - Será necessário alterar o plano de emissão de notas.\n    - Para maiores informações basta solicitar nesse mesmo e-mail;\n- Após liberarem para emissão via webservice, deverá liberar o RPS. Basta acessar https://www.issnetonline.com.br/duquedecaxias/online/login/Login.aspx, logar com usuário e senha do cliente, ir em Solicitação, selecionar o modelo do Documento Fiscal (no caso RPS – Recibo Provisório de Serviço) e a quantidade de notas a serem emitidas que desejará deixar configurado.\n\n\n\n\n      \n    \n  \n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n    \n    \n      \n        \n          \n            Equipe Focus NFe\n          \n        \n      \n      Time técnico da Focus NFe.\n    \n  \n  \n\n  \n  \n    \n      \n    \n  \n\n  \n    \n      Explore outros conteúdos\n    \n  \n  \n    \n      \n      \n      \n        \n          \n            \n              \n              \n            \n            \n              \n                \n                \n                Cidades Integradas\n              \n              \n                Como emitir nota fiscal de serviço (NFSe) em São Paulo - SP\n              \n              Emitir a Nota Fiscal de Serviços Eletrônica (NFSe) em São Paulo é um processo obrigatório para a maioria dos prestadores...\n              Leia mais\n            \n          \n        \n      \n        \n          \n            \n              \n              \n            \n            \n              \n                \n                \n                Cidades Integradas\n              \n              \n                Como emitir nota fiscal de serviço (NFSe) em Salvador - BA\n              \n              Salvador - BA é uma das centenas de cidades integradas à API da Focus NFe. Nossos clientes já podem fazer...\n              Leia mais\n            \n          \n        \n      \n        \n          \n            \n              \n              \n            \n            \n              \n                \n                \n                Cidades Integradas\n              \n              \n                Como emitir nota fiscal de serviço (NFSe) em João Pessoa - PB\n              \n              João Pessoa – PB é uma das centenas de cidades integradas à API da Focus NFe. Nossos clientes já podem...\n              Leia mais\n            \n          \n        \n      \n    \n    \n\n  \n  \n    \n      Voltar ao Blog\n    \n  \n\n\n\n  \n    \n      \n        Assine nossa newsletter\n        Receba nossos conteúdos exclusivos em primeira mão.\n        \n          \n        \n      \n      \n        \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n                    \n      \n    \n  \n\n\n\n  \n    \n      \n        \n          \n        \n        \n          \n          \n          \n          \n          \n        \n      \n      \n        \n          \n            Serviços\n            \n              Início\n              Produtos\n              Contato\n              Cidades Integradas - NFSe\n              Planos e Preços\n              Casos de Sucesso\n              Exemplos de código\n              Documentação da API\n              \n              Status dos Serviços\n              Compare com a concorrência\n              Blog\n              Entrar \n              Comece Agora \n            \n          \n          \n            Sobre Nós\n            \n              Quem Somos\n              Guides\n              Fórum\n              Suporte\n            \n            Políticas\n            \n              Carta aos clientes e parceiros sobre a Reforma Tributária\n              Termos de uso\n              Política Estratégica de Segurança da Informação\n              Impostos retidos na fonte\n              SLA\n            \n          \n        \n      \n    \n    \n      \n        .cls-1{fill:url(#linear-gradient);}.cls-2{fill:#272425;}\n      \n    \n    \n      \n        © 2026 Focus NFe LTDA. Todos os direitos reservados.\n      \n    \n  \n\n\n\n\n  document.addEventListener(\"DOMContentLoaded\", function () {\n    const content = document.querySelector('.post-content');\n    const toc = document.getElementById('sumario-blog-post');\n\n    if (!content || !toc) return;\n\n    // Coleta os headings em ordem de aparição\n    const allHeadings = Array.from(content.querySelectorAll('h2, h3'));\n    const h2Count = allHeadings.filter(h => h.tagName === 'H2').length;\n    const h3Count = allHeadings.filter(h => h.tagName === 'H3').length;\n    const totalHeadings = h2Count + h3Count;\n\n    if (totalHeadings === 0) return;\n\n    const showAll = totalHeadings <= 20;\n\n    let html = `\n      <h2 class=\"fs-5 fw-semibold mb-3\">Neste artigo:</h2>\n      <nav class=\"nav flex-column\">`;\n\n    let lastH2Id = null;\n\n    allHeadings.forEach((heading, index) => {\n      const tag = heading.tagName;\n      const id = heading.id || `sumario-${index}`;\n      heading.id = id;\n\n      if (tag === 'H2') {\n        html += `\n          <a href=\"#${id}\" class=\"nav-link text-orange1 pb-0 ms-0 fw-semibold\">${heading.textContent}</a>`;\n        lastH2Id = id;\n      } else if (tag === 'H3' && showAll && lastH2Id) {\n        html += `\n          <a href=\"#${id}\" class=\"nav-link text-orange1 pb-0 ms-3\">${heading.textContent}</a>`;\n      }\n    });\n\n    html += '</nav>';\n    toc.innerHTML = html;\n  });\n  \n\n        \n        \n        \n            (function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement(\"script\");r.src=o;r.async=true;i=t.getElementsByTagName(\"script\")[0];i.parentNode.insertBefore(r,i)})(window,document,\"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js\",\"vgo\");\n            vgo('setAccount', '69126782');\n            vgo('setTrackByDefault', true);\n\n            vgo('process');"
+  }
+}

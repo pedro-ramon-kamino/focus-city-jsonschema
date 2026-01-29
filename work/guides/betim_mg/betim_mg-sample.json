@@ -1,0 +1,33 @@
+{
+  "data_emissao": "2025-07-16T11:13:00",
+  "optante_simples_nacional": true,
+  "regime_especial_tributacao": "6",
+  "prestador": {
+    "cnpj": "00000000000000",
+    "inscricao_municipal": "123445",
+    "codigo_municipio": 3106705
+  },
+  "tomador": {
+    "cnpj": "11.111.111/0001-11",
+    "razao_social": "Fictício Tomador",
+    "endereco": {
+      "logradouro": "Rua Fictícia",
+      "numero": "2",
+      "complemento": "ap02",
+      "bairro": "Centro",
+      "codigo_municipio": 4106902,
+      "uf": "PR",
+      "cep": "82900-010"
+    },
+    "telefone": "11 1111-1111",
+    "email": "test@example.com"
+  },
+  "servico": {
+    "valor_servicos": 1,
+    "aliquota": 2.0,
+    "valor_iss": 0.02,
+    "discriminacao": "Exemplo serviços",
+    "item_lista_servico": "14.01",
+    "codigo_tributario_municipio": "14.01 / 452000100"
+  }
+}

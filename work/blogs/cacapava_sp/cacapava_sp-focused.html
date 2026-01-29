@@ -1,0 +1,32 @@
+
+        <p>Caçapava - SP é uma das centenas de <a href="https://focusnfe.com.br/cidades-integradas-nfse/" target="_blank" rel="noreferrer noopener">cidades integradas à API da Focus NFe</a>. Nossos clientes já podem fazer a emissão, consulta e cancelamento de notas fiscais de serviço (NFSe). Utilizamos um padrão simples e consistente de comunicação com o web service da prefeitura, garantido disponibilidade e rapidez. Conheça o formato único que nossa API utiliza na comunicação com todos os municípios <a href="https://focusnfe.com.br/doc/" target="_blank" rel="noreferrer noopener">clicando aqui</a>.</p>
+
+<p>Veja abaixo os detalhes deste município:</p>
+
+<pre class="wp-block-preformatted" style="font-size:18px"><strong>Dados básicos:
+</strong>
+<strong>Provedor</strong>: Etransparencia.
+<strong>Utiliza padrão ABRASF</strong>: Não.
+<strong>Necessita certificado digital</strong>: Não. Requer par de tokens exclusivos para webservice.
+<strong>Endereço produção</strong>: https://nfe.etransparencia.com.br/sp.cacapava/nfe/principal.aspx
+<strong>Endereço homologação</strong>: https://nfehomo.etransparencia.com.br/sp.cacapava/nfe/principal.aspx</pre>
+
+<pre class="wp-block-preformatted" style="font-size:18px"><strong>Campos em nossa API:
+</strong>
+<strong>item_lista_servico</strong>: Utiliza o padrão nacional da <a href="http://sped.rfb.gov.br/pagina/show/1601" target="_blank" rel="noreferrer noopener">Lei Complementar 116/2003</a>.
+<strong>codigo_cnae</strong>: Campo não utilizado.
+<strong>codigo_tributario_municipio</strong>: Campo não utilizado.</pre>
+
+<pre class="wp-block-preformatted" style="font-size:18px"><strong><strong>Observações:</strong>
+</strong>
+- Obrigatório informar os campos valor_iss e aliquota.
+
+- A autenticação do webservice é feita usando um par de tokens disponíveis nos cadastros do portal da prefeitura: Código do Usuário cadastrado; Código da empresa Contribuinte .
+
+- Os códigos são diferentes do login e senha de acesso ao portal.
+Para o Login: Sistema &gt; Segurança &gt; Editar Perfil &gt; Código do usuário para login em Webservices
+- Para a senha: Contribuintes &gt; Cadastro de Contribuintes &gt; Consultar &gt; Código (abaixo de Razão Social).</pre>
+
+<p></p>
+
+      

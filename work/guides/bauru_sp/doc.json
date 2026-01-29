@@ -1,0 +1,14 @@
+{
+  "codigo_municipio_incidencia": {
+    "type": "string",
+    "description": "Código IBGE de 7 dígitos da localidade de incidência do ISSQN.",
+    "required": false,
+    "proibido": false
+  },
+  "iss_aliquota": {
+    "type": "string",
+    "description": "Alíquota aplicada sobre a base de cálculo para apuração do ISSQN.",
+    "required": false,
+    "proibido": false
+  }
+}

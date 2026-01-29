@@ -1,0 +1,41 @@
+{
+  "data_emissao": "2026-01-20T09:00:00-0300",
+  "natureza_operacao": 1,
+  "optante_simples_nacional": false,
+  "prestador": {
+    "cnpj": "00000000000000",
+    "inscricao_municipal": "123445",
+    "codigo_municipio": 3525904
+  },
+  "tomador": {
+    "cnpj": "11.111.111/0001-11",
+    "razao_social": "Fictício Tomador",
+    "endereco": {
+      "logradouro": "Rua Fictícia",
+      "numero": "2",
+      "complemento": "ap02",
+      "bairro": "Centro",
+      "codigo_municipio": 3525904,
+      "uf": "SP",
+      "cep": "13208-703"
+    },
+    "telefone": "11 1111-1111",
+    "email": "test@example.com"
+  },
+  "servico": {
+    "discriminacao": "Nota emitida em caráter de TESTE de integração com Webservice \n Quebra de linha 1 | Quebra de linha 2",
+    "valor_servicos": 1.0,
+    "aliquota": 2.0,
+    "item_lista_servico": "4.03",
+    "codigo_tributario_municipio": "19",
+    "codigo_nbs": "1.2301.11.00",
+    "codigo_indicador_operacao": "030101",
+    "ibs_cbs_situacao_tributaria": "200",
+    "ibs_cbs_classificacao_tributaria": "200029",
+    "codigo_municipio_incidencia": 3525904,
+    "iss_retido": false
+  },
+  "percentual_total_tributos_simples_nacional": 0.0,
+  "consumidor_final": 0,
+  "indicador_destinatario": 0
+}

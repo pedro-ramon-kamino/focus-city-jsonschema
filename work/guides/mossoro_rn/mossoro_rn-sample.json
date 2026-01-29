@@ -1,0 +1,35 @@
+{
+  "data_emissao": "2026-01-15T05:39:04-0300",
+  "natureza_operacao": 1,
+  "optante_simples_nacional": true,
+  "regime_tributario_simples_nacional": 3,
+  "prestador": {
+    "cnpj": "00000000000000",
+    "inscricao_municipal": "123445",
+    "codigo_municipio": 2408003
+  },
+  "tomador": {
+    "cnpj": "11.111.111/0001-11",
+    "razao_social": "Fictício Tomador",
+    "endereco": {
+      "logradouro": "Rua Fictícia",
+      "numero": "2",
+      "complemento": "ap02",
+      "bairro": "Centro",
+      "codigo_municipio": 2408003,
+      "uf": "RN",
+      "cep": "82900-010"
+    },
+    "telefone": "11 1111-1111",
+    "email": "test@example.com"
+  },
+  "servico": {
+    "discriminacao": "Nota emitida em caráter de TESTE de integração com Webservice \n Quebra de linha 1 | Quebra de linha 2",
+    "valor_servicos": 1.0,
+    "aliquota": 2.0,
+    "item_lista_servico": "0701",
+    "codigo_cnae": "7112000",
+    "codigo_nbs": "1.1403.29.00",
+    "iss_retido": false
+  }
+}

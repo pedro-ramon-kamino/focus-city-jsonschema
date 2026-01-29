@@ -1,0 +1,41 @@
+{
+  "data_emissao": "2025-12-17T00:00:00",
+  "natureza_operacao": "1",
+  "prestador": {
+    "cnpj": "00000000000",
+    "inscricao_municipal": "12345",
+    "codigo_municipio": "3550308"
+  },
+  "tomador": {
+    "cnpj": "85.904.290/0001-50",
+    "razao_social": "Fictício Tomador",
+    "endereco": {
+      "logradouro": "Rua Fictícia",
+      "numero": "2",
+      "complemento": "ap02",
+      "bairro": "Centro",
+      "uf": "SP",
+      "cep": "05608040"
+    },
+    "telefone": "41 3256-8060",
+    "email": "test@example.com"
+  },
+  "servico": {
+    "discriminacao": "NFSe reforma tributária teste",
+    "item_lista_servico": "07498",
+    "valor_servicos": "1",
+    "valor_final_cobrado": "1",
+    "base_calculo": "1",
+    "aliquota": "5",
+    "iss_retido": "0",
+    "valor_ipi": 0,
+    "codigo_nbs": "000000000",
+    "codigo_indicador_operacao": "000000",
+    "ibs_cbs_classificacao_tributaria": "000001"
+  },
+  "exigibilidade_suspensa": 0,
+  "pagamento_parcelado_antecipado": 0,
+  "finalidade_emissao": 0,
+  "consumidor_final": 0,
+  "indicador_destinatario": 0
+}

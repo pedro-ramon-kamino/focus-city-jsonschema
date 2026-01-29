@@ -1,0 +1,473 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Emissão de NFS-e em Mossoró (RN) pela API da Focus NFe",
+  "type": "object",
+  "properties": {
+    "chaves_nfse_referenciadas": {
+      "title": "Chaves de acesso das NFS-e referenciadas",
+      "description": "Lista de objetos do tipo chave_nfse",
+      "type": "string"
+    },
+    "chaves_nfse_referenciadas[]": {
+      "type": "object",
+      "properties": {
+        "chave_nfse": {
+          "title": "Chave da NFS-e referenciada",
+          "description": "",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "chave_nfse"
+      ]
+    },
+    "consumidor_final": {
+      "title": "Indica operação de uso ou consumo pessoal (art. 57)",
+      "description": "Valores possíveis:0 - Não1 - Sim",
+      "type": "string"
+    },
+    "destinatario": {
+      "title": "Destinatário",
+      "description": "Grupo de informações do destinatário. O destinatário só deve ser informado quando [indicador_destinatario = 1]",
+      "type": "string",
+      "properties": {
+        "cnpj": {
+          "title": "CNPJ",
+          "description": "Número do CNPJ",
+          "type": "string"
+        },
+        "cpf": {
+          "title": "CPF",
+          "description": "Número do CPF",
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "description": "",
+          "type": "string"
+        },
+        "endereco": {
+          "title": "Endereço",
+          "description": "Grupo de informações do endereço",
+          "type": "string",
+          "properties": {
+            "bairro": {
+              "title": "Bairro do endereço",
+              "description": "",
+              "type": "string"
+            },
+            "cep": {
+              "title": "CEP",
+              "description": "",
+              "type": "string"
+            },
+            "cep_ext": {
+              "title": "CEP no exterior",
+              "description": "Código alfanumérico do Endereçamento Postal no exterior",
+              "type": "string"
+            },
+            "codigo_municipio": {
+              "title": "Código município",
+              "description": "",
+              "type": "string"
+            },
+            "codigo_pais_ext": {
+              "title": "Código do país",
+              "description": "Tabela de Países ISO",
+              "type": "string"
+            },
+            "complemento": {
+              "title": "Complemento do endereço",
+              "description": "",
+              "type": "string"
+            },
+            "logradouro": {
+              "title": "Logradouro",
+              "description": "",
+              "type": "string"
+            },
+            "nome_cidade_ext": {
+              "title": "Nome da cidade no exterior",
+              "description": "Nome da cidade no exterior",
+              "type": "string"
+            },
+            "numero": {
+              "title": "Número no logradouro do endereço",
+              "description": "",
+              "type": "string"
+            },
+            "regiao_ext": {
+              "title": "Região no exterior",
+              "description": "Estado, província ou região da cidade no exterior",
+              "type": "string"
+            }
+          },
+          "optional": [
+            "bairro",
+            "cep",
+            "cep_ext",
+            "codigo_municipio",
+            "codigo_pais_ext",
+            "complemento",
+            "logradouro",
+            "nome_cidade_ext",
+            "numero",
+            "regiao_ext"
+          ]
+        },
+        "motivo_ausencia_nif": {
+          "title": "Motivo ausência NIF",
+          "description": "Tipo do motivo para não informação do NIF. Valores possíveis:0 - Não informado na nota de origem1 - Dispensado do NIF2 - Não exigência do NIF",
+          "type": "string"
+        },
+        "nif": {
+          "title": "NIF",
+          "description": "Número de Identificação Fiscal fornecido por um órgão de administração tributária no exterior",
+          "type": "string"
+        },
+        "razao_social": {
+          "title": "Razão Social",
+          "description": "Nome ou Razão Social",
+          "type": "string"
+        },
+        "telefone": {
+          "title": "Telefone",
+          "description": "",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "cnpj",
+        "cpf",
+        "email",
+        "endereco",
+        "motivo_ausencia_nif",
+        "nif",
+        "razao_social",
+        "telefone"
+      ]
+    },
+    "documentos_referenciados": {
+      "title": "Documentos Referenciados",
+      "description": "Lista de objetos do tipo documentos_referenciados",
+      "type": "string"
+    },
+    "documentos_referenciados[]": {
+      "type": "object",
+      "properties": {
+        "chave_dfe": {
+          "title": "Chave DFe",
+          "description": "Chave do Documento Fiscal eletrônico do repositório nacional referenciado para os casos de operações já tributadas",
+          "type": "string"
+        },
+        "cnpj_fornecedor": {
+          "title": "CNPJ do fornecedor",
+          "description": "",
+          "type": "string"
+        },
+        "codigo_municipio_documento_fiscal_outro": {
+          "title": "Código município",
+          "description": "Cód. do município emissor do doc. fiscal que não se encontra no repositório nacional",
+          "type": "string"
+        },
+        "cpf_fornecedor": {
+          "title": "CPF do fornecedor",
+          "description": "",
+          "type": "string"
+        },
+        "data_competencia_documento_dedutivel": {
+          "title": "Data comp. doc. ded.",
+          "description": "Data da comp. do documento dedutível. (AAAA-MM-DD)",
+          "type": "string"
+        },
+        "data_emissao_documento_dedutivel": {
+          "title": "Data emissão doc. ded.",
+          "description": "Data da emissão do documento dedutível. (AAAA-MM-DD)",
+          "type": "string"
+        },
+        "descricao_chave_dfe": {
+          "title": "Descrição chave DFe",
+          "description": "Descrição da DF -e a que se refere a chaveDfe que seja um dos documentos do Repositório Nacional. Deve ser preenchido apenas quando tipoChaveDFe = 9 (Outro)",
+          "type": "string"
+        },
+        "descricao_documento_fiscal_outro": {
+          "title": "Descrição do doc.",
+          "description": "",
+          "type": "string"
+        },
+        "descricao_documento_nao_fiscal_outro": {
+          "title": "Desc. doc. não fiscal",
+          "description": "",
+          "type": "string"
+        },
+        "descricao_tipo_valor_incluido": {
+          "title": "Desc. repasse",
+          "description": "Descrição do reembolso ou ressarcimento quando a opção é \"99 - Outros reembolsos ou ressarcimentos recebidos por valores pagos relativos a operações por conta e ordem de terceiro\"",
+          "type": "string"
+        },
+        "motivo_ausencia_nif_fornecedor": {
+          "title": "Motivo ausência NIF do forn.",
+          "description": "Tipo do motivo para não informação do NIF. Valores possíveis:0 - Não informado na nota de origem1 - Dispensado do NIF2 - Não exigência do NIF",
+          "type": "string"
+        },
+        "nif_fornecedor": {
+          "title": "NIF do fornecedor",
+          "description": "Tipo NIF (Número de Identificação Fiscal) - fornecido por um órgão de administração tributária no exterior",
+          "type": "string"
+        },
+        "numero_documento_fiscal_outro": {
+          "title": "Número do documento fiscal",
+          "description": "Número do documento fiscal que não se encontra no repositório nacional",
+          "type": "string"
+        },
+        "numero_documento_nao_fiscal": {
+          "title": "Número do documento não fiscal",
+          "description": "",
+          "type": "string"
+        },
+        "razao_social_fornecedor": {
+          "title": "Razão Social do fornecedor",
+          "description": "Nome ou Razão Social",
+          "type": "string"
+        },
+        "tipo_chave_dfe": {
+          "title": "Tipo chave DFe",
+          "description": "Tipo de documento do repositório nacional. Valores possíveis:1 - NFS-e2 - NF-e3 - CT-e9 - Outro",
+          "type": "string"
+        },
+        "tipo_valor_incluido": {
+          "title": "Tipo valor incluído",
+          "description": "Tipo de valor incluído neste documento, recebido por motivo de estarem relacionadas a operações de terceiros, objeto de reembolso, repasse ou ressarcimento pelo recebedor, já tributados e aqui referenciado",
+          "type": "string"
+        },
+        "valor_repasse": {
+          "title": "Val. reemb./ressarc.",
+          "description": "Valor monetário reembolso ou ressarcimento(total ou parcial, conforme documento informado) utilizado para não inclusão na base de cálculo do ISS e do IBS e da CBS da NFS-e que está sendo emitida (R$)",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "chave_dfe",
+        "cnpj_fornecedor",
+        "codigo_municipio_documento_fiscal_outro",
+        "cpf_fornecedor",
+        "data_competencia_documento_dedutivel",
+        "data_emissao_documento_dedutivel",
+        "descricao_chave_dfe",
+        "descricao_documento_fiscal_outro",
+        "descricao_documento_nao_fiscal_outro",
+        "descricao_tipo_valor_incluido",
+        "motivo_ausencia_nif_fornecedor",
+        "nif_fornecedor",
+        "numero_documento_fiscal_outro",
+        "numero_documento_nao_fiscal",
+        "razao_social_fornecedor",
+        "tipo_chave_dfe",
+        "tipo_valor_incluido",
+        "valor_repasse"
+      ]
+    },
+    "finalidade_emissao": {
+      "title": "Indicador da finalidade da emissão de NFS-e",
+      "description": "Valores possíveis:0 - NFS-e regular",
+      "type": "string"
+    },
+    "imovel": {
+      "title": "Imóvel",
+      "description": "Grupo de informações de operações relacionadas a bens imóveis, exceto obras",
+      "type": "string",
+      "properties": {
+        "codigo_cib": {
+          "title": "CIB",
+          "description": "Código do Cadastro Imobiliário Brasileiro - CIB",
+          "type": "string"
+        },
+        "endereco": {
+          "title": "Endereço do imóvel",
+          "description": "Grupo de informações do endereço do imóvel",
+          "type": "string",
+          "properties": {
+            "bairro": {
+              "title": "Bairro do endereço",
+              "description": "",
+              "type": "string"
+            },
+            "cep": {
+              "title": "CEP",
+              "description": "",
+              "type": "string"
+            },
+            "cep_ext": {
+              "title": "CEP no exterior",
+              "description": "Código alfanumérico do Endereçamento Postal no exterior",
+              "type": "string"
+            },
+            "complemento": {
+              "title": "Complemento do endereço",
+              "description": "",
+              "type": "string"
+            },
+            "logradouro": {
+              "title": "Logradouro",
+              "description": "",
+              "type": "string"
+            },
+            "nome_cidade_ext": {
+              "title": "Nome da cidade no exterior",
+              "description": "Nome da cidade no exterior",
+              "type": "string"
+            },
+            "numero": {
+              "title": "Número no logradouro do endereço",
+              "description": "",
+              "type": "string"
+            },
+            "regiao_ext": {
+              "title": "Região no exterior",
+              "description": "Estado, província ou região da cidade no exterior",
+              "type": "string"
+            }
+          },
+          "optional": [
+            "bairro",
+            "cep",
+            "cep_ext",
+            "complemento",
+            "logradouro",
+            "nome_cidade_ext",
+            "numero",
+            "regiao_ext"
+          ]
+        },
+        "inscricao_imobiliaria": {
+          "title": "Inscrição imobiliária fiscal",
+          "description": "",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "codigo_cib",
+        "endereco",
+        "inscricao_imobiliaria"
+      ]
+    },
+    "indicador_destinatario": {
+      "title": "Ind. Destinatário",
+      "description": "Indica o destinatário do serviço. Valores possíveis:0 - O destinatário é o próprio tomador/adquirente identificado na NFS-e (tomador=adquirente=destinatário)1 - O destinatário não é o próprio adquirente, podendo ser outra pessoa, física ou jurídica (ou equiparada), ou umestabelecimento diferente do indicado como tomador (tomador=adquirente≠destinatário)",
+      "type": "string"
+    },
+    "regime_tributario_simples_nacional": {
+      "title": "Regime de Apuração Tributária Simples Nacional",
+      "description": "Valores possíveis:1 - Regime de apuração dos tributos federais e municipal pelo SN;2 - Regime de apuração dos tributos federais pelo SN e o ISSQN pela NFS-e conforme respectiva legislação municipal do tributo;3 - Regime de apuração dos tributos federais e municipal pela NFS-e conforme respectivas legilações federal e municipal de cada tributo.",
+      "type": "string"
+    },
+    "servico": {
+      "type": "object",
+      "properties": {
+        "cbs_percentual_diferimento": {
+          "title": "Percentual de diferimento para a CBS",
+          "description": "",
+          "type": "string"
+        },
+        "codigo_indicador_operacao": {
+          "title": "Código indicador da operação",
+          "description": "Código indicador da operação de fornecimento, conforme tabela \"código indicador de operação\"",
+          "type": "string"
+        },
+        "codigo_nbs": {
+          "title": "Cód. NBS",
+          "description": "Código da lista de Nomenclatura Brasileira de Serviços (NBS)",
+          "type": "string"
+        },
+        "ibs_cbs_classificacao_tributaria": {
+          "title": "Cód. class. trib. IBS/CBS",
+          "description": "Código de Classificação Tributária do IBS e da CBS",
+          "type": "string"
+        },
+        "ibs_cbs_classificacao_tributaria_regular": {
+          "title": "Cód. class. trib. reg. IBS/CBS",
+          "description": "Código de Classificação Tributária do IBS e da CBS de tributação regular",
+          "type": "string"
+        },
+        "ibs_cbs_credito_codigo_classificacao": {
+          "title": "Cód. créd. pres. IBS/CBS",
+          "description": "Código e classificação do crédito presumido: IBS e CBS",
+          "type": "string"
+        },
+        "ibs_cbs_situacao_tributaria": {
+          "title": "CST IBS/CBS",
+          "description": "Código de Situação Tributária do IBS e da CBS",
+          "type": "string"
+        },
+        "ibs_cbs_situacao_tributaria_regular": {
+          "title": "CST trib. reg. IBS/CBS",
+          "description": "Código de Situação Tributária do IBS e da CBS de tributação regular",
+          "type": "string"
+        },
+        "ibs_mun_percentual_diferimento": {
+          "title": "Perc. de diferimento para IBS Mun.",
+          "description": "",
+          "type": "string"
+        },
+        "ibs_uf_percentual_diferimento": {
+          "title": "Perc. de diferimento para IBS UF",
+          "description": "",
+          "type": "string"
+        },
+        "valor_total_tributos": {
+          "title": "Valor Total Tributos",
+          "description": "",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "cbs_percentual_diferimento",
+        "codigo_indicador_operacao",
+        "codigo_nbs",
+        "ibs_cbs_classificacao_tributaria",
+        "ibs_cbs_classificacao_tributaria_regular",
+        "ibs_cbs_credito_codigo_classificacao",
+        "ibs_cbs_situacao_tributaria",
+        "ibs_cbs_situacao_tributaria_regular",
+        "ibs_mun_percentual_diferimento",
+        "ibs_uf_percentual_diferimento",
+        "valor_total_tributos"
+      ]
+    },
+    "tipo_compra_governamental": {
+      "title": "Tipo de ente governamental",
+      "description": "Tipo de ente governamental. Para administração pública direta e suas autarquias e fundações.Valores possíveis:1 - União2 - Estado3 - Distrito Federal4 - Município",
+      "type": "string"
+    },
+    "tipo_operacao_governamental": {
+      "title": "Tipo Operação Entes Governamentais",
+      "description": "Tipo de Operação com Entes Governamentais ou outros serviços sobre bens imóveis1 - Fornecimento com pagamento posterior;2 - Recebimento do pagamento com fornecimento já realizado;3 - Fornecimento com pagamento já realizado;4 - Recebimento do pagamento com fornecimento posterior;5 - Fornecimento e recebimento do pagamento concomitantes.",
+      "type": "string"
+    },
+    "tomador": {
+      "type": "object",
+      "properties": {
+        "nif": {
+          "title": "NIF",
+          "description": "Número de identificação fiscal fornecido por órgão de administração tributária no exterior",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "nif"
+      ]
+    }
+  },
+  "optional": [
+    "chaves_nfse_referenciadas",
+    "consumidor_final",
+    "destinatario",
+    "documentos_referenciados",
+    "finalidade_emissao",
+    "imovel",
+    "indicador_destinatario",
+    "regime_tributario_simples_nacional",
+    "tipo_compra_governamental",
+    "tipo_operacao_governamental"
+  ]
+}

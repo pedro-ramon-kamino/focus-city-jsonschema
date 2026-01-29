@@ -1,0 +1,8 @@
+{
+  "obrigatorios": {},
+  "ignorados": {},
+  "opcionais": {
+    "$.codigo_municipio_incidencia": "Código IBGE de 7 dígitos da localidade de incidência do ISSQN.",
+    "$.iss_aliquota": "Alíquota aplicada sobre a base de cálculo para apuração do ISSQN."
+  }
+}

@@ -1,0 +1,647 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Emissão de NFS-e em São Paulo (SP) pela API da Focus NFe",
+  "type": "object",
+  "properties": {
+    "chaves_nfse_referenciadas": {
+      "title": "Chaves de acesso da NFS-e referenciada",
+      "description": "Lista de objetos do tipo chave_nfse",
+      "type": "string"
+    },
+    "chaves_nfse_referenciadas[]": {
+      "type": "object",
+      "properties": {
+        "chave_nfse": {
+          "title": "Chave da NFS-e referenciada",
+          "description": "",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "chave_nfse"
+      ]
+    },
+    "consumidor_final": {
+      "title": "Indicador Consumo Final",
+      "description": "Valores possíveis:0 - Não1 - Sim",
+      "type": "string"
+    },
+    "destinatario": {
+      "title": "Destinatário",
+      "description": "Grupo de informações do destinatário",
+      "type": "string",
+      "properties": {
+        "cnpj": {
+          "title": "CNPJ",
+          "description": "Número do CNPJ",
+          "type": "string"
+        },
+        "cpf": {
+          "title": "CPF",
+          "description": "Número do CPF",
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "description": "Endereço eletrônico",
+          "type": "string"
+        },
+        "endereco": {
+          "title": "Endereço",
+          "description": "Grupo de informações do endereço",
+          "type": "string",
+          "properties": {
+            "cep": {
+              "title": "CEP",
+              "description": "Código de Endereçamento Postal",
+              "type": "string"
+            },
+            "cep_ext": {
+              "title": "CEP no exterior",
+              "description": "Código alfanumérico do Endereçamento Postal no exterior",
+              "type": "string"
+            },
+            "codigo_pais_ext": {
+              "title": "Código do país",
+              "description": "Tabela de Países ISO",
+              "type": "string"
+            },
+            "nome_cidade_ext": {
+              "title": "Nome da cidade no exterior",
+              "description": "Nome da cidade no exterior",
+              "type": "string"
+            },
+            "regiao_ext": {
+              "title": "Região no exterior",
+              "description": "Estado, província ou região da cidade no exterior",
+              "type": "string"
+            }
+          },
+          "optional": [
+            "cep",
+            "cep_ext",
+            "codigo_pais_ext",
+            "nome_cidade_ext",
+            "regiao_ext"
+          ]
+        },
+        "motivo_ausencia_nif": {
+          "title": "Motivo ausência NIF",
+          "description": "Tipo do motivo para não informação do NIF. Valores possíveis:0 - Não informado na nota de origem1 - Dispensado do NIF2 - Não exigência do NIF",
+          "type": "string"
+        },
+        "nif": {
+          "title": "NIF",
+          "description": "Número de Identificação Fiscal fornecido por um órgão de administração tributária no exterior",
+          "type": "string"
+        },
+        "razao_social": {
+          "title": "Razão Social",
+          "description": "Nome ou Razão Social",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "cnpj",
+        "cpf",
+        "email",
+        "endereco",
+        "motivo_ausencia_nif",
+        "nif",
+        "razao_social"
+      ]
+    },
+    "documentos_referenciados": {
+      "title": "Documentos Referenciados",
+      "description": "Lista de objetos do tipo documentos_referenciados",
+      "type": "string"
+    },
+    "documentos_referenciados[]": {
+      "type": "object",
+      "properties": {
+        "chave_dfe": {
+          "title": "Chave DFE",
+          "description": "Chave do Documento Fiscal eletrônico do repositório nacional referenciado para os casos de operações já tributadas",
+          "type": "string"
+        },
+        "cnpj_fornecedor": {
+          "title": "CNPJ do fornecedor",
+          "description": "",
+          "type": "string"
+        },
+        "codigo_municipio_doc_fiscal_outro": {
+          "title": "Código município emissor",
+          "description": "Código do município emissor do documento fiscal que não se encontra no repositório nacional",
+          "type": "string"
+        },
+        "cpf_fornecedor": {
+          "title": "CPF do fornecedor",
+          "description": "",
+          "type": "string"
+        },
+        "data_competencia_documento_dedutivel": {
+          "title": "Data comp. doc. ded.",
+          "description": "Data da competência do documento dedutível. Ano, mês e dia (AAAA-MM-DD)",
+          "type": "string"
+        },
+        "data_emissao_documento_dedutivel": {
+          "title": "Data emissão doc. ded.",
+          "description": "Data da emissão do documento dedutível. Ano, mês e dia (AAAA-MM-DD)",
+          "type": "string"
+        },
+        "descricao_chave_dfe": {
+          "title": "Descrição chave DFE",
+          "description": "Descrição da DF -e a que se refere a chaveDfe que seja um dos documentos do Repositório Nacional. Deve ser preenchido apenas quando tipoChaveDFe = 9 (Outro)",
+          "type": "string"
+        },
+        "descricao_doc_fiscal_outro": {
+          "title": "Descrição do documento fiscal",
+          "description": "",
+          "type": "string"
+        },
+        "descricao_doc_nao_fiscal": {
+          "title": "Descrição do documento não fiscal",
+          "description": "",
+          "type": "string"
+        },
+        "descricao_tipo_valor_incluido": {
+          "title": "Descrição repasse",
+          "description": "Descrição do reembolso ou ressarcimento quando a opção é \"99 - Outros reembolsos ou ressarcimentos recebidos por valores pagos relativos a operações por conta e ordem de terceiro\"",
+          "type": "string"
+        },
+        "motivo_ausencia_nif_fornecedor": {
+          "title": "Mot. ausência NIF fornecedor",
+          "description": "Tipo do motivo para não informação do NIF. Valores possíveis:0 - Não informado na nota de origem1 - Dispensado do NIF2 - Não exigência do NIF",
+          "type": "string"
+        },
+        "nif_fornecedor": {
+          "title": "NIF do fornecedor",
+          "description": "Tipo NIF (Número de Identificação Fiscal) - fornecido por um órgão de administração tributária no exterior",
+          "type": "string"
+        },
+        "numero_doc_fiscal_outro": {
+          "title": "Número do documento fiscal",
+          "description": "Número do documento fiscal que não se encontra no repositório nacional",
+          "type": "string"
+        },
+        "numero_doc_nao_fiscal": {
+          "title": "Número do documento não fiscal",
+          "description": "",
+          "type": "string"
+        },
+        "razao_social_fornecedor": {
+          "title": "Razão Social do fornecedor",
+          "description": "Nome ou Razão Social",
+          "type": "string"
+        },
+        "tipo_chave_dfe": {
+          "title": "Tipo chave DFE",
+          "description": "Tipo de documento do repositório nacional. Valores possíveis:1 - NFS-e2 - NF-e3 - CT-e9 - Outro",
+          "type": "string"
+        },
+        "tipo_valor_incluido": {
+          "title": "Tipo valor incluído",
+          "description": "Tipo de valor incluído neste documento, recebido por motivo de estarem relacionadas a operações de terceiros, objeto de reembolso, repasse ou ressarcimento pelo recebedor, já tributados e aqui referenciado",
+          "type": "string"
+        },
+        "valor_repasse": {
+          "title": "Valor monetário reembolso ou ressarcimento",
+          "description": "Valor monetário (total ou parcial, conforme documento informado) utilizado para não inclusão na base de cálculo do ISS e do IBS e da CBS da NFS-e que está sendo emitida (R$)",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "chave_dfe",
+        "cnpj_fornecedor",
+        "codigo_municipio_doc_fiscal_outro",
+        "cpf_fornecedor",
+        "data_competencia_documento_dedutivel",
+        "data_emissao_documento_dedutivel",
+        "descricao_chave_dfe",
+        "descricao_doc_fiscal_outro",
+        "descricao_doc_nao_fiscal",
+        "descricao_tipo_valor_incluido",
+        "motivo_ausencia_nif_fornecedor",
+        "nif_fornecedor",
+        "numero_doc_fiscal_outro",
+        "numero_doc_nao_fiscal",
+        "razao_social_fornecedor",
+        "tipo_chave_dfe",
+        "tipo_valor_incluido",
+        "valor_repasse"
+      ]
+    },
+    "evento": {
+      "title": "Evento",
+      "description": "Grupo de informações sobre o evento",
+      "type": "string",
+      "properties": {
+        "data_fim": {
+          "title": "Data de fim do evento",
+          "description": "Data de fim da atividade de evento. Ano, Mês e Dia (AAAA-MM-DD)",
+          "type": "string"
+        },
+        "data_inicio": {
+          "title": "Data de início do evento",
+          "description": "Data de início da atividade de evento. Ano, Mês e Dia (AAAA-MM-DD)",
+          "type": "string"
+        },
+        "endereco": {
+          "title": "Endereço do evento",
+          "description": "Grupo de informações do endereço do evento",
+          "type": "string",
+          "properties": {
+            "cep": {
+              "title": "CEP",
+              "description": "Código de Endereçamento Postal",
+              "type": "string"
+            },
+            "cep_ext": {
+              "title": "CEP no exterior",
+              "description": "Código alfanumérico do Endereçamento Postal no exterior",
+              "type": "string"
+            },
+            "codigo_pais_ext": {
+              "title": "Código do país",
+              "description": "Tabela de Países ISO",
+              "type": "string"
+            },
+            "nome_cidade_ext": {
+              "title": "Nome da cidade no exterior",
+              "description": "Nome da cidade no exterior",
+              "type": "string"
+            },
+            "regiao_ext": {
+              "title": "Região no exterior",
+              "description": "Estado, província ou região da cidade no exterior",
+              "type": "string"
+            }
+          },
+          "optional": [
+            "cep",
+            "cep_ext",
+            "codigo_pais_ext",
+            "nome_cidade_ext",
+            "regiao_ext"
+          ]
+        },
+        "nome": {
+          "title": "Nome do evento",
+          "description": "Nome do evento cultural, artístico, esportivo",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "data_fim",
+        "data_inicio",
+        "endereco",
+        "nome"
+      ]
+    },
+    "exigibilidade_suspensa": {
+      "title": "Exigibilidade Suspensa",
+      "description": "Informe se é uma emissão com exigibilidade suspensa.0 - Não1 - Sim",
+      "type": "string"
+    },
+    "finalidade_emissao": {
+      "title": "Indicador da finalidade da emissão",
+      "description": "Valores possíveis:0 - NFS-e regular1 - NFS-e complementar",
+      "type": "string"
+    },
+    "imovel": {
+      "type": "object",
+      "properties": {
+        "codigo_cib": {
+          "title": "Código CIB",
+          "description": "Cadastro de imóveis. Obrigatório para construção civil",
+          "type": "string"
+        },
+        "endereco": {
+          "title": "Endereço imóvel",
+          "description": "Grupo de informações do endereço do imóvel",
+          "type": "string",
+          "properties": {
+            "cep": {
+              "title": "CEP",
+              "description": "Código de Endereçamento Postal",
+              "type": "string"
+            },
+            "cep_ext": {
+              "title": "CEP no exterior",
+              "description": "Código alfanumérico do Endereçamento Postal no exterior",
+              "type": "string"
+            },
+            "codigo_pais_ext": {
+              "title": "Código do país",
+              "description": "Tabela de Países ISO",
+              "type": "string"
+            },
+            "nome_cidade_ext": {
+              "title": "Nome da cidade no exterior",
+              "description": "Nome da cidade no exterior",
+              "type": "string"
+            },
+            "regiao_ext": {
+              "title": "Região no exterior",
+              "description": "Estado, província ou região da cidade no exterior",
+              "type": "string"
+            }
+          },
+          "optional": [
+            "cep",
+            "cep_ext",
+            "codigo_pais_ext",
+            "nome_cidade_ext",
+            "regiao_ext"
+          ]
+        },
+        "inscricao_imobiliaria": {
+          "title": "Inscrição Imobiliária Fiscal",
+          "description": "Inscrição Imobiliária fiscal (código fornecido pela prefeitura para identificação da obra ou para fins de recolhimento do IPTU)",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "codigo_cib",
+        "endereco",
+        "inscricao_imobiliaria"
+      ]
+    },
+    "indicador_destinatario": {
+      "title": "Indicador Destinatário",
+      "description": "Valores possíveis:0 - O destinatário é o próprio tomador identificado na NFS-e (tomador = destinatário)1 - O destinatário não é o próprio tomador, podendo ser o intermediário ou outra pessoa, física ou jurídica (ou equiparada), ou um estabelecimento diferente do indicado como tomador (tomador != destinatário)",
+      "type": "string"
+    },
+    "obra": {
+      "type": "object",
+      "properties": {
+        "codigo": {
+          "title": "Código Obra",
+          "description": "Identificação da obra, do Cadastro Nacional de Obras, ou do Cadastro Específico do INSS",
+          "type": "string"
+        },
+        "codigo_cib": {
+          "title": "Código CIB",
+          "description": "Cadastro de imóveis. Obrigatório para construção civil",
+          "type": "string"
+        },
+        "endereco": {
+          "title": "Endereço obra",
+          "description": "Grupo de informações do endereço da obra",
+          "type": "string",
+          "properties": {
+            "cep": {
+              "title": "CEP",
+              "description": "Código de Endereçamento Postal",
+              "type": "string"
+            },
+            "cep_ext": {
+              "title": "CEP no exterior",
+              "description": "Código alfanumérico do Endereçamento Postal no exterior",
+              "type": "string"
+            },
+            "codigo_pais_ext": {
+              "title": "Código do país",
+              "description": "Tabela de Países ISO",
+              "type": "string"
+            },
+            "nome_cidade_ext": {
+              "title": "Nome da cidade no exterior",
+              "description": "Nome da cidade no exterior",
+              "type": "string"
+            },
+            "regiao_ext": {
+              "title": "Região no exterior",
+              "description": "Estado, província ou região da cidade no exterior",
+              "type": "string"
+            }
+          },
+          "optional": [
+            "cep",
+            "cep_ext",
+            "codigo_pais_ext",
+            "nome_cidade_ext",
+            "regiao_ext"
+          ]
+        },
+        "inscricao_imobiliaria": {
+          "title": "Inscrição Imobiliária Fiscal",
+          "description": "Inscrição Imobiliária fiscal (código fornecido pela prefeitura para identificação da obra ou para fins de recolhimento do IPTU)",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "codigo",
+        "codigo_cib",
+        "endereco",
+        "inscricao_imobiliaria"
+      ]
+    },
+    "pagamento_parcelado_antecipado": {
+      "title": "Pag. Parc. Antecipado",
+      "description": "Informe se a nota teve pagamento parcelado antecipado0 - Não1 - Sim",
+      "type": "string"
+    },
+    "servico": {
+      "type": "object",
+      "properties": {
+        "codigo_indicador_operacao": {
+          "title": "Código indicador da operação de fornecimento",
+          "description": "Conforme tabela \"código indicador de operação\"",
+          "type": "string"
+        },
+        "codigo_municipio_prestacao": {
+          "title": "Código município prestação",
+          "description": "Código da cidade do município da prestação do serviço",
+          "type": "string"
+        },
+        "codigo_nbs": {
+          "title": "NBS",
+          "description": "Nomenclatura Brasileira de Serviços",
+          "type": "string"
+        },
+        "codigo_ncm": {
+          "title": "NCM",
+          "description": "Nomenclatura Comum do Mercosul",
+          "type": "string"
+        },
+        "codigo_pais_prestacao": {
+          "title": "Código do país prestação",
+          "description": "Código do país da prestação do serviço",
+          "type": "string"
+        },
+        "fonte_total_tributos": {
+          "title": "Fonte do total de tributos",
+          "description": "Utilizado para mostrar a entidade responsável pelo cálculo do campo percentual_total_tributos. Ex: IBPT.",
+          "type": "string"
+        },
+        "ibs_cbs_classificacao_tributaria": {
+          "title": "Código Class. Trib. IBS/CBS",
+          "description": "Código de classificação Tributária do IBS e da CBS principal",
+          "type": "string"
+        },
+        "ibs_cbs_classificacao_tributaria_regular": {
+          "title": "Código Class. Trib. IBS/CBS Regular",
+          "description": "Código de classificação Tributária do IBS e da CBS de tributação regular",
+          "type": "string"
+        },
+        "percentual_total_tributos": {
+          "title": "Percentual do valor total dos tributos",
+          "description": "",
+          "type": "string"
+        },
+        "valor_final_cobrado": {
+          "title": "Valor Final",
+          "description": "Valor final cobrado",
+          "type": "string"
+        },
+        "valor_inicial_cobrado": {
+          "title": "Valor Inicial",
+          "description": "Valor inicial cobrado",
+          "type": "string"
+        },
+        "valor_ipi": {
+          "title": "Valor IPI",
+          "description": "Valor de IPI",
+          "type": "string"
+        },
+        "valor_juros": {
+          "title": "Valor Juros",
+          "description": "Valor dos juros",
+          "type": "string"
+        },
+        "valor_multa": {
+          "title": "Valor Multa",
+          "description": "Valor da multa",
+          "type": "string"
+        }
+      },
+      "required": [
+        "codigo_indicador_operacao",
+        "codigo_nbs",
+        "ibs_cbs_classificacao_tributaria",
+        "valor_final_cobrado",
+        "valor_ipi"
+      ],
+      "optional": [
+        "codigo_municipio_prestacao",
+        "codigo_ncm",
+        "codigo_pais_prestacao",
+        "fonte_total_tributos",
+        "ibs_cbs_classificacao_tributaria_regular",
+        "percentual_total_tributos",
+        "valor_inicial_cobrado",
+        "valor_juros",
+        "valor_multa"
+      ]
+    },
+    "tipo_compra_governamental": {
+      "title": "Tipo do ente da compra governamental",
+      "description": "Valores possíveis:1 - União2 - Estados3 - Distrito Federal4 - Municípios",
+      "type": "string"
+    },
+    "tipo_operacao_governamental": {
+      "title": "Tipo de Op. Entes Gov.",
+      "description": "Tipo de Operação com Entes Governamentais ou outros serviços sobre bens imóveis. Valores possíveis:1 - Fornecimento com pagamento posterior2 - Recebimento do pagamento com fornecimento já realizado3 - Fornecimento com pagamento já realizado4 - Recebimento do pagamento com fornecimento posterior5 - Fornecimento e recebimento do pagamento concomitantes",
+      "type": "string"
+    },
+    "tomador": {
+      "type": "object",
+      "properties": {
+        "endereco": {
+          "title": "Endereço do tomador",
+          "description": "",
+          "type": "string",
+          "properties": {
+            "bairro": {
+              "title": "Bairro",
+              "description": "",
+              "type": "string"
+            },
+            "cep": {
+              "title": "CEP",
+              "description": "",
+              "type": "string"
+            },
+            "codigo_municipio": {
+              "title": "Código Município",
+              "description": "",
+              "type": "string"
+            },
+            "complemento": {
+              "title": "Complemento",
+              "description": "",
+              "type": "string"
+            },
+            "logradouro": {
+              "title": "Logradouro",
+              "description": "",
+              "type": "string"
+            },
+            "numero": {
+              "title": "Número",
+              "description": "",
+              "type": "string"
+            },
+            "tipo_logradouro": {
+              "title": "Tipo de Logradouro",
+              "description": "",
+              "type": "string"
+            },
+            "uf": {
+              "title": "UF",
+              "description": "",
+              "type": "string"
+            }
+          },
+          "optional": [
+            "bairro",
+            "cep",
+            "codigo_municipio",
+            "complemento",
+            "logradouro",
+            "numero",
+            "tipo_logradouro",
+            "uf"
+          ]
+        },
+        "motivo_ausencia_nif": {
+          "title": "Motivo ausência NIF",
+          "description": "Tipo do motivo para não informação do NIF0 - Não informado na nota de origem1 - Dispensado do NIF2 - Não exigência do NIF",
+          "type": "string"
+        },
+        "nif": {
+          "title": "NIF",
+          "description": "Tipo NIF (Número de Identificação Fiscal) fornecido por um órgão de administração tributária no exterior",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "endereco",
+        "motivo_ausencia_nif",
+        "nif"
+      ]
+    },
+    "tributacao_rps": {
+      "title": "Tipo de tributação do RPS",
+      "description": "Indica como o RPS foi tributado. Valores possíveis:T: Tributado em São Paulo (valor default);F: Tributado Fora de São Paulo;A: Tributado em São Paulo, porém Isento;B: Tributado Fora de São Paulo, porém Isento;M: Tributado em São Paulo, porém Imune;N: Tributado Fora de São Paulo, porém Imune;X: Tributado em São Paulo, porém Exigibilidade Suspensa;V: Tributado Fora de São Paulo, porém Exigibilidade Suspensa;P: Exportação de Serviços.",
+      "type": "string"
+    }
+  },
+  "optional": [
+    "chaves_nfse_referenciadas",
+    "destinatario",
+    "documentos_referenciados",
+    "evento",
+    "tipo_compra_governamental",
+    "tipo_operacao_governamental",
+    "tributacao_rps"
+  ],
+  "required": [
+    "consumidor_final",
+    "exigibilidade_suspensa",
+    "finalidade_emissao",
+    "indicador_destinatario",
+    "pagamento_parcelado_antecipado"
+  ]
+}

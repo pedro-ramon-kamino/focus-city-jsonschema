@@ -1,0 +1,730 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Emissão de NFS-e em Itajaí (SC) pela API da Focus NFe",
+  "type": "object",
+  "properties": {
+    "codigo_moeda": {
+      "title": "Cód. Moeda",
+      "description": "Código da moeda conforme padrão ISO 4217, composto por 3 dígitos numéricos.Valores possíveis: https://bcb.gov.br/estabilidadefinanceira/cotacoestodas",
+      "type": "string"
+    },
+    "destinatario": {
+      "title": "Destinatário do Serviço",
+      "description": "",
+      "type": "string",
+      "properties": {
+        "cnpj": {
+          "title": "CNPJ",
+          "description": "",
+          "type": "string"
+        },
+        "cpf": {
+          "title": "CPF",
+          "description": "",
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "description": "",
+          "type": "string"
+        },
+        "endereco": {
+          "title": "Endereço",
+          "description": "Informações de Endereço do Destinatário",
+          "type": "string",
+          "properties": {
+            "bairro": {
+              "title": "Bairro",
+              "description": "",
+              "type": "string"
+            },
+            "cep": {
+              "title": "CEP",
+              "description": "",
+              "type": "string"
+            },
+            "codigo_municipio": {
+              "title": "Cód. Município",
+              "description": "Código do Município conforme tabela do IBGE",
+              "type": "string"
+            },
+            "codigo_pais": {
+              "title": "Cód. País",
+              "description": "Código do País conforme tabela do BACEN",
+              "type": "string"
+            },
+            "complemento": {
+              "title": "Complemento",
+              "description": "",
+              "type": "string"
+            },
+            "logradouro": {
+              "title": "Logradouro",
+              "description": "",
+              "type": "string"
+            },
+            "numero": {
+              "title": "Número",
+              "description": "",
+              "type": "string"
+            },
+            "uf": {
+              "title": "UF",
+              "description": "Sigla da Unidade da Federação - Estado",
+              "type": "string"
+            }
+          },
+          "optional": [
+            "bairro",
+            "cep",
+            "codigo_municipio",
+            "codigo_pais",
+            "complemento",
+            "logradouro",
+            "numero",
+            "uf"
+          ]
+        },
+        "nif": {
+          "title": "NIF",
+          "description": "",
+          "type": "string"
+        },
+        "razao_social": {
+          "title": "Razão Social",
+          "description": "Nome ou Razão Social",
+          "type": "string"
+        },
+        "telefone": {
+          "title": "Telefone",
+          "description": "",
+          "type": "string"
+        },
+        "tipo_servico": {
+          "title": "Tipo Serviço",
+          "description": "Tipo do Destinatário do ServiçoValores possíveis:0 - Em branco / Não informado1 - Próprio adquirente do serviço2 - Outro adquirente (intermediário ou terceiro)",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "cnpj",
+        "cpf",
+        "email",
+        "endereco",
+        "nif",
+        "razao_social",
+        "telefone",
+        "tipo_servico"
+      ]
+    },
+    "evento": {
+      "title": "Atividade Evento",
+      "description": "Informações de Serviço de Atividades e Eventos",
+      "type": "string",
+      "properties": {
+        "data_fim": {
+          "title": "Data de Fim",
+          "description": "",
+          "type": "string"
+        },
+        "data_inicio": {
+          "title": "Data de Início",
+          "description": "",
+          "type": "string"
+        },
+        "endereco": {
+          "title": "Endereço",
+          "description": "Informações de Endereço da Atividade/Evento",
+          "type": "string",
+          "properties": {
+            "bairro": {
+              "title": "Bairro",
+              "description": "",
+              "type": "string"
+            },
+            "cep": {
+              "title": "CEP",
+              "description": "",
+              "type": "string"
+            },
+            "codigo_municipio": {
+              "title": "Cód. Município",
+              "description": "Código do Município conforme tabela do IBGE",
+              "type": "string"
+            },
+            "codigo_pais": {
+              "title": "Cód. País",
+              "description": "Código do País conforme tabela do BACEN",
+              "type": "string"
+            },
+            "complemento": {
+              "title": "Complemento",
+              "description": "",
+              "type": "string"
+            },
+            "logradouro": {
+              "title": "Logradouro",
+              "description": "",
+              "type": "string"
+            },
+            "numero": {
+              "title": "Número",
+              "description": "",
+              "type": "string"
+            },
+            "uf": {
+              "title": "UF",
+              "description": "Sigla da Unidade da Federação - Estado",
+              "type": "string"
+            }
+          },
+          "optional": [
+            "bairro",
+            "cep",
+            "codigo_municipio",
+            "codigo_pais",
+            "complemento",
+            "logradouro",
+            "numero",
+            "uf"
+          ]
+        }
+      },
+      "optional": [
+        "data_fim",
+        "data_inicio",
+        "endereco"
+      ]
+    },
+    "intermediario": {
+      "title": "Intermediário do Serviço",
+      "description": "",
+      "type": "string",
+      "properties": {
+        "endereco": {
+          "title": "Endereço",
+          "description": "Informações de Endereço do Intermediário",
+          "type": "string",
+          "properties": {
+            "bairro": {
+              "title": "Bairro",
+              "description": "",
+              "type": "string"
+            },
+            "cep": {
+              "title": "CEP",
+              "description": "",
+              "type": "string"
+            },
+            "codigo_municipio": {
+              "title": "Cód. Município",
+              "description": "Código do Município conforme tabela do IBGE",
+              "type": "string"
+            },
+            "codigo_pais": {
+              "title": "Cód. País",
+              "description": "Código do País conforme tabela do BACEN",
+              "type": "string"
+            },
+            "complemento": {
+              "title": "Complemento",
+              "description": "",
+              "type": "string"
+            },
+            "logradouro": {
+              "title": "Logradouro",
+              "description": "",
+              "type": "string"
+            },
+            "numero": {
+              "title": "Número",
+              "description": "",
+              "type": "string"
+            },
+            "uf": {
+              "title": "UF",
+              "description": "Sigla da Unidade da Federação - Estado",
+              "type": "string"
+            }
+          },
+          "optional": [
+            "bairro",
+            "cep",
+            "codigo_municipio",
+            "codigo_pais",
+            "complemento",
+            "logradouro",
+            "numero",
+            "uf"
+          ]
+        },
+        "nif": {
+          "title": "NIF",
+          "description": "Número de identificação fiscal fornecido por órgão de administração tributária no exterior",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "endereco",
+        "nif"
+      ]
+    },
+    "mdic": {
+      "title": "Envio MDIC",
+      "description": "Envio de informações ao MDICValores possíveis:0 - Não enviar ao MDIC1 - Enviar ao MDIC",
+      "type": "string"
+    },
+    "mecanismo_comercio_ext_prestador": {
+      "title": "Mec. Aferição ComEx Prestador",
+      "description": "Mecanismo de Aferição - Comércio Exterior (Prestador)Valores possíveis:00 - Desconhecido01 - Nenhum02 - ACC - Adiantamento sobre Contrato de Câmbio03 - ACE - Adiantamento sobre Cambiais Entregues04 - BNDES-Exim Pós-Embarque - Serviços05 - BNDES-Exim Pré-Embarque - Serviços06 - FGE - Fundo de Garantia à Exportação07 - PROEX - Equalização08 - PROEX - Financiamento",
+      "type": "string"
+    },
+    "mecanismo_comercio_ext_tomador": {
+      "title": "Mec. Aferição ComEx Tomador",
+      "description": "Mecanismo de Aferição – Comércio Exterior (Tomador)Valores possíveis:00 - Desconhecido01 - Nenhum02 - Adm. Pública e Representação Internacional03 - Aluguéis e Arrendamento de Máquinas/Equipamentos04 - Arrendamento de Aeronave - Transporte Aéreo Público05 - Comissão a Agentes Externos06 - Armazenagem/Movimentação no Exterior07 - Eventos FIFA (Subsidiária)08 - Eventos FIFA09 - Fretes e Arrendamentos10 - Material Aeronáutico11 - Promoção de Bens no Exterior12 - Promoção de Destinos Turísticos13 - Promoção do Brasil no Exterior14 - Promoção de Serviços no Exterior15 - RECINE16 - RECOPA17 - Registro/Manutenção de Marcas/Patentes18 - REICOMP19 - REIDI20 - REPENEC21 - REPES22 - RETAERO23 - RETID24 - Royalties / Assistência Técnica25 - Avaliação de Conformidade - OMC26 - ZPE",
+      "type": "string"
+    },
+    "modo_prestacao": {
+      "title": "Modo de Prestação",
+      "description": "Modo de Prestação (exportação/importação)Valores possíveis:0 - Desconhecido1 - Transfronteiriço2 - Consumo no Brasil3 - Movimento Temporário4 - Consumo no Exterior",
+      "type": "string"
+    },
+    "movimentacao_temporaria_bens": {
+      "title": "Mov. Temporária Bens",
+      "description": "Movimentação Temporária de BensValores possíveis:0 - Desconhecido1 - Não2 - Vinculada - Declaração de Importação3 - Vinculada - Declaração de Exportação",
+      "type": "string"
+    },
+    "numero_declaracao_importacao": {
+      "title": "Número Doc. Importação",
+      "description": "Número do Documento de Importação, campo alfanumérico com tamanho mínimo de 1 e máximo de 12 caracteres.",
+      "type": "string"
+    },
+    "numero_registro_exportacao": {
+      "title": "Número Reg. Exportação",
+      "description": "Número do Registro de Exportação, campo alfanumérico com tamanho fixo de 12 caracteres.",
+      "type": "string"
+    },
+    "obra": {
+      "title": "Construção Civil",
+      "description": "Informações de Serviço de Construção Civil",
+      "type": "string",
+      "properties": {
+        "art": {
+          "title": "ART",
+          "description": "Anotação de Responsabilidade Técnica",
+          "type": "string"
+        },
+        "codigo": {
+          "title": "Cód. Obra",
+          "description": "Código de identificação da obra",
+          "type": "string"
+        },
+        "codigo_cib": {
+          "title": "Cód. CIB",
+          "description": "Código do Cadastro Imobiliário Brasileiro",
+          "type": "string"
+        },
+        "endereco": {
+          "title": "Endereço Completo",
+          "description": "Informações de Endereço da Obra",
+          "type": "string",
+          "properties": {
+            "bairro": {
+              "title": "Bairro",
+              "description": "",
+              "type": "string"
+            },
+            "cep": {
+              "title": "CEP",
+              "description": "",
+              "type": "string"
+            },
+            "codigo_municipio": {
+              "title": "Cód. Município",
+              "description": "Código do Município conforme tabela do IBGE",
+              "type": "string"
+            },
+            "codigo_pais": {
+              "title": "Cód. País",
+              "description": "Código do País conforme tabela do BACEN",
+              "type": "string"
+            },
+            "complemento": {
+              "title": "Complemento",
+              "description": "",
+              "type": "string"
+            },
+            "logradouro": {
+              "title": "Logradouro",
+              "description": "",
+              "type": "string"
+            },
+            "numero": {
+              "title": "Número",
+              "description": "",
+              "type": "string"
+            },
+            "uf": {
+              "title": "UF",
+              "description": "Sigla da Unidade da Federação - Estado",
+              "type": "string"
+            }
+          },
+          "optional": [
+            "bairro",
+            "cep",
+            "codigo_municipio",
+            "codigo_pais",
+            "complemento",
+            "logradouro",
+            "numero",
+            "uf"
+          ]
+        },
+        "endereco_simplificado": {
+          "title": "Endereço Simplificado",
+          "description": "Endereço por extenso (antigo, condensado em apenas uma string)",
+          "type": "string"
+        },
+        "inscricao_municipal": {
+          "title": "Inscrição Municipal",
+          "description": "",
+          "type": "string"
+        },
+        "numero_ano": {
+          "title": "Numero Ano",
+          "description": "",
+          "type": "string"
+        },
+        "tipo_alvara": {
+          "title": "Tipo Alvará",
+          "description": "",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "art",
+        "codigo",
+        "codigo_cib",
+        "endereco",
+        "endereco_simplificado",
+        "inscricao_municipal",
+        "numero_ano",
+        "tipo_alvara"
+      ]
+    },
+    "servico": {
+      "type": "object",
+      "properties": {
+        "aliquota_cofins": {
+          "title": "Alíq. COFINS",
+          "description": "Valor da Alíquota do COFINS (%)",
+          "type": "string"
+        },
+        "aliquota_pis": {
+          "title": "Alíq. PIS",
+          "description": "Valor da Alíquota do PIS (%)",
+          "type": "string"
+        },
+        "base_calculo_pis_cofins": {
+          "title": "Base Cálculo PIS/COFINS",
+          "description": "Valor da Base de Cálculo do PIS/COFINS (R$)",
+          "type": "string"
+        },
+        "cbs_aliquota": {
+          "title": "Alíquota CBS União",
+          "description": "Alíquota da União para CBS parametrizada no sistema",
+          "type": "string"
+        },
+        "cbs_aliquota_efetiva": {
+          "title": "Alíquota Efetiva CBS",
+          "description": "pAliqEfetCBS = pCBS x (1 - pRedAliqCBS) x (1 - pRedutor)Se pRedAliqCBS não for informado na DPS, então pAliqEfetCBS é a própria pCBS",
+          "type": "string"
+        },
+        "cbs_aliquota_efetiva_regular": {
+          "title": "Alíquota Efetiva Trib. Regular CBS",
+          "description": "Alíquota efetiva de tributação regular da CBS",
+          "type": "string"
+        },
+        "cbs_aliquota_governamental": {
+          "title": "Alíquota CBS",
+          "description": "Alíquota da CBS",
+          "type": "string"
+        },
+        "cbs_percentual_credito_presumido": {
+          "title": "Alíquota Créd. Presumido CBS",
+          "description": "Alíquota do crédito presumido para a CBS",
+          "type": "string"
+        },
+        "cbs_percentual_reducao_aliquota": {
+          "title": "Perc. Redução Alíquota CBS",
+          "description": "Percentual da redução de alíquota da CBS",
+          "type": "string"
+        },
+        "cbs_valor": {
+          "title": "Total Valor CBS",
+          "description": "Total valor da CBS da UniãovCBS = vBC x (pCBS ou pAliqEfetCBS)",
+          "type": "string"
+        },
+        "cbs_valor_credito_presumido": {
+          "title": "Valor Créd. Presumido CBS",
+          "description": "Valor do Crédito Presumido da CBSvCredPresCBS = vBC x pCredPresCBS",
+          "type": "string"
+        },
+        "cbs_valor_diferimento": {
+          "title": "Total Diferimento CBS",
+          "description": "Total do Diferimento CBSvDifCBS = vCBS x pDifCBS",
+          "type": "string"
+        },
+        "cbs_valor_governamental": {
+          "title": "Valor Tributo CBS",
+          "description": "Valor do Tributo da CBS calculado",
+          "type": "string"
+        },
+        "cbs_valor_regular": {
+          "title": "Valor Trib. Regular CBS",
+          "description": "Valor da tributação regular da CBSvTribRegCBS = vBC x pAliqEfeRegCBS",
+          "type": "string"
+        },
+        "codigo_municipio_prestacao": {
+          "title": "Cód. Município Prestação",
+          "description": "Código IBGE de 7 dígitos da localidade da prestação do serviço",
+          "type": "string"
+        },
+        "codigo_nbs": {
+          "title": "Cód. NBS",
+          "description": "Código da lista de Nomenclatura Brasileira de Serviços (NBS)",
+          "type": "string"
+        },
+        "codigo_pais_prestacao": {
+          "title": "Cód. País Prestação",
+          "description": "Código do País da prestação do serviço conforme tabela do BACEN",
+          "type": "string"
+        },
+        "ibs_cbs_base_calculo": {
+          "title": "Base Cálculo IBS/CBS",
+          "description": "Valor da base de cálculo (BC) do IBS/CBS antes das reduções para cálculo do tributo bruto.vBC = vServ - descIncond – vCalcReeRepRes – vISSQN – vPIS - vCOFINS (até 2026) ouvBC = vServ - descIncond – vCalcReeRepRes – vISSQN (até 2032)",
+          "type": "string"
+        },
+        "ibs_cbs_valor_total": {
+          "title": "Valor Total NF IBS/CBS",
+          "description": "Valor Total da NF considerando os impostos por fora: IBS e CBSO IBS e a CBS são por fora, por isso seus valores devem ser adicionados ao valor total da NFvTotNF = vLiq (em 2026)vTotNF = vLiq + vCBS + vIBSTot (a partir de 2027)",
+          "type": "string"
+        },
+        "ibs_mun_aliquota": {
+          "title": "Alíquota IBS Município",
+          "description": "Alíquota do Município para IBS da localidade de incidência parametrizada no sistema",
+          "type": "string"
+        },
+        "ibs_mun_aliquota_efetiva": {
+          "title": "Alíquota Efetiva IBS Município",
+          "description": "pAliqEfetMun = pIBSMun x (1 - pRedAliqMun) x (1 - pRedutor)Se pRedAliqMun não for informado na DPS, então pAliqEfetMun é a própria pIBSMun",
+          "type": "string"
+        },
+        "ibs_mun_aliquota_efetiva_regular": {
+          "title": "Alíquota Efetiva Trib. Regular IBS Mun.",
+          "description": "Alíquota efetiva de tributação regular do IBS municipal",
+          "type": "string"
+        },
+        "ibs_mun_aliquota_governamental": {
+          "title": "Alíquota IBS Competência Município",
+          "description": "Alíquota do IBS de competência do Município",
+          "type": "string"
+        },
+        "ibs_mun_percentual_reducao_aliquota": {
+          "title": "Perc. Redução Alíquota IBS Município",
+          "description": "Percentual de redução de alíquota municipal",
+          "type": "string"
+        },
+        "ibs_mun_valor": {
+          "title": "Total Valor IBS Municipal",
+          "description": "Total valor do IBS municipalvIBSMun = vBC x (pIBSMun ou pAliqEfetMun)",
+          "type": "string"
+        },
+        "ibs_mun_valor_diferimento": {
+          "title": "Total Diferimento IBS Municipal",
+          "description": "Total do Diferimento do IBS municipalvDifMun = vIBSMun x pDifMun",
+          "type": "string"
+        },
+        "ibs_mun_valor_governamental": {
+          "title": "Valor Tributo IBS Município",
+          "description": "Valor do Tributo do IBS do Município calculado",
+          "type": "string"
+        },
+        "ibs_mun_valor_regular": {
+          "title": "Valor Trib. Regular IBS Município",
+          "description": "Valor da tributação regular do IBS municipalvTribRegIBSMun = vBC x pAliqEfeRegIBSMun",
+          "type": "string"
+        },
+        "ibs_percentual_credito_presumido": {
+          "title": "Alíquota Créd. Presumido IBS",
+          "description": "Alíquota do crédito presumido para o IBS",
+          "type": "string"
+        },
+        "ibs_uf_aliquota": {
+          "title": "Alíquota IBS UF",
+          "description": "Alíquota da UF para IBS da localidade de incidência parametrizada no sistema",
+          "type": "string"
+        },
+        "ibs_uf_aliquota_efetiva": {
+          "title": "Alíquota Efetiva IBS UF",
+          "description": "pAliqEfetUF = pIBSUF x (1 - pRedAliqUF) x (1 - pRedutor)Se pRedAliqUF não for informado na DPS, então pAliqEfetUF é a própria pIBSUF",
+          "type": "string"
+        },
+        "ibs_uf_aliquota_efetiva_regular": {
+          "title": "Alíquota Efetiva Trib. Regular IBS UF",
+          "description": "Alíquota efetiva de tributação regular do IBS estadual",
+          "type": "string"
+        },
+        "ibs_uf_aliquota_governamental": {
+          "title": "Alíquota IBS Competência UF",
+          "description": "Alíquota do IBS de competência do Estado",
+          "type": "string"
+        },
+        "ibs_uf_percentual_reducao_aliquota": {
+          "title": "Perc. Redução Alíquota IBS UF",
+          "description": "Percentual de redução de alíquota estadual",
+          "type": "string"
+        },
+        "ibs_uf_valor": {
+          "title": "Total Valor IBS UF",
+          "description": "Total valor do IBS estadualvIBSUF = vBC x (pIBSUF ou pAliqEfetUF)",
+          "type": "string"
+        },
+        "ibs_uf_valor_diferimento": {
+          "title": "Total Diferimento IBS UF",
+          "description": "Total do Diferimento do IBS estadualvDifUF = vIBSUF x pDifUF",
+          "type": "string"
+        },
+        "ibs_uf_valor_governamental": {
+          "title": "Valor Tributo IBS UF",
+          "description": "Valor do Tributo do IBS da UF calculado",
+          "type": "string"
+        },
+        "ibs_uf_valor_regular": {
+          "title": "Valor Trib. Regular IBS UF",
+          "description": "Valor da tributação regular do IBS estadualvTribRegIBSUF = vBC x pAliqEfeRegIBSUF",
+          "type": "string"
+        },
+        "ibs_valor_credito_presumido": {
+          "title": "Valor Créd. Presumido IBS",
+          "description": "Valor do Crédito Presumido para o IBSvCredPresIBS = vBC x pCredPresIBS",
+          "type": "string"
+        },
+        "ibs_valor_total": {
+          "title": "Valor Total IBS",
+          "description": "Valor total do IBS.vIBSTot = vIBSUF + vIBSMun",
+          "type": "string"
+        },
+        "situacao_tributaria_pis_cofins": {
+          "title": "Cód. CST",
+          "description": "Código de Situação Tributária do PIS/COFINS (CST)Valores possíveis:00 - Nenhum01 - Operação Tributável com Alíquota Básica02 - Operação Tributável com Alíquota Diferenciada03 - Operação Tributável com Alíquota por Unidade de Medida de Produto04 - Operação Tributável monofásica - Revenda a Alíquota Zero05 - Operação Tributável por Substituição Tributária06 - Operação Tributável a Alíquota Zero07 - Operação Tributável da Contribuição08 - Operação sem Incidência da Contribuição09 - Operação com Suspensão da Contribuição",
+          "type": "string"
+        },
+        "tipo_imunidade": {
+          "title": "Tipo Imunidade",
+          "description": "Identificação da Imunidade do ISSQN - somente para o caso de ImunidadeValores possíveis:0 - Imunidade (tipo não informado na nota de origem)1 - Patrimônio, renda ou serviços, uns dos outros (CF88, Art 150, VI, a)2 - Templos de qualquer culto (CF88, Art 150, VI, b)3 - Patrimônio, renda ou serviços dos partidos políticos, inclusive suas fundações, das entidades sindicais dos trabalhadores, das instituições de educação e de assistência social, sem fins lucrativos, atendidos os requisitos da lei (CF88, Art 150, VI, c);4 - Livros, jornais, periódicos e o papel destinado a sua impressão (CF88, Art 150, VI, d)5 - Fonogramas e videofonogramas musicais produzidos no Brasil contendo obras musicais ou literomusicais de autores brasileiros e/ou obras em geral interpretadas por artistas brasileiros bem como os suportes materiais ou arquivos digitais que os contenham, salvo na etapa de replicação industrial de mídias ópticas de leitura a laser.   (CF88, Art 150, VI, e)",
+          "type": "string"
+        },
+        "tipo_retencao_pis_cofins": {
+          "title": "Tipo Retenção PIS/COFINS",
+          "description": "Tipo de Retenção do PIS/COFINSValores possíveis:1 - Retido2 - Não Retido",
+          "type": "string"
+        },
+        "valor_repasse": {
+          "title": "Valor Reembolso Repasse Ressarcimento",
+          "description": "Valor monetário (R$) total relativo ao fornecimento próprio de bens materiais ou relacionados a operações de terceiros, objeto de reembolso, repasse ou ressarcimento pelo recebedor, já tributados e aqui referenciados e que não integram da base de cálculo (BC) do ISSQN, do IBS e da CBS.",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "aliquota_cofins",
+        "aliquota_pis",
+        "base_calculo_pis_cofins",
+        "cbs_aliquota",
+        "cbs_aliquota_efetiva",
+        "cbs_aliquota_efetiva_regular",
+        "cbs_aliquota_governamental",
+        "cbs_percentual_credito_presumido",
+        "cbs_percentual_reducao_aliquota",
+        "cbs_valor",
+        "cbs_valor_credito_presumido",
+        "cbs_valor_diferimento",
+        "cbs_valor_governamental",
+        "cbs_valor_regular",
+        "codigo_municipio_prestacao",
+        "codigo_nbs",
+        "codigo_pais_prestacao",
+        "ibs_cbs_base_calculo",
+        "ibs_cbs_valor_total",
+        "ibs_mun_aliquota",
+        "ibs_mun_aliquota_efetiva",
+        "ibs_mun_aliquota_efetiva_regular",
+        "ibs_mun_aliquota_governamental",
+        "ibs_mun_percentual_reducao_aliquota",
+        "ibs_mun_valor",
+        "ibs_mun_valor_diferimento",
+        "ibs_mun_valor_governamental",
+        "ibs_mun_valor_regular",
+        "ibs_percentual_credito_presumido",
+        "ibs_uf_aliquota",
+        "ibs_uf_aliquota_efetiva",
+        "ibs_uf_aliquota_efetiva_regular",
+        "ibs_uf_aliquota_governamental",
+        "ibs_uf_percentual_reducao_aliquota",
+        "ibs_uf_valor",
+        "ibs_uf_valor_diferimento",
+        "ibs_uf_valor_governamental",
+        "ibs_uf_valor_regular",
+        "ibs_valor_credito_presumido",
+        "ibs_valor_total",
+        "situacao_tributaria_pis_cofins",
+        "tipo_imunidade",
+        "tipo_retencao_pis_cofins",
+        "valor_repasse"
+      ]
+    },
+    "tomador": {
+      "title": "Tomador do Serviço",
+      "description": "",
+      "type": "string",
+      "properties": {
+        "nif": {
+          "title": "NIF",
+          "description": "Número de identificação fiscal fornecido por órgão de administração tributária no exterior",
+          "type": "string"
+        }
+      },
+      "optional": [
+        "nif"
+      ]
+    },
+    "valor_servico_ext": {
+      "title": "Valor Serviço Moeda",
+      "description": "Valor decimal do serviço na moeda informada, com até 15 dígitos inteiros e 2 casas decimais.",
+      "type": "string"
+    },
+    "vinculo_negocio": {
+      "title": "Vínculo entre partes",
+      "description": "Vínculo entre as partes no negócio (exportação/importação)Valores possíveis:0 - Sem vínculo1 - Controlada2 - Controladora3 - Coligada4 - Matriz5 - Filial6 - Outro vínculo",
+      "type": "string"
+    }
+  },
+  "optional": [
+    "codigo_moeda",
+    "destinatario",
+    "evento",
+    "intermediario",
+    "mdic",
+    "mecanismo_comercio_ext_prestador",
+    "mecanismo_comercio_ext_tomador",
+    "modo_prestacao",
+    "movimentacao_temporaria_bens",
+    "numero_declaracao_importacao",
+    "numero_registro_exportacao",
+    "obra",
+    "tomador",
+    "valor_servico_ext",
+    "vinculo_negocio"
+  ]
+}

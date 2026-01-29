@@ -1,0 +1,93 @@
+
+        <p>Rio de Janeiro – RJ é uma das centenas de <a href="https://focusnfe.com.br/cidades-integradas-nfse/">cidades integradas à API da Focus NFe</a>.<br>
+Nossos clientes já podem realizar a <strong>emissão</strong>, <strong>consulta</strong> e <strong>cancelamento</strong> de <strong>notas fiscais de serviço (NFSe)</strong>.</p>
+
+<p>Utilizamos um padrão simples e consistente de comunicação com o web service da prefeitura, garantindo disponibilidade e rapidez.<br>
+A <a href="https://focusnfe.com.br/produtos/nota-fiscal-eletronica-nfe/">API da Focus NFe</a> utiliza um formato único na comunicação com todos os municípios brasileiros.</p>
+
+<p>Além da nossa API, também há outras formas de emissão de NFS-e na cidade do Rio de Janeiro.<br>
+A seguir, apresentamos esses métodos e o passo a passo para realizar a emissão pelo sistema da prefeitura.</p>
+
+<h2 id="como-emitir-nfse-no-rio-de-janeiro-rj">Como emitir NFSe no Rio de Janeiro (RJ)?</h2>
+
+<p>Apesar de a emissão de NFS-e estar concentrada em um único portal, a <strong>Focus NFe</strong> disponibiliza a <a href="https://focusnfe.com.br/blog/o-que-e-api-rest/">emissão por meio da sua API REST</a>.<br>
+Além disso, é possível emitir notas fiscais eletrônicas através do <strong>portal Nota Carioca</strong>, mantido pela Prefeitura do Rio de Janeiro.</p>
+
+<p>Veja como funciona cada opção:</p>
+
+<h3 id="emitir-nota-fiscal-pelo-site-da-prefeitura">Emitir Nota Fiscal pelo site da Prefeitura</h3>
+
+<h4 id="cadastramento-da-empresa-na-prefeitura">Cadastramento da empresa na prefeitura</h4>
+<p>Tanto empresas <strong>optantes pelo Simples Nacional</strong> quanto as de <strong>outros regimes tributários</strong> podem se cadastrar no sistema para obter acesso ao emissor.</p>
+
+<h4 id="cadastro-no-portal-nota-carioca">Cadastro no portal Nota Carioca</h4>
+<p>Acesse o <a href="https://notacarioca.rio.gov.br/senhaweb/login.aspx">portal Nota Carioca</a>.<br>
+Informe seu <strong>CEP</strong> ou <strong>CNPJ</strong> e a <strong>senha</strong> gerada durante o cadastramento.<br>
+Caso não possua senha, clique em <strong>“Não possui senha”</strong>, preencha o formulário e aguarde o recebimento da senha provisória por e-mail.</p>
+
+<h4 id="acesso-ao-sistema">Acesso ao sistema</h4>
+<p>Ao entrar no portal, o menu lateral exibirá opções como <strong>Configuração de Perfil</strong>, <strong>Verificação do Simples Nacional</strong> e <strong>Guias de Pagamento</strong>.<br>
+Quando seu cadastro for aprovado, aparecerá a opção <strong>“Emitir NFS-e”</strong>.<br>
+Antes disso, você só verá “Consulta de Notas”.</p>
+
+<h4 id="preencha-as-informações-solicitadas">Preencha as informações solicitadas</h4>
+<ul>
+  <li>Informe o <strong>CPF ou CNPJ</strong> do tomador de serviços.</li>
+  <li>Preencha os <strong>dados do serviço</strong>, incluindo descrição, quantidade e valor.</li>
+  <li>O campo <strong>“Discriminação dos Serviços”</strong> é livre e pode conter informações adicionais (dados bancários, faturas etc.).</li>
+  <li>O <strong>campo ISS</strong> é preenchido automaticamente conforme a atividade da empresa.</li>
+</ul>
+
+<h4 id="revisão-e-envio-da-nfs-e">Revisão e envio da NFS-e</h4>
+<p>Revise todos os dados inseridos e, se estiverem corretos, finalize a emissão.<br>
+O sistema permite o download do arquivo em <strong>PDF</strong> ou <strong>XML</strong> para envio ao cliente.</p>
+
+<h3 id="emitir-nota-fiscal-pela-api-focus-nfe">Emitir Nota Fiscal pela API Focus NFe</h3>
+
+<p>A API da Focus NFe é uma solução que automatiza a emissão, consulta e cancelamento de documentos fiscais eletrônicos, como a NFSe, diretamente a partir do sistema da sua empresa. Com uma comunicação padronizada e estável com os web services das prefeituras, ela elimina a complexidade de lidar com diferentes formatos municipais. Basta enviar os dados da nota em formato JSON e a Focus NFe cuida de todo o processo técnico — da validação ao retorno dos arquivos XML e PDF.</p>
+
+<blockquote>
+  <p><strong><em><a href="https://focusnfe.com.br/guides/nfse/municipios-integrados/rio-de-janeiro-rj/">Neste artigo técnico</a>, você pode conferir o passo a passo para emitir NFSe no Rio de Janeiro - RJ pela API da Focus NFe.</em></strong></p>
+</blockquote>
+
+<h2 id="principais-dúvidas-sobre-emissão-de-notas-no-rio-de-janeiro-rj">Principais dúvidas sobre emissão de notas no Rio de Janeiro (RJ)</h2>
+
+<h3 id="como-o-mei-pode-emitir-nota-fiscal-no-rio-de-janeiro">Como o MEI pode emitir nota fiscal no Rio de Janeiro?</h3>
+
+<p>Desde <strong>1º de setembro de 2023</strong>, os <strong>MEIs</strong> só podem emitir notas fiscais eletrônicas pelo <strong>Portal Nacional da NFSe</strong>.<br>
+Não é mais permitida a emissão pelo sistema da <a href="https://www.1746.rio/hc/pt-br/articles/10674193247771-Nota-Carioca-Emiss%C3%A3o-de-nota-fiscal-eletr%C3%B4nica">Nota Carioca</a>.</p>
+
+<h3 id="por-que-não-aparece-a-opção-de-emissão-de-nfs-e">Por que não aparece a opção de emissão de NFS-e?</h3>
+
+<p>Segundo o <a href="https://notacarioca.rio.gov.br/faq.aspx#faq0727">FAQ da Nota Carioca (item 7.27)</a>, a opção não aparece para empresas que:</p>
+<ul>
+  <li>Não possuem códigos de serviço cadastrados no <strong>Cadastro Municipal</strong>; ou</li>
+  <li>Têm restrição legal para emissão de NFS-e.</li>
+</ul>
+
+<h3 id="como-emitir-nota-fiscal-avulsa-de-prestação-de-serviço-no-rj">Como emitir nota fiscal avulsa de prestação de serviço no RJ?</h3>
+
+<p>Acesse o site da <a href="https://nfae.fazenda.rj.gov.br/sefaz-dfe-nfae/paginas/inicio.faces">Nota Fiscal Avulsa Eletrônica (NFA-e)</a>.<br>
+Selecione <strong>“Emitir NFA-e”</strong> e escolha entre <strong>certificado digital</strong> ou <strong>senha de acesso</strong>.<br>
+MEIs e pessoas físicas/jurídicas não contribuintes do ICMS devem se <a href="https://nfae.fazenda.rj.gov.br/sefaz-dfe-nfae/paginas/cadastroEmissor.faces">cadastrar previamente</a>.</p>
+
+<h3 id="como-emitir-a-nota-carioca">Como emitir a Nota Carioca?</h3>
+
+<p>Para emitir a Nota Carioca:</p>
+<ol>
+  <li>Crie uma <strong>senha web</strong> no sistema NFS-e, caso não possua certificado digital;</li>
+  <li>Acesse o portal com sua senha web e preencha os dados da nota.<br>
+A Prefeitura do Rio de Janeiro oferece um <a href="https://notacarioca.rio.gov.br/files/manuais/NFSe_PF.pdf">manual completo de acesso</a>.</li>
+</ol>
+
+<h3 id="como-consultar-nota-fiscal-no-rj">Como consultar nota fiscal no RJ?</h3>
+
+<p>A consulta pode ser feita no <strong>portal Nota Carioca</strong>, com sua <strong>senha web</strong>.<br>
+Também é possível consultar diretamente pela <strong>API da Focus NFe</strong>, que simplifica o processo sem necessidade de gerar assinatura digital.</p>
+
+<blockquote>
+  <p>A Focus NFe gerencia toda a comunicação com os servidores da SEFAZ-RJ ou da Prefeitura do Rio de Janeiro, garantindo agilidade e segurança na emissão e consulta de documentos fiscais.</p>
+</blockquote>
+
+
+      

@@ -1,0 +1,35 @@
+{
+  "data_emissao": "2025-12-01T07:34:56-0300",
+  "natureza_operacao": 1,
+  "optante_simples_nacional": true,
+  "regime_especial_tributacao": 6,
+  "prestador": {
+    "cnpj": "00000000000000",
+    "inscricao_municipal": "123445",
+    "codigo_municipio": 2927408
+  },
+  "tomador": {
+    "cnpj": "11.111.111/0001-11",
+    "razao_social": "Fictício Tomador",
+    "endereco": {
+      "logradouro": "Rua Fictícia",
+      "numero": "2",
+      "complemento": "ap02",
+      "bairro": "Centro",
+      "codigo_municipio": 2927408,
+      "uf": "BA",
+      "cep": "41680-400"
+    }
+  },
+  "servico": {
+    "discriminacao": "Nota emitida em caráter de TESTE de integração com Webservice \n Quebra de linha 1 | Quebra de linha 2",
+    "valor_servicos": 1.0,
+    "aliquota": 5.0,
+    "item_lista_servico": "10.08",
+    "codigo_tributario_municipio": "1008001",
+    "codigo_nbs": "114062000",
+    "ibs_cbs_classificacao_tributaria": "000001",
+    "codigo_indicador_operacao": "100301",
+    "iss_retido": false
+  }
+}

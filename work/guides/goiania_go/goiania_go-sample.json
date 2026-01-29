@@ -1,0 +1,35 @@
+{
+  "data_emissao": "2025-10-01T07:34:56-0300",
+  "natureza_operacao": 1,
+  "optante_simples_nacional": true,
+  "regime_especial_tributacao": 6,
+  "prestador": {
+    "cnpj": "**************",
+    "inscricao_municipal": "****",
+    "codigo_municipio": 5208707
+  },
+  "tomador": {
+    "cnpj": "85.904.290/0001-50",
+    "razao_social": "Fictício Tomador",
+    "endereco": {
+      "logradouro": "Rua Fictícia",
+      "numero": "2",
+      "complemento": "ap02",
+      "bairro": "Centro",
+      "codigo_municipio": 5208707,
+      "uf": "GO",
+      "cep": "82900-010"
+    },
+    "telefone": "41 3256-8060",
+    "email": "test@example.com"
+  },
+  "servico": {
+    "discriminacao": "Nota emitida em caráter de TESTE",
+    "valor_servicos": 1.0,
+    "aliquota": 2.0,
+    "item_lista_servico": "1.01",
+    "codigo_tributario_municipio": "1.01",
+    "codigo_cnae": "6319400",
+    "iss_retido": false
+  }
+}
